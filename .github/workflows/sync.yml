@@ -1,0 +1,42 @@
+name: Sync reviewed startup-ad module
+
+on:
+  schedule:
+    - cron: '23 1 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - sync_module.py
+      - reviewed_rules.json
+      - test_sync.py
+      - .github/workflows/sync.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: startup-module-sync
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Run bounded-selection regression tests
+        run: python -m unittest -v test_sync.py
+      - name: Fetch public upstream and regenerate
+        run: python sync_module.py --repository "$GITHUB_REPOSITORY" --branch "$GITHUB_REF_NAME"
+      - name: Commit only checked module and status
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- StartupAds.module UpdateStatus.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update reviewed startup-ad module'
+            git push
+          fi

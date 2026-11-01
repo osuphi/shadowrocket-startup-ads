@@ -1,0 +1,224 @@
+#!name=开屏广告增强（自动同步筛选版）
+#!desc=公开上游规则自动同步；限已审阅应用和主机。需 HTTPS 解密及自己的受信任 CA，不保证所有 App/版本生效。
+#!author=Modified from fmz200/wool_scripts and contributors
+#!homepage=https://github.com/osuphi/shadowrocket-startup-ads
+#!raw-url=https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/StartupAds.module
+# GPL-3.0. Modified 2026-11-02. See LICENSE and README.md.
+# Upstream source: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule
+# Upstream date: 2026-10-30 16:26:32
+# This generated subset does not include remote-execution scripts or certificate material.
+
+[URL Rewrite]
+# AppSo
+^https?://sso\.ifanr\.com/jiong/IOS/appso/splash/ - reject
+# 百度
+^https?://baichuan\.baidu\.com/rs/adpmobile/launch - reject
+# 刺猬猫阅读
+^https?://app\.hbooker\.com/setting/get_startpage_url_list - reject
+# 当当阅读
+^https?://e\.dangdang\.com/media/api.+\?action=getDeviceStartPage - reject
+# 当当阅读
+^https?://e\.dangdang\.com/.+?getDeviceStartPage - reject
+# 大众点评
+^https?://mapi\.dianping\.com/mapi/operating/loadsplashconfig - reject
+# 得物
+^https?://app\.dewu\.com/api/v1/app/advertisement - reject
+# 叮咚买菜
+^https?://maicai\.api\.ddxq\.mobi/advert/ - reject
+# DLabel云标签
+^https://imagepc\.ctaiot\.com/dlabel/0/startpage - reject
+# DLabel云标签
+^https://dudian\-oss\.oss\-cn\-shenzhen\.aliyuncs\.com/dlabel/1/startpage - reject
+# 盖得排行
+^https?://zone\.guiderank\-app\.com/guiderank-web/app/ad/listLaunchADByCity\.do - reject
+# 高德地图
+^https?://amap\-aos\-info\-nogw\.amap\.com/ws/aos/alimama/splash_screen_rt - reject
+# 杭州公交
+^https?://m\.ibuscloud\.com/v\d/app/getStartPage - reject
+# 华住会
+^https?://appapi\.huazhu\.com:\d+/client/app/getAppStartPage/ - reject
+# 驾校一点通
+^https?://richmanrules\.ksedt\.com/intellectWaterfall(Bidding)?/find - reject
+# Keep
+^https?://kad\.gotokeep\.com/op-engine-webapp/v\d/ad - reject
+# 两步路
+^https?://helper\.2bulu\.com/getSplash - reject
+# linxi
+^https?://api\.internetofcity\.cn/api/resource/anon/popups/getSplashList - reject
+# 漫画人
+^https?://mangaapi\.manhuaren\.com/v\d/public/getStartPageAds - reject
+# 猫耳FM
+^https?://app\.missevan\.com/site/launch\? - reject
+# 拼多多
+^https?://(?:api\.pinduoduo\.com|api\.yangkeduo\.com)/api/cappuccino/splash - reject
+# 前程无忧 51Job
+^https?://(?:appapi\.51job\.com|appapi\.51jobapp\.com)/api/market/get_launch - reject
+# 起点读书
+^https?://mage\.if\.qidian\.com/argus/api/v\d/client/getsplashscreen - reject
+# 起点读书
+^https?://magev6\.if\.qidian\.com/argus/api/v4/client/getsplashscreen(?:\?|$) - reject
+# QQ音乐
+^https?://y\.gtimg\.cn/music/common/upload/t_splash_info/ - reject
+# 去哪儿
+^https?://client\.qunar\.com/pitcher-proxy\?qrt=p_splashAd - reject
+# 神马
+^https?://editor\.sm\.cn/launch_picture - reject
+# 识货
+^https?://sh\-gateway\.shihuo\.cn/v\d/services/sh-adapi/home/screen - reject
+# 淘票票
+^https?://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.queryloadingbanner/ - reject
+# 腾讯新闻
+^https?://r\.inews\.qq\.com/getSplash - reject
+# 腾讯游戏
+^https?://qt\.qq\.com/lua/mengyou/get_splash_screen_info - reject
+# 同程旅行
+^https?://wx\.17u\.cn/xcxhomeapi/home/screen$ - reject
+# 万词王
+^https?://wanciwangdata\.oss\-cn\-beijing\.aliyuncs\.com/startup/resource/content.+ - reject
+# 完美世界电竞
+^https?://api\.wmpvp\.com/api/v\d/config/promote - reject
+# 西窗烛
+^https?://lchttpapi\.xczim\.com/1\.1/functions/getLaunchImageForIOS - reject
+# 星火英语
+^https?://(?:api0\.sparke\.cn|api1\.sparke\.cn|api2\.sparke\.cn|api3\.sparke\.cn|api4\.sparke\.cn|api5\.sparke\.cn|api6\.sparke\.cn|api7\.sparke\.cn|api8\.sparke\.cn|api9\.sparke\.cn)/admodel/list\?adspace=spgg&flag=\d$ - reject
+# 医考帮
+^https?://api\.yikaobang\.com\.cn/index\.php/Client/main/startPage - reject
+# 一起考教师
+^https?://api\.17kjs\.com/meta/ads_targets - reject
+# 指点天下
+^https?://zua\.zhidiantianxia\.cn/api/adverts - reject
+# 中国电信
+^https?://cloud\.189\.cn/include/splash/ - reject
+
+[Map Local]
+# 360儿童卫士
+^https?://ad\.life\.360\.cn/v2/app/advertisement/config\?sdk_ver= data-type=text data="{}" header="Content-Type:application/json"
+# 爱牵挂care
+^https?://manager\.aiqiangua\.com:8080/AqgNews/api/start_ad\.do data-type=text data="{}" header="Content-Type:application/json"
+# 爱桐乡
+^https?://mapi\.txcmapp\.com/api/open/atx2/ad\.php data-type=text data=" "
+# 百度输入法
+^https?://mime\.baidu\.com/v5/start_screen_ads/list data-type=text data="{}" header="Content-Type:application/json"
+# 半月谈
+^https?://www\.banyuetanapp\.com/byt-api/ad/getAdvertList\?adSpaceId=100000002 data-type=text data=" "
+# 乐刻
+^https?://lens\.leoao\.com/lens/conduct/app/rpc/v2/com\.lefit\.dubbo\.cms\.api\.front\.AppAdvertisingFrontService/getAppAdvertisingNew data-type=text data="{}" header="Content-Type:application/json"
+# 达达骑士版
+^https?://delivery\-api\.imdada\.cn/v2_0/dada/promote/imax\?privacyParam data-type=text data="{}" header="Content-Type:application/json"
+# 大疆商城
+^https://se\-api\.djiits\.com/api/components/launch_ad\.json\?abbrv_url=1&country=cn&language=zh-CN data-type=text data="{}" header="Content-Type:application/json"
+# e代驾
+^https?://pic\.edaijia\.cn/adsplash/ data-type=text data=" "
+# 返利网
+^https?://(?:l0\.51fanli\.net|l1\.51fanli\.net|l2\.51fanli\.net|l3\.51fanli\.net|l4\.51fanli\.net|l5\.51fanli\.net|l6\.51fanli\.net|l7\.51fanli\.net|l8\.51fanli\.net|l9\.51fanli\.net)/app/images/splash/202\d{1}/\d{2}/.*.jpg data-type=text data=" "
+# 凤凰秀
+^https?://api\.fengshows\.com/api/launchAD data-type=tiny-gif
+# 高德地图
+^https?://m5\.amap\.com/ws/shield/dsp/app/startup/init\? data-type=text data="{}" header="Content-Type:application/json"
+# 广汽传祺
+^https?://gsp\.gacmotor\.com/gateway/webapi/baseinfo/advertise/getAdvertiseByPositionCode\?positionCode=1 data-type=text data="{}" header="Content-Type:application/json"
+# 故宫博物馆小程序
+^https?://gugongmini\.dpm\.org\.cn/gugong_applet/open-screen data-type=text data="{}" header="Content-Type:application/json"
+# 嗨学
+^https://www\.haixue\.com/advert/app/adInfo/v1/queryAdByPositionCode data-type=text data="{}" header="Content-Type:application/json"
+# 机核网
+^https?://www\.gcores\.com/gapi/v1/app-start-pages\?page data-type=text data="{}" header="Content-Type:application/json"
+# 京东云无线宝
+^https?://router\-app\-api\.jdcloud\.com/v\d/board/routerAppSplash data-type=text data=" "
+# 开源中国
+^https?://www\.oschina\.net/action/apiv2/get_launcher data-type=tiny-gif
+# 看东方（百视TV）
+^https://bp\-api\.bestv\.com\.cn/cms/api/free/open/advertisingV2 data-type=text data="{}" header="Content-Type:application/json"
+# 乐堡潮玩馆小程序
+^https?://tbgapplet\.carlsberg\.asia/tuborg/banner/loading data-type=text data="{}" header="Content-Type:application/json"
+# 联想至像打印
+^https://abcapi\.lenovoimage\.com/v1/promote/startup data-type=text data="{}" header="Content-Type:application/json"
+# lofter
+^https?://ad\.lofter\.com/v1\.1/yitou/madr data-type=text data=" "
+# 鲁班到家用户版
+^https://order\-app\-api\.lbdj\.com/lbdj/apporder/ad/ data-type=text data="{}" header="Content-Type:application/json"
+# 马达出行
+^https://mada\-travel\.17u\.cn/mdapi/config/ads data-type=text data="{}" header="Content-Type:application/json"
+# 麦当劳
+^https?://api\.mcd\.cn/bff/portal/home/splash data-type=text data=" "
+# 脉脉
+^https://(?:h3\.open\.taou\.com|open\.taou\.com)/maimai/adshow\? data-type=text data="{}" header="Content-Type:application/json"
+# 马卡龙玩图
+^https?://app\.api\.versa\-ai\.com/launch/ads\? data-type=text data=" "
+# 猫眼
+^https://p0\.pipi\.cn/adAdmin/\w+\.jpg\?imageMogr2/quality/ data-type=text data="{}" header="Content-Type:application/json"
+# 牛听听
+^https://gateway\.benewtech\.cn/resources-app/app/startup/prepage data-type=text data="{}" header="Content-Type:application/json"
+# ONE
+^https?://v3\.wufazhuce\.com:8000/api/adpreloadlist data-type=text data="{}" header="Content-Type:application/json"
+# 票根
+^https?://pss\.txffp\.com/piaogen/images/launchScreen/ data-type=text data=" "
+# 穷游
+^https?://open\.qyer\.com/qyer/startpage/ data-type=text data=" "
+# 奇瑞汽车
+^https://mobile\-consumer\-sapp\.chery\.cn/web/position/getShowList\?displayPlatform=1&tabType=0& data-type=text data="{}" header="Content-Type:application/json"
+# 全球购骑士卡
+^https?://facade\-api\.black\-unique\.com/app/v1/startScreen\? data-type=text data="{}" header="Content-Type:application/json"
+# 去哪儿
+^https?://homefront\.qunar\.com/front/splash/ad data-type=text data="{}" header="Content-Type:application/json"
+# 日产智联
+^https?://oneapph5\.dongfeng\-nissan\.com\.cn/mb-gw/vmsp-discover/rest/business-service/v1/advert/advertinfo data-type=text data="{}" header="Content-Type:application/json"
+# 日淘任意门
+^https?://app\.meruki\.cn/\?n=Sig\.Front\.AppFront\.GetOpenAdDoorzo data-type=text data="{}" header="Content-Type:application/json"
+# 省省回头车
+^https://www\.ymm56\.com/short-distance-match-app/openAppAd data-type=text data="{}" header="Content-Type:application/json"
+# 苏e行
+^https?://api\.bwton\.com/bas/ad data-type=text data=" "
+# 太平洋知科技
+^https?://mrobot\.pconline\.com\.cn/s-900/onlineinfo/cms/launch data-type=text data=" "
+# 淘宝
+^https?://acs\.m\.taobao\.com/gw/mtop\.etao\.noah\.query/.+tao_splash data-type=text data="{}" header="Content-Type:application/json"
+# TapTap
+^https?://api\.taptapdada\.com/startup-logo/v\d/combo\? data-type=text data="{}" header="Content-Type:application/json"
+# 腾讯地图
+^https?://4gimg\.map\.qq\.com/mwaSplash/ data-type=text data=" "
+# 途牛
+^https?://m\.tuniu\.com/api/operation/splash/ data-type=text data=" "
+# 稿定设计
+^https://qiye\.gaoding\.com/api/v3/oc/v2/delivery-pits/ios-splash/ data-type=text data="{}" header="Content-Type:application/json"
+# 微店
+^https?://thor\.weidian\.com/ares/home\.splash data-type=text data=" "
+# 向日葵
+^https?://client\-api\-v2\.oray\.com/materials/SLCC_IOS_STARTUP data-type=text data="{}" header="Content-Type:application/json"
+# 闲鱼
+^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlecommerce\.splash\.ads data-type=text data="{}" header="Content-Type:application/json"
+# 小Biu智家
+^https?://shcss\.suning\.com/shcss-web/api/appImage/queryAppImage\.do data-type=text data=" "
+# 小蚕霸王餐
+^https://sdk\.1rtb\.net/sdk/req_ad\? data-type=text data="{}" header="Content-Type:application/json"
+# 小米打印
+^https?://api\-miprint\.hannto\.com/v1/c/res/app/ad/\?app_version data-type=text data="{}" header="Content-Type:application/json"
+# 小象超市
+^https?://mall\.meituan\.com/api/c/homepage/splash data-type=text data="{}" header="Content-Type:application/json"
+# 小宇宙
+^https?://api\.xiaoyuzhoufm\.com/v\d/flash data-type=text data="{}" header="Content-Type:application/json"
+# 希尔顿
+^https?://wcprd\.hilton\.com\.cn/app-middleware/graphql\?type=splashAd data-type=text data=" "
+# 迅游加速器
+^https?://portal\-xunyou\.qingcdn\.com/api/v\d/ios/configs/splash_ad data-type=text data=" "
+# 亚朵开屏
+^https?://api2\.yaduo\.com/atourlife/activity/appLaunch data-type=text data="{}" header="Content-Type:application/json"
+# 永安行
+^https://api5\.youonbike\.com/ibike-rest-service/user/fun_IBF_GetAdvert data-type=text data="{}" header="Content-Type:application/json"
+# 游戏时光
+^https?://app02\.vgtime\.com:8080/vgtime-app/api/v2/init/ad\.json$ data-type=text data="{}" header="Content-Type:application/json"
+# 猿辅导
+^https?://xyst\.yuanfudao\.com/iphone/splashesV\d data-type=text data=" "
+# 掌上鹿城
+^https?://vapp\.tmuyun\.com/api/app_start_page/list/new data-type=text data="{}" header="Content-Type:application/json"
+# 掌上英雄联盟
+^https?://us\.l\.qq\.com/exapp data-type=text data=" "
+# 知乎
+^https://api\.zhihu\.com/commercial_api/(?:launch_v2|real_time_launch_v2) data-type=text data="{}" header="Content-Type:application/json"
+# 中关村在线
+^https?://apicloud\.zol\.com\.cn/Article/WapLaunchLogo data-type=text data="{}" header="Content-Type:application/json"
+# 住这儿
+^https?://z\.onewo\.com/passer/api/ads/v1/8/list data-type=text data=" "
+
+[MITM]
+hostname = %APPEND% 4gimg.map.qq.com, abcapi.lenovoimage.com, acs.m.goofish.com, acs.m.taobao.com, ad.life.360.cn, ad.lofter.com, amap-aos-info-nogw.amap.com, api-miprint.hannto.com, api.17kjs.com, api.bwton.com, api.fengshows.com, api.internetofcity.cn, api.mcd.cn, api.pinduoduo.com, api.taptapdada.com, api.wmpvp.com, api.xiaoyuzhoufm.com, api.yangkeduo.com, api.yikaobang.com.cn, api.zhihu.com, api0.sparke.cn, api1.sparke.cn, api2.sparke.cn, api2.yaduo.com, api3.sparke.cn, api4.sparke.cn, api5.sparke.cn, api5.youonbike.com, api6.sparke.cn, api7.sparke.cn, api8.sparke.cn, api9.sparke.cn, apicloud.zol.com.cn, app.api.versa-ai.com, app.dewu.com, app.hbooker.com, app.meruki.cn, app.missevan.com, app02.vgtime.com, appapi.51job.com, appapi.51jobapp.com, appapi.huazhu.com, baichuan.baidu.com, bp-api.bestv.com.cn, client-api-v2.oray.com, client.qunar.com, cloud.189.cn, delivery-api.imdada.cn, dudian-oss.oss-cn-shenzhen.aliyuncs.com, e.dangdang.com, editor.sm.cn, facade-api.black-unique.com, gateway.benewtech.cn, gsp.gacmotor.com, gugongmini.dpm.org.cn, h3.open.taou.com, helper.2bulu.com, homefront.qunar.com, imagepc.ctaiot.com, kad.gotokeep.com, l0.51fanli.net, l1.51fanli.net, l2.51fanli.net, l3.51fanli.net, l4.51fanli.net, l5.51fanli.net, l6.51fanli.net, l7.51fanli.net, l8.51fanli.net, l9.51fanli.net, lchttpapi.xczim.com, lens.leoao.com, m.ibuscloud.com, m.tuniu.com, m5.amap.com, mada-travel.17u.cn, mage.if.qidian.com, magev6.if.qidian.com, maicai.api.ddxq.mobi, mall.meituan.com, manager.aiqiangua.com, mangaapi.manhuaren.com, mapi.dianping.com, mapi.txcmapp.com, mime.baidu.com, mobile-consumer-sapp.chery.cn, mrobot.pconline.com.cn, oneapph5.dongfeng-nissan.com.cn, open.qyer.com, open.taou.com, order-app-api.lbdj.com, p0.pipi.cn, pic.edaijia.cn, portal-xunyou.qingcdn.com, pss.txffp.com, qiye.gaoding.com, qt.qq.com, r.inews.qq.com, richmanrules.ksedt.com, router-app-api.jdcloud.com, sdk.1rtb.net, se-api.djiits.com, sh-gateway.shihuo.cn, shcss.suning.com, sso.ifanr.com, tbgapplet.carlsberg.asia, thor.weidian.com, us.l.qq.com, v3.wufazhuce.com, vapp.tmuyun.com, wanciwangdata.oss-cn-beijing.aliyuncs.com, wcprd.hilton.com.cn, www.banyuetanapp.com, www.gcores.com, www.haixue.com, www.oschina.net, www.ymm56.com, wx.17u.cn, xyst.yuanfudao.com, y.gtimg.cn, z.onewo.com, zone.guiderank-app.com, zua.zhidiantianxia.cn
