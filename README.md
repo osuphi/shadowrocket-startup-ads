@@ -6,7 +6,11 @@
 
 ## 安装模块
 
+当前部署的订阅地址：[StartupAds.module](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/StartupAds.module)。复制这个链接地址到 Shadowrocket，不要把整个 GitHub 仓库地址填进模块订阅。
+
 公开部署后，在 Shadowrocket“配置 → 模块 → 右上角 +”中填入本仓库 `StartupAds.module` 的 Raw 地址，下载并启用。不要复制 GitHub 的网页预览地址。
+
+如果安装过旧的本地“开屏广告增强”模块，先停用旧版，再启用这份远程模块。建议继续使用原有的 v2 分流配置；如果之前导入了内置同一套开屏规则的完整增强 `.conf`，先切回 v2，避免重复叠加。WLOC 是独立定位模块。
 
 本模块要求 Shadowrocket 2.2.69 或以上。需要对正在使用的配置开启 HTTPS 解密，并生成、安装和完全信任你自己的 CA。模块只追加指定主机名，不附带证书，也不会自动开启解密。
 
