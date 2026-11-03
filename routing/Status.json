@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-03T03:09:05.940843+00:00",
+  "checked_at_utc": "2026-11-03T03:09:54.073493+00:00",
   "version": 3,
   "source_metadata": {
     "commits": {
@@ -213,8 +213,8 @@
     "skipped": {
       "not-an-explicit-reviewed-ad-shape": 77991,
       "functional-or-live-protection": 392,
-      "functional-first-label": 1,
-      "covered-by-reviewed-ad-family": 2
+      "covered-by-reviewed-ad-family": 2,
+      "functional-first-label": 1
     }
   },
   "removed_lower_priority_exact_duplicates": [
