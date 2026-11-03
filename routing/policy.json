@@ -1,0 +1,900 @@
+{
+  "version": 3,
+  "general": [
+    "udp-policy-not-supported-behaviour = REJECT",
+    "skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, captive.apple.com",
+    "tun-excluded-routes = 239.255.255.250/32,224.0.0.251/32, ff02::fb/128",
+    "dns-server = system"
+  ],
+  "groups": [
+    "🔰 选择节点 = select,PROXY,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,policy-select-name=PROXY",
+    "🇭🇰 香港节点 = select,policy-regex-filter=香港|Hong[ -]?Kong|(?i:(?:^|[^A-Za-z])HK(?:[^A-Za-z]|$))|🇭🇰",
+    "🇯🇵 日本节点 = select,policy-regex-filter=日本|东京|大阪|(?i:Japan|Tokyo|(?:^|[^A-Za-z])JP(?:[^A-Za-z]|$))|🇯🇵",
+    "🇸🇬 新加坡节点 = select,policy-regex-filter=新加坡|狮城|(?i:Singapore|(?:^|[^A-Za-z])SG(?:[^A-Za-z]|$))|🇸🇬",
+    "🇺🇸 美国节点 = select,policy-regex-filter=美国|洛杉矶|圣何塞|西雅图|(?i:United[ -]?States|USA|(?:^|[^A-Za-z])US(?:[^A-Za-z]|$))|🇺🇸|🇺🇲",
+    "🇹🇼 台湾节点 = select,policy-regex-filter=台湾|台灣|台北|(?i:Taiwan|Taipei|(?:^|[^A-Za-z])TW(?:[^A-Za-z]|$))|🇹🇼|🇨🇳.*台湾",
+    "🤖 OpenAI = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "▶️ YouTube = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "🔎 Google = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "🐙 GitHub = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "🍎 Apple 海外 = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "💬 Bing / Copilot = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "☁️ OneDrive = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "🎮 Steam 商店/社区 = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "🌩️ Cloudflare = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "🪟 Microsoft = select,🔰 选择节点,🇭🇰 香港节点,🇯🇵 日本节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "🍎 Apple = select,DIRECT,🔰 选择节点,policy-select-name=DIRECT",
+    "🪟 微软下载 = select,DIRECT,🔰 选择节点,policy-select-name=DIRECT",
+    "🎮 Steam 登录/下载 = select,DIRECT,🔰 选择节点,policy-select-name=DIRECT",
+    "🌏 爱奇艺&哔哩哔哩 = select,DIRECT,🔰 选择节点,🇭🇰 香港节点,🇹🇼 台湾节点,policy-select-name=DIRECT",
+    "📺 动画疯 = select,🔰 选择节点,🇹🇼 台湾节点,DIRECT,policy-select-name=🔰 选择节点",
+    "🎓学术网站 = select,DIRECT,🔰 选择节点,policy-select-name=DIRECT",
+    "🇨🇳 国内网站 = select,DIRECT,🔰 选择节点,policy-select-name=DIRECT",
+    "🛑 拦截广告 = select,REJECT,🔰 选择节点,DIRECT,policy-select-name=REJECT",
+    "🐟 漏网之鱼 = select,🔰 选择节点,DIRECT,policy-select-name=🔰 选择节点"
+  ],
+  "new_direct_groups": [
+    "📺 国内直播",
+    "💬 国内通讯",
+    "💳 国内支付",
+    "📱 运营商服务"
+  ],
+  "local_rules": [
+    "DOMAIN,localhost,DIRECT",
+    "DOMAIN-SUFFIX,local,DIRECT",
+    "DOMAIN,captive.apple.com,DIRECT",
+    "IP-CIDR,0.0.0.0/8,DIRECT,no-resolve",
+    "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+    "IP-CIDR,100.64.0.0/10,DIRECT,no-resolve",
+    "IP-CIDR,127.0.0.0/8,DIRECT,no-resolve",
+    "IP-CIDR,169.254.0.0/16,DIRECT,no-resolve",
+    "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve",
+    "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+    "IP-CIDR,224.0.0.0/4,DIRECT,no-resolve",
+    "IP-CIDR,255.255.255.255/32,DIRECT,no-resolve",
+    "IP-CIDR6,::1/128,DIRECT,no-resolve",
+    "IP-CIDR6,fc00::/7,DIRECT,no-resolve",
+    "IP-CIDR6,fe80::/10,DIRECT,no-resolve",
+    "IP-CIDR6,ff00::/8,DIRECT,no-resolve"
+  ],
+  "essential_rules": [
+    "DOMAIN,raw.githubusercontent.com,🐙 GitHub",
+    "DOMAIN,challenges.cloudflare.com,🔰 选择节点",
+    "DOMAIN,js.stripe.com,🔰 选择节点",
+    "DOMAIN,api.stripe.com,🔰 选择节点",
+    "DOMAIN,checkout.stripe.com,🔰 选择节点",
+    "DOMAIN,hooks.stripe.com,🔰 选择节点",
+    "DOMAIN,openai-api.arkoselabs.com,🤖 OpenAI",
+    "DOMAIN-SUFFIX,auth0.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,client-api.arkoselabs.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,hcaptcha.com,🔰 选择节点"
+  ],
+  "shared_rules": [
+    "DOMAIN,browser-intake-datadoghq.com,🔰 选择节点",
+    "DOMAIN,static.cloudflareinsights.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,ai.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,algolia.net,🔰 选择节点",
+    "DOMAIN-SUFFIX,api.statsig.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,events.statsigapi.net,🔰 选择节点",
+    "DOMAIN-SUFFIX,featuregates.org,🔰 选择节点",
+    "DOMAIN-SUFFIX,host.livekit.cloud,🔰 选择节点",
+    "DOMAIN-SUFFIX,identrust.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,intercom.io,🔰 选择节点",
+    "DOMAIN-SUFFIX,intercomcdn.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,launchdarkly.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,observeit.net,🔰 选择节点",
+    "DOMAIN-SUFFIX,segment.io,🔰 选择节点",
+    "DOMAIN-SUFFIX,sentry.io,🔰 选择节点",
+    "DOMAIN-SUFFIX,stripe.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,turn.livekit.cloud,🔰 选择节点"
+  ],
+  "functional_rules": [
+    "DOMAIN,firebaseinstallations.googleapis.com,🔎 Google",
+    "DOMAIN,firebaseremoteconfig.googleapis.com,🔎 Google",
+    "DOMAIN,firebase-settings.crashlytics.com,🔎 Google",
+    "DOMAIN,fcm.googleapis.com,🔎 Google",
+    "DOMAIN-SUFFIX,sentry-cdn.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,crashlytics.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,app-measurement.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,firebaseio.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,firebaseapp.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,statsig.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,statsigapi.net,🔰 选择节点",
+    "DOMAIN-SUFFIX,configcat.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,split.io,🔰 选择节点",
+    "DOMAIN-SUFFIX,segment.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,mixpanel.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,mparticle.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,optimizely.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,onesignal.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,pusher.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,pushwoosh.com,🔰 选择节点",
+    "DOMAIN-SUFFIX,recaptcha.net,🔰 选择节点",
+    "DOMAIN-SUFFIX,bugly.qq.com,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,sensorsdata.cn,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,sensorsdata.io,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,umeng.com,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,umeng.co,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,umengcloud.com,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,umengacs.com,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,cmpassport.com,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,id6.me,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,onepass.geetest.com,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,geetest.com,🇨🇳 国内网站",
+    "DOMAIN-SUFFIX,gtimg.com,🇨🇳 国内网站"
+  ],
+  "ai_core_rules": [
+    "DOMAIN,chat.openai.com.cdn.cloudflare.net,🤖 OpenAI",
+    "DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,🤖 OpenAI",
+    "DOMAIN,openaicomproductionae4b.blob.core.windows.net,🤖 OpenAI",
+    "DOMAIN,production-openaicom-storage.azureedge.net,🤖 OpenAI",
+    "DOMAIN-SUFFIX,chatgpt.com,🤖 OpenAI",
+    "DOMAIN-SUFFIX,chatgpt.livekit.cloud,🤖 OpenAI",
+    "DOMAIN-SUFFIX,oaistatic.com,🤖 OpenAI",
+    "DOMAIN-SUFFIX,oaiusercontent.com,🤖 OpenAI",
+    "DOMAIN-SUFFIX,openai.com,🤖 OpenAI",
+    "DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🤖 OpenAI",
+    "DOMAIN-SUFFIX,openaicom.imgix.net,🤖 OpenAI"
+  ],
+  "download_rules": [
+    "DOMAIN,download.microsoft.com,🪟 微软下载",
+    "DOMAIN,ntservicepack.microsoft.com,🪟 微软下载",
+    "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com,🪟 微软下载",
+    "DOMAIN-SUFFIX,update.microsoft.com,🪟 微软下载",
+    "DOMAIN-SUFFIX,windowsupdate.microsoft.com,🪟 微软下载",
+    "DOMAIN-SUFFIX,windowsupdate.com,🪟 微软下载"
+  ],
+  "service_overrides": [
+    "DOMAIN-SUFFIX,copilot.microsoft.com,💬 Bing / Copilot",
+    "DOMAIN-SUFFIX,copilot.cloud.microsoft,💬 Bing / Copilot",
+    "DOMAIN-SUFFIX,githubcopilot.com,🐙 GitHub"
+  ],
+  "retained_rules": [
+    "DOMAIN-SUFFIX,webofscience.com,🎓学术网站",
+    "DOMAIN-SUFFIX,sciencedirect.com,🎓学术网站",
+    "DOMAIN-SUFFIX,webofknowledge.com,🎓学术网站",
+    "DOMAIN-SUFFIX,clarivate.com,🎓学术网站",
+    "DOMAIN-SUFFIX,taylorandfrancis.com,🎓学术网站",
+    "DOMAIN-SUFFIX,dl.acm.org,🎓学术网站",
+    "DOMAIN,acm-prod.disqus.com,🎓学术网站",
+    "DOMAIN-SUFFIX,sciencedirectassets.com,🎓学术网站",
+    "DOMAIN-SUFFIX,readspeaker.com,🎓学术网站",
+    "DOMAIN-SUFFIX,pubmed.ncbi.nlm.nih.gov,🎓学术网站",
+    "DOMAIN-SUFFIX,ieee.org,🎓学术网站",
+    "DOMAIN-SUFFIX,nature.com,🎓学术网站",
+    "DOMAIN-SUFFIX,elsevier.com,🎓学术网站",
+    "DOMAIN-SUFFIX,tandfonline.com,🎓学术网站",
+    "DOMAIN-SUFFIX,springer.com,🎓学术网站",
+    "DOMAIN-SUFFIX,onlinelibrary.wiley.com,🎓学术网站",
+    "DOMAIN-SUFFIX,taylorfrancis.com,🎓学术网站",
+    "DOMAIN-SUFFIX,cloudflare-dns.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflare-ipfs.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflare-quic.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflare.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflare.net,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflareapps.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflarebolt.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflareclient.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflareinsights.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflareok.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflareresolve.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflaressl.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflarestatus.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflarestream.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflaretest.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,cloudflarewarp.com,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,one.one.one,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,pages.dev,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,videodelivery.net,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,warp.plus,🌩️ Cloudflare",
+    "DOMAIN-SUFFIX,workers.dev,🌩️ Cloudflare"
+  ],
+  "carrier_rules": [
+    "DOMAIN-SUFFIX,10099.com.cn,📱 运营商服务"
+  ],
+  "service_order_before_ads": [
+    [
+      "AppleProxy",
+      "🍎 Apple 海外"
+    ],
+    [
+      "Apple",
+      "🍎 Apple"
+    ],
+    [
+      "AliPay",
+      "💳 国内支付"
+    ],
+    [
+      "UnionPay",
+      "💳 国内支付"
+    ],
+    [
+      "WeChat",
+      "💬 国内通讯"
+    ],
+    [
+      "DingTalk",
+      "💬 国内通讯"
+    ],
+    [
+      "ChinaMobile",
+      "📱 运营商服务"
+    ],
+    [
+      "ChinaTelecom",
+      "📱 运营商服务"
+    ],
+    [
+      "ChinaUnicom",
+      "📱 运营商服务"
+    ],
+    [
+      "Douyu",
+      "📺 国内直播"
+    ],
+    [
+      "HuYa",
+      "📺 国内直播"
+    ],
+    [
+      "BiliBili",
+      "🌏 爱奇艺&哔哩哔哩"
+    ],
+    [
+      "iQIYI",
+      "🌏 爱奇艺&哔哩哔哩"
+    ],
+    [
+      "SteamCN",
+      "🎮 Steam 登录/下载"
+    ]
+  ],
+  "service_order_after_ads": [
+    [
+      "OpenAI",
+      "🤖 OpenAI"
+    ],
+    [
+      "YouTube",
+      "▶️ YouTube"
+    ],
+    [
+      "Google",
+      "🔎 Google"
+    ],
+    [
+      "GitHub",
+      "🐙 GitHub"
+    ],
+    [
+      "OneDrive",
+      "☁️ OneDrive"
+    ],
+    [
+      "Bing",
+      "💬 Bing / Copilot"
+    ],
+    [
+      "Microsoft",
+      "🪟 Microsoft"
+    ],
+    [
+      "Steam",
+      "🎮 Steam 商店/社区"
+    ],
+    [
+      "Bahamut",
+      "📺 动画疯"
+    ]
+  ],
+  "ai_exact": [
+    "chat.openai.com.cdn.cloudflare.net",
+    "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
+    "openaicomproductionae4b.blob.core.windows.net",
+    "production-openaicom-storage.azureedge.net",
+    "openai-api.arkoselabs.com"
+  ],
+  "ai_suffixes": [
+    "chatgpt.com",
+    "chatgpt.livekit.cloud",
+    "oaistatic.com",
+    "oaiusercontent.com",
+    "openai.com",
+    "openaiapi-site.azureedge.net",
+    "openaicom.imgix.net"
+  ],
+  "category_additions": {
+    "OneDrive": [
+      [
+        "DOMAIN-SUFFIX",
+        "1drv.ms"
+      ]
+    ]
+  },
+  "ad_suffix_families": [
+    "googlesyndication.com",
+    "adnxs.com"
+  ],
+  "ad_exact_families": [
+    "doubleclick.net",
+    "googleadservices.com",
+    "adsrvr.org"
+  ],
+  "ad_exact_first_labels": [
+    "ad",
+    "ads",
+    "adserver",
+    "adservice",
+    "adservices",
+    "adserv",
+    "advert",
+    "advertising",
+    "adclick",
+    "adcdn",
+    "ads-api"
+  ],
+  "ad_protected_first_labels": [
+    "accounts",
+    "account",
+    "login",
+    "auth",
+    "oauth",
+    "consent",
+    "config",
+    "settings",
+    "push",
+    "msg",
+    "message",
+    "messaging",
+    "remoteconfig"
+  ],
+  "protected_suffixes": [
+    "10010.com",
+    "10086.cn",
+    "10099.com.cn",
+    "189.cn",
+    "alipay.com",
+    "alipayobjects.com",
+    "app-measurement.com",
+    "apple.com",
+    "auth0.com",
+    "biliapi.com",
+    "biliapi.net",
+    "bilibili.com",
+    "bugly.qq.com",
+    "bytefcdnrd.com",
+    "challenges.cloudflare.com",
+    "cmpassport.com",
+    "configcat.com",
+    "crashlytics.com",
+    "dingtalk.com",
+    "douyu.com",
+    "douyu.tv",
+    "douyuba.cn",
+    "douyucdn.cn",
+    "douyucdn2.cn",
+    "douyupcdn.cn",
+    "douyuscdn.com",
+    "douyutv.com",
+    "doyonoc.com",
+    "edgesrv.com",
+    "fcm.googleapis.com",
+    "featuregates.org",
+    "firebaseapp.com",
+    "firebaseinstallations.googleapis.com",
+    "firebaseio.com",
+    "firebaseremoteconfig.googleapis.com",
+    "geetest.com",
+    "gtimg.com",
+    "guguyuyin.com",
+    "hcaptcha.com",
+    "hdslb.com",
+    "huya.com",
+    "icloud.com",
+    "id6.me",
+    "intercom.io",
+    "intercomcdn.com",
+    "iqiyi.com",
+    "launchdarkly.com",
+    "mixpanel.com",
+    "mparticle.com",
+    "onepass.geetest.com",
+    "onesignal.com",
+    "optimizely.com",
+    "oywtv.com",
+    "pusher.com",
+    "pushwoosh.com",
+    "raw.githubusercontent.com",
+    "recaptcha.net",
+    "segment.com",
+    "segment.io",
+    "sensorsdata.cn",
+    "sensorsdata.io",
+    "sentry-cdn.com",
+    "sentry.io",
+    "servicewechat.com",
+    "split.io",
+    "statsig.com",
+    "statsigapi.net",
+    "stripe.com",
+    "tenpay.com",
+    "umeng.co",
+    "umeng.com",
+    "umengacs.com",
+    "umengcloud.com",
+    "unionpay.com",
+    "wechat.com",
+    "weixin.qq.com"
+  ],
+  "protected_test_hosts": [
+    "msg.douyu.com",
+    "cs-op.douyucdn.cn",
+    "rtbapi.douyucdn.cn",
+    "capi.douyucdn.cn",
+    "dotcounter.douyutv.com",
+    "api.sentry.io",
+    "ads.sentry.io",
+    "ads.douyu.com",
+    "ads.alipay.com",
+    "app-measurement.com",
+    "firebaseremoteconfig.googleapis.com",
+    "firebase-settings.crashlytics.com",
+    "fcm.googleapis.com",
+    "ads.umeng.com",
+    "msg.umeng.com",
+    "ads.bugly.qq.com",
+    "ads.sensorsdata.cn",
+    "api.configcat.com",
+    "events.statsigapi.net",
+    "challenges.cloudflare.com",
+    "checkout.stripe.com",
+    "raw.githubusercontent.com",
+    "app.10099.com.cn"
+  ],
+  "test_cases": [
+    {
+      "host": "localhost",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "printer.local",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "192.168.1.1",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "10.2.3.4",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "::1",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "fd12::1",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "fe80::1234",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "chatgpt.com",
+      "expected": "🤖 OpenAI"
+    },
+    {
+      "host": "api.openai.com",
+      "expected": "🤖 OpenAI"
+    },
+    {
+      "host": "cdn.oaistatic.com",
+      "expected": "🤖 OpenAI"
+    },
+    {
+      "host": "files.oaiusercontent.com",
+      "expected": "🤖 OpenAI"
+    },
+    {
+      "host": "chatgpt.livekit.cloud",
+      "expected": "🤖 OpenAI"
+    },
+    {
+      "host": "openaicomproductionae4b.blob.core.windows.net",
+      "expected": "🤖 OpenAI"
+    },
+    {
+      "host": "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
+      "expected": "🤖 OpenAI"
+    },
+    {
+      "host": "www.youtube.com",
+      "expected": "▶️ YouTube"
+    },
+    {
+      "host": "r1---sn-a5mekn7z.googlevideo.com",
+      "expected": "▶️ YouTube"
+    },
+    {
+      "host": "i.ytimg.com",
+      "expected": "▶️ YouTube"
+    },
+    {
+      "host": "www.google.com",
+      "expected": "🔎 Google"
+    },
+    {
+      "host": "www.google.com.hk",
+      "expected": "🔎 Google"
+    },
+    {
+      "host": "drive.google.com",
+      "expected": "🔎 Google"
+    },
+    {
+      "host": "github.com",
+      "expected": "🐙 GitHub"
+    },
+    {
+      "host": "raw.githubusercontent.com",
+      "expected": "🐙 GitHub"
+    },
+    {
+      "host": "api.githubcopilot.com",
+      "expected": "🐙 GitHub"
+    },
+    {
+      "host": "www.apple.com",
+      "expected": "🍎 Apple"
+    },
+    {
+      "host": "icloud.com",
+      "expected": "🍎 Apple"
+    },
+    {
+      "host": "tv.apple.com",
+      "expected": "🍎 Apple 海外"
+    },
+    {
+      "host": "www.microsoft.com",
+      "expected": "🪟 Microsoft"
+    },
+    {
+      "host": "login.live.com",
+      "expected": "🪟 Microsoft"
+    },
+    {
+      "host": "onedrive.live.com",
+      "expected": "☁️ OneDrive"
+    },
+    {
+      "host": "1drv.ms",
+      "expected": "☁️ OneDrive"
+    },
+    {
+      "host": "www.bing.com",
+      "expected": "💬 Bing / Copilot"
+    },
+    {
+      "host": "copilot.microsoft.com",
+      "expected": "💬 Bing / Copilot"
+    },
+    {
+      "host": "copilot.cloud.microsoft",
+      "expected": "💬 Bing / Copilot"
+    },
+    {
+      "host": "store.steampowered.com",
+      "expected": "🎮 Steam 商店/社区"
+    },
+    {
+      "host": "steamcommunity.com",
+      "expected": "🎮 Steam 商店/社区"
+    },
+    {
+      "host": "cm.steampowered.com",
+      "expected": "🎮 Steam 登录/下载"
+    },
+    {
+      "host": "cache1.steamcontent.com",
+      "expected": "🎮 Steam 登录/下载"
+    },
+    {
+      "host": "dl.steam.ksyna.com",
+      "expected": "🎮 Steam 登录/下载"
+    },
+    {
+      "host": "www.bilibili.com",
+      "expected": "🌏 爱奇艺&哔哩哔哩"
+    },
+    {
+      "host": "www.iqiyi.com",
+      "expected": "🌏 爱奇艺&哔哩哔哩"
+    },
+    {
+      "host": "ani.gamer.com.tw",
+      "expected": "📺 动画疯"
+    },
+    {
+      "host": "www.baidu.com",
+      "expected": "🇨🇳 国内网站"
+    },
+    {
+      "host": "www.qq.com",
+      "expected": "🇨🇳 国内网站"
+    },
+    {
+      "host": "www.taobao.com",
+      "expected": "🇨🇳 国内网站"
+    },
+    {
+      "host": "example.cn",
+      "expected": "🇨🇳 国内网站"
+    },
+    {
+      "host": "www.nature.com",
+      "expected": "🎓学术网站"
+    },
+    {
+      "host": "www.cloudflare.com",
+      "expected": "🌩️ Cloudflare"
+    },
+    {
+      "host": "ai.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "stripe.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "login.auth0.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "api.sentry.io",
+      "expected": "🔰 选择节点",
+      "reason": "Mixed-use SDK is no longer blanket-blocked."
+    },
+    {
+      "host": "doubleclick.net",
+      "expected": "🔎 Google",
+      "reason": "The selected light source lists specific endpoints; do not widen them into a parent suffix."
+    },
+    {
+      "host": "pagead2.googlesyndication.com",
+      "expected": "🛑 拦截广告"
+    },
+    {
+      "host": "app-measurement.com",
+      "expected": "🔰 选择节点",
+      "reason": "Mixed-use SDK is no longer blanket-blocked."
+    },
+    {
+      "host": "challenges.cloudflare.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "js.stripe.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "api.stripe.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "checkout.stripe.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "hooks.stripe.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "captcha.hcaptcha.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "client-api.arkoselabs.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "openai-api.arkoselabs.com",
+      "expected": "🤖 OpenAI"
+    },
+    {
+      "host": "download.microsoft.com",
+      "expected": "🪟 微软下载"
+    },
+    {
+      "host": "ntservicepack.microsoft.com",
+      "expected": "🪟 微软下载"
+    },
+    {
+      "host": "ctldl.windowsupdate.com",
+      "expected": "🪟 微软下载"
+    },
+    {
+      "host": "windowsupdate.microsoft.com",
+      "expected": "🪟 微软下载"
+    },
+    {
+      "host": "dl.delivery.mp.microsoft.com",
+      "expected": "🪟 微软下载"
+    },
+    {
+      "host": "unclassified-example.invalid",
+      "expected": "🐟 漏网之鱼"
+    },
+    {
+      "host": "203.0.113.10",
+      "expected": "🐟 漏网之鱼"
+    },
+    {
+      "host": "2001:db8::1234",
+      "expected": "🐟 漏网之鱼"
+    },
+    {
+      "host": "203.0.113.123",
+      "expected": "🐟 漏网之鱼",
+      "context": {
+        "asn": 20473
+      },
+      "reason": "Remove broad ASN OpenAI capture; fallback remains ordinary proxy by default."
+    },
+    {
+      "host": "203.0.113.124",
+      "expected": "🇨🇳 国内网站",
+      "context": {
+        "asn": 20473,
+        "country": "CN"
+      }
+    },
+    {
+      "host": "www.douyu.com",
+      "expected": "📺 国内直播"
+    },
+    {
+      "host": "msg.douyu.com",
+      "expected": "📺 国内直播"
+    },
+    {
+      "host": "cs-op.douyucdn.cn",
+      "expected": "📺 国内直播"
+    },
+    {
+      "host": "rtbapi.douyucdn.cn",
+      "expected": "📺 国内直播"
+    },
+    {
+      "host": "capi.douyucdn.cn",
+      "expected": "📺 国内直播"
+    },
+    {
+      "host": "dotcounter.douyutv.com",
+      "expected": "📺 国内直播"
+    },
+    {
+      "host": "huya.com",
+      "expected": "📺 国内直播"
+    },
+    {
+      "host": "www.alipay.com",
+      "expected": "💳 国内支付"
+    },
+    {
+      "host": "render.alipay.com",
+      "expected": "💳 国内支付"
+    },
+    {
+      "host": "alipayobjects.com",
+      "expected": "💳 国内支付"
+    },
+    {
+      "host": "unionpay.com",
+      "expected": "💳 国内支付"
+    },
+    {
+      "host": "weixin.qq.com",
+      "expected": "💬 国内通讯"
+    },
+    {
+      "host": "servicewechat.com",
+      "expected": "💬 国内通讯"
+    },
+    {
+      "host": "dingtalk.com",
+      "expected": "💬 国内通讯"
+    },
+    {
+      "host": "www.10086.cn",
+      "expected": "📱 运营商服务"
+    },
+    {
+      "host": "app.10010.com",
+      "expected": "📱 运营商服务"
+    },
+    {
+      "host": "www.189.cn",
+      "expected": "📱 运营商服务"
+    },
+    {
+      "host": "app.10099.com.cn",
+      "expected": "📱 运营商服务"
+    },
+    {
+      "host": "cmpassport.com",
+      "expected": "🇨🇳 国内网站"
+    },
+    {
+      "host": "bugly.qq.com",
+      "expected": "🇨🇳 国内网站"
+    },
+    {
+      "host": "api.sensorsdata.cn",
+      "expected": "🇨🇳 国内网站"
+    },
+    {
+      "host": "msg.umeng.com",
+      "expected": "🇨🇳 国内网站"
+    },
+    {
+      "host": "firebaseremoteconfig.googleapis.com",
+      "expected": "🔎 Google"
+    },
+    {
+      "host": "firebaseinstallations.googleapis.com",
+      "expected": "🔎 Google"
+    },
+    {
+      "host": "fcm.googleapis.com",
+      "expected": "🔎 Google"
+    },
+    {
+      "host": "firebase-settings.crashlytics.com",
+      "expected": "🔎 Google"
+    },
+    {
+      "host": "api.configcat.com",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "events.statsigapi.net",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "ads.douyu.com",
+      "expected": "📺 国内直播"
+    },
+    {
+      "host": "ads.sentry.io",
+      "expected": "🔰 选择节点"
+    },
+    {
+      "host": "ads.alipay.com",
+      "expected": "💳 国内支付"
+    },
+    {
+      "host": "pay.example-unclassified.invalid",
+      "expected": "🐟 漏网之鱼"
+    },
+    {
+      "host": "api.openai.com.example.net",
+      "expected": "🐟 漏网之鱼"
+    },
+    {
+      "host": "www.douyu.com.example.net",
+      "expected": "🐟 漏网之鱼"
+    },
+    {
+      "host": "ad.ae.doubleclick.net",
+      "expected": "🛑 拦截广告"
+    },
+    {
+      "host": "www.doubleclick.net.example.net",
+      "expected": "🐟 漏网之鱼"
+    }
+  ]
+}

@@ -1,0 +1,2270 @@
+{
+  "checked_at_utc": "2026-11-03T03:09:05.940843+00:00",
+  "version": 3,
+  "source_metadata": {
+    "commits": {
+      "blackmatrix7/ios_rule_script": "0b6897dc17e0c513d25449c935a9694818e32f0c",
+      "hagezi/dns-blocklists": "39c4cbeb03d39bc36fff42a998ebb014f6f22bb8"
+    },
+    "sources": {
+      "YouTube.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/YouTube/YouTube.list",
+        "sha256": "f764cd91a779982225b3553ece8033c86a6545f4990f5fefd356805de962aee9"
+      },
+      "Google.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Google/Google.list",
+        "sha256": "c6efe08ab4c0a12ddba20f5e75abfba2dd63a42b810f8cb5c303433a38e93b73"
+      },
+      "GitHub.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/GitHub/GitHub.list",
+        "sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b"
+      },
+      "OneDrive.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/OneDrive/OneDrive.list",
+        "sha256": "9352a648b6a170ec902f4683a9002634e66e776c8362334757bb5ba115f6d3b6"
+      },
+      "Bing.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Bing/Bing.list",
+        "sha256": "4b9fe5e5f0cef4c4b09a2e109ca4db00f1cc67ec45aae5c50fca3bdb72b61968"
+      },
+      "AppleProxy.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/AppleProxy/AppleProxy.list",
+        "sha256": "a26977a1a3fc2529f7ea05a31fbb693ab7d2b5cd4100ae60082cf795f58ce068"
+      },
+      "Apple.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Apple/Apple.list",
+        "sha256": "438384889951117d5f432b600c4b3009583f466de7e87bbe2db865a2ac732a0c"
+      },
+      "Microsoft.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Microsoft/Microsoft.list",
+        "sha256": "22df1a1017ad5d41755bf020ca8eb9afeedc7bdc2c649ed2074b255227a7ed8e"
+      },
+      "SteamCN.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/SteamCN/SteamCN.list",
+        "sha256": "82c144434e9199c524d95caa8e3659c9f6f1de9fd23b223a58b5d3c821923936"
+      },
+      "Steam.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Steam/Steam.list",
+        "sha256": "290ebccc4be56defc7d36f85d8c9777101548a4f2147ca29fe50b794c6a8dec7"
+      },
+      "BiliBili.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/BiliBili/BiliBili.list",
+        "sha256": "9b22a7bdf97792346bf480771841b6cd1097ec7ad034b34528c14f3798107854"
+      },
+      "iQIYI.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/iQIYI/iQIYI.list",
+        "sha256": "9c1f49df5c05fa7cc16e17b08c4e731259a9f0ebec6dcb49964a31106acada69"
+      },
+      "Bahamut.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Bahamut/Bahamut.list",
+        "sha256": "5c6618ac00734921dae209bb812c1b61cc88523e158b856548153d1d3d8df2fd"
+      },
+      "China.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/China/China.list",
+        "sha256": "65477cd1e2917a8ca09ba08132e9d9131c54c0d9e1cfcba0be2eaa8ea1a04b75"
+      },
+      "OpenAI.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/OpenAI/OpenAI.list",
+        "sha256": "6f4047cdbf6953cf5d9b38c4ccd6da7bc6f1acb91b7a87134f25d5b8f5d2408b"
+      },
+      "Douyu.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Douyu/Douyu.list",
+        "sha256": "e29d67bbbd3734756e5bfe5db9764cd02313b9397c38b4609a69aba6ced1c393"
+      },
+      "HuYa.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/HuYa/HuYa.list",
+        "sha256": "9889627e10e5adebd648c1015f92da25f904f00b6705e114a8ff294a76268bff"
+      },
+      "WeChat.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/WeChat/WeChat.list",
+        "sha256": "c48cebb11ccc41a56a22560b83c64bf0efdf9c598128da3771f36fe591a0924e"
+      },
+      "DingTalk.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/DingTalk/DingTalk.list",
+        "sha256": "7945176ffad14aeaa1d5f2ebfa787e25af9e72dd3950435870ad2bdf8d9f5c2f"
+      },
+      "AliPay.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/AliPay/AliPay.list",
+        "sha256": "23d7ca5404f4795d485b4ea700f45e1d94f2dbf0f2871eeca5298cfce81ff5be"
+      },
+      "UnionPay.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/UnionPay/UnionPay.list",
+        "sha256": "cf603ac5ee90f5869a4a119cec8b90eab865c6388858be4d97d196bff9a38187"
+      },
+      "ChinaMobile.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/ChinaMobile/ChinaMobile.list",
+        "sha256": "8aa8078a08299feee81b6927c4f0ac82b91df9c1ed96012dc5c1e78fa324c8fb"
+      },
+      "ChinaTelecom.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/ChinaTelecom/ChinaTelecom.list",
+        "sha256": "b804b6a6b87a3b0ab250445b205a735a394acd6e0d9c6c4c77fd21ebac854027"
+      },
+      "ChinaUnicom.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/ChinaUnicom/ChinaUnicom.list",
+        "sha256": "ece90d6c9bbd29377e65a7aa1301e47c77b62f2fe9ba0955c938faf2976768dd"
+      },
+      "Apple_Domain.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Apple/Apple_Domain.list",
+        "sha256": "f1074adb086fd44a95db76e9dcc96fc1133f0ec4c29b15d6f2346686deb25d00"
+      },
+      "China_Domain.list": {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/China/China_Domain.list",
+        "sha256": "d35eec789ae09a6d2b6dd48ed2c52d6d811f433b1e73a92b2f9246b778fa7923"
+      },
+      "hagezi-light.txt": {
+        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/39c4cbeb03d39bc36fff42a998ebb014f6f22bb8/wildcard/light-onlydomains.txt",
+        "sha256": "1682f3adf7a15d9698d420e1068aa334b25abbe495a04c6e6cee977fb21601e3"
+      }
+    }
+  },
+  "counts": {
+    "YouTube": 179,
+    "Google": 679,
+    "GitHub": 29,
+    "OneDrive": 14,
+    "Bing": 9,
+    "AppleProxy": 39,
+    "Apple": 1553,
+    "Microsoft": 644,
+    "SteamCN": 17,
+    "Steam": 54,
+    "BiliBili": 115,
+    "iQIYI": 34,
+    "Bahamut": 5,
+    "China": 3568,
+    "OpenAI": 11,
+    "Douyu": 13,
+    "HuYa": 4,
+    "WeChat": 30,
+    "DingTalk": 11,
+    "AliPay": 21,
+    "UnionPay": 16,
+    "ChinaMobile": 36,
+    "ChinaTelecom": 82,
+    "ChinaUnicom": 33,
+    "ConservativeAds": 1281
+  },
+  "normalization": {
+    "YouTube": {
+      "non-domain-service-rule": 11
+    },
+    "Google": {
+      "non-domain-service-rule": 13
+    },
+    "GitHub": {
+      "non-domain-service-rule": 1
+    },
+    "OneDrive": {
+      "non-domain-service-rule": 3
+    },
+    "Bing": {},
+    "AppleProxy": {
+      "non-domain-service-rule": 5
+    },
+    "Apple": {
+      "non-domain-service-rule": 43
+    },
+    "Microsoft": {
+      "non-domain-service-rule": 7
+    },
+    "SteamCN": {},
+    "Steam": {
+      "non-domain-service-rule": 15
+    },
+    "BiliBili": {
+      "non-domain-service-rule": 12
+    },
+    "iQIYI": {
+      "non-domain-service-rule": 28
+    },
+    "Bahamut": {
+      "non-domain-service-rule": 1
+    },
+    "China": {
+      "non-domain-service-rule": 40
+    },
+    "OpenAI": {
+      "shared-or-unreviewed-ai-host": 19,
+      "non-domain-service-rule": 4
+    },
+    "Douyu": {},
+    "HuYa": {},
+    "WeChat": {
+      "non-domain-service-rule": 3
+    },
+    "DingTalk": {},
+    "AliPay": {},
+    "UnionPay": {},
+    "ChinaMobile": {
+      "non-domain-service-rule": 1
+    },
+    "ChinaTelecom": {},
+    "ChinaUnicom": {
+      "non-domain-service-rule": 1
+    }
+  },
+  "ad_filtering": {
+    "input_domains": 79665,
+    "exact_hosts": 1279,
+    "suffix_families": [
+      "adnxs.com",
+      "googlesyndication.com"
+    ],
+    "skipped": {
+      "not-an-explicit-reviewed-ad-shape": 77991,
+      "functional-or-live-protection": 392,
+      "functional-first-label": 1,
+      "covered-by-reviewed-ad-family": 2
+    }
+  },
+  "removed_lower_priority_exact_duplicates": [
+    {
+      "matcher": "DOMAIN-SUFFIX,apple-dns.net",
+      "kept": "AppleProxy",
+      "removed_from": "Apple"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,apple.news",
+      "kept": "AppleProxy",
+      "removed_from": "Apple"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,appsto.re",
+      "kept": "AppleProxy",
+      "removed_from": "Apple"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,cdn-apple.com",
+      "kept": "AppleProxy",
+      "removed_from": "Apple"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,crashlytics.com",
+      "kept": "main",
+      "removed_from": "Apple"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,digicert.com",
+      "kept": "AppleProxy",
+      "removed_from": "Apple"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,cmpassport.com",
+      "kept": "main",
+      "removed_from": "ChinaMobile"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,id6.me",
+      "kept": "main",
+      "removed_from": "ChinaTelecom"
+    },
+    {
+      "matcher": "DOMAIN,openai-api.arkoselabs.com",
+      "kept": "main",
+      "removed_from": "OpenAI"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,app-measurement.com",
+      "kept": "main",
+      "removed_from": "Google"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,crashlytics.com",
+      "kept": "main",
+      "removed_from": "Google"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,firebaseapp.com",
+      "kept": "main",
+      "removed_from": "Google"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,firebaseio.com",
+      "kept": "main",
+      "removed_from": "Google"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,googlesyndication.com",
+      "kept": "ConservativeAds",
+      "removed_from": "Google"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,recaptcha.net",
+      "kept": "main",
+      "removed_from": "Google"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,githubcopilot.com",
+      "kept": "main",
+      "removed_from": "GitHub"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,1drv.com",
+      "kept": "OneDrive",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,1drv.ms",
+      "kept": "OneDrive",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,akadns.net",
+      "kept": "Apple",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bing.com",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bing.com.cn",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bing.net",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bingads.com",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bingagencyawards.com",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bingapistatistics.com",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bingsandbox.com",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bingvisualsearch.com",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bingworld.com",
+      "kept": "Bing",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,livefilestore.com",
+      "kept": "OneDrive",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,microsoftpersonalcontent.com",
+      "kept": "OneDrive",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,onedrive.com",
+      "kept": "OneDrive",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,optimizely.com",
+      "kept": "main",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,sharepoint.com",
+      "kept": "OneDrive",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,sharepointonline.com",
+      "kept": "OneDrive",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,spoprod-a.akamaihd.net",
+      "kept": "OneDrive",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,windowsupdate.com",
+      "kept": "main",
+      "removed_from": "Microsoft"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,digicert.com",
+      "kept": "AppleProxy",
+      "removed_from": "Bahamut"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,gvt1.com",
+      "kept": "YouTube",
+      "removed_from": "Bahamut"
+    },
+    {
+      "matcher": "DOMAIN,download.microsoft.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN,ntservicepack.microsoft.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,10010.com",
+      "kept": "ChinaUnicom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,139.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,21cn.com",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,71.am",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,71.am.com",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,71edge.com",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,95516.com",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,95516.net",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,aaplimg.com",
+      "kept": "Apple",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,acg.tv",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,acgvideo.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,akadns.net",
+      "kept": "Apple",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,alipay.com",
+      "kept": "AliPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,alipay.hk",
+      "kept": "AliPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,alipaydns.com",
+      "kept": "AliPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,alipaylog.com",
+      "kept": "AliPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,alipaymo.com",
+      "kept": "AliPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,alipayobjects.com",
+      "kept": "AliPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,alipayplus.com",
+      "kept": "AliPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,andfx.net",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,animetamashi.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,anitama.net",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,b23.tv",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,beatsbydre.com",
+      "kept": "Apple",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,biliapi.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,biliapi.net",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilibili.cc",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilibili.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilibili.net",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilibili.tv",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilibiligame.co",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilibiligame.net",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilibilipay.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilicdn1.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilicdn2.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilicdn3.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilicdn4.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilicdn5.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilicomics.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,biligame.co",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,biligame.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,biligame.net",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,biligo.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,biliintl.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilivideo.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,bilivideo.net",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinamobile.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinamobileltd.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinapay.com",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinatelecom-h.com",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinatelecomglobal.com",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinaunicom.com",
+      "kept": "ChinaUnicom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinaunicom.com.hk",
+      "kept": "ChinaUnicom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinaunicomglobal.com",
+      "kept": "ChinaUnicom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinaunionpay.com",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chinaunionpay.net",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,chntel.com",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,clarivate.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,cmpassport.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,ctexcel.ca",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,ctexcel.com",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,ctexcel.com.hk",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,ctexcel.fr",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,ctexcel.us",
+      "kept": "ChinaTelecom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,ddurl.to",
+      "kept": "DingTalk",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,dingding.xin",
+      "kept": "DingTalk",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,dingtalk.com",
+      "kept": "DingTalk",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,dingtalk.net",
+      "kept": "DingTalk",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,dingtalkapps.com",
+      "kept": "DingTalk",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,douyu.com",
+      "kept": "Douyu",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,douyu.tv",
+      "kept": "Douyu",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,douyuscdn.com",
+      "kept": "Douyu",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,douyutv.com",
+      "kept": "Douyu",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,dreamcast.hk",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,fetion-portal.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,fetionpic.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,geetest.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,gitv.tv",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,gtimg.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,hdslb.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,hdslb.org",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,hotmail.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,huya.com",
+      "kept": "HuYa",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,ieee.org",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,im9.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,iq.com",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,iqiyi.com",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,iqiyipic.com",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,laiwang.com",
+      "kept": "DingTalk",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,lwurl.to",
+      "kept": "DingTalk",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,maoercdn.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,mcbbs.net",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,me.com",
+      "kept": "Apple",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,microsoftonline.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,migucloud.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,miguvideo.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,mincdn.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,mmarket.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,mmarket6.com",
+      "kept": "ChinaMobile",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,msauth.net",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,msecnd.net",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,msocdn.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,mychinaunicom.com",
+      "kept": "ChinaUnicom",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,mzstatic.com",
+      "kept": "Apple",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,nature.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,office.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,office.net",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,office365.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,onenote.net",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,outlook.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,pps.tv",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,ppsimg.com",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,qiyi.com",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,qiyipic.com",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,qy.net",
+      "kept": "iQIYI",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,s-microsoft.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,sciencedirect.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,servicewechat.com",
+      "kept": "WeChat",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,sharepoint.com",
+      "kept": "OneDrive",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,smtcdns.net",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,springer.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,tandfonline.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,tenpay.com",
+      "kept": "WeChat",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,umeng.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,umengcloud.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,unionpay.com",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,unionpay.net",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,unionpayintl.com",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,unionpaysecure.com",
+      "kept": "UnionPay",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,update.microsoft.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,visualstudio.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,webofknowledge.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,wechat.com",
+      "kept": "WeChat",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,weixinbridge.com",
+      "kept": "WeChat",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,windows.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,windows.net",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,windowsupdate.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,windowsupdate.microsoft.com",
+      "kept": "main",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,xbox.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,xboxlive.com",
+      "kept": "Microsoft",
+      "removed_from": "China"
+    },
+    {
+      "matcher": "DOMAIN-SUFFIX,yo9.com",
+      "kept": "BiliBili",
+      "removed_from": "China"
+    }
+  ],
+  "file_sha256": {
+    "Shadowrocket-Precision.conf": "861569cd4fc3a0e160db1c104363e4c966bcb79cd2d21ace6936448570c315d5",
+    "lists/YouTube.list": "f05d91e4630e08c5e262f30881c75a503f104ebe3e6a402b994fd66d4d2d01b6",
+    "lists/Google.list": "1366d742a271f82508a1ccb7b1ec3aa1fd4d8e97b4af418503053d651458e047",
+    "lists/GitHub.list": "e42251e1530d5a2eef8dcdcd4954fb1c29dd9b55d54e70cc09d6bdab8c13a42f",
+    "lists/OneDrive.list": "8b5cffa93f614b624a403e812159b596a3172dab5f79dbd143a052f29bac51e6",
+    "lists/Bing.list": "abe47150a1122df42997b3d8af00564b38ffd9ea9c5f1f1bb494d22a4268ea9d",
+    "lists/AppleProxy.list": "bdafb2ce3fd33f740b871bd9ae388b850e35096b4996273f5ef7fdcf0bf7f7eb",
+    "lists/Apple.list": "072750622b1c82935dcbac0597291b070757b27aaf9743759f7000e1b2b93bc7",
+    "lists/Microsoft.list": "110ee473e37967248f5a46a99434a3ee6f66f7b1aff74ca77740fcd38096cce3",
+    "lists/SteamCN.list": "313ce173dd42f37999c763655f98d8be39a2f0d1f581496283603b39d95962c9",
+    "lists/Steam.list": "3a7ca50f2ab98639a69fac2e94cf1f02f5071fe76340326f2fb8c8448f44891e",
+    "lists/BiliBili.list": "745fcc43407fca55681b2c989ef5673aa9244e1bf3c11a0100b06a4aad3a69bd",
+    "lists/iQIYI.list": "8fcf5affaad9303c59617b3c79938005a71d7a783145f778de419c8b2d5d0cc5",
+    "lists/Bahamut.list": "f99f169f5ebf24657880188417b5b8d9920d172cc93580a20113a929737b58db",
+    "lists/China.list": "3fd40ca8e41d147912b3f3e506fbc751b35621b8ddc61e687482707a05dbc020",
+    "lists/OpenAI.list": "2c4852e1913255e83d28d91c1883b40f5d281c3b6196003244e15c74ca3065be",
+    "lists/Douyu.list": "2ac654ba53867fb7f9f53eebba8367f6cafd5c1ea614c263b789bb81d491ae4e",
+    "lists/HuYa.list": "082b4e52f4ff360b35f922be6b249945c37eda3a6711d1f3cff036f80a1a036b",
+    "lists/WeChat.list": "6424d95b86e5264ceef7b207ff737a2199dd767ddc58e16ae01db878004b2b1d",
+    "lists/DingTalk.list": "0f4bc675fd31a18f8e314c437c0b77774df4bc20ccd0cb99ab9fb24119e536b3",
+    "lists/AliPay.list": "8e29656ff4374a68ee402ddf6e5bb610947d190e15e88070bdd40dc11cd21c1c",
+    "lists/UnionPay.list": "ed3a5db73ffca87541718facafa3b9cd10f45d21b9f6e0061208f81fb295a89b",
+    "lists/ChinaMobile.list": "b9ed6fac991a32cf4f6f9012bb8faf3174eebb5ecf77ad417d434351440c6e9f",
+    "lists/ChinaTelecom.list": "ecc6585df3a1fb655554b6f4aaf1f0699311122ec1b1e3cef344a5365bf289ae",
+    "lists/ChinaUnicom.list": "555cbdebabd99942d72108a7739275b0ecd88a2199d1090b74003b39e1e47acd",
+    "ads/ConservativeAds.list": "05e0e31072fc6f8c1ad4c5dfe8040df3baad52f94233426196d3a760260f9211"
+  },
+  "validation": {
+    "groups": 29,
+    "main_rules": 151,
+    "remote_resources": 25,
+    "expanded_exact_duplicate_matchers": 0,
+    "route_cases_passed": 108,
+    "functional_hosts_protected": 23,
+    "synthetic_update_protection_cases_passed": 23,
+    "cases": [
+      {
+        "host": "localhost",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "DOMAIN,localhost"
+        },
+        "pass": true
+      },
+      {
+        "host": "printer.local",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,local"
+        },
+        "pass": true
+      },
+      {
+        "host": "192.168.1.1",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "IP-CIDR,192.168.0.0/16,no-resolve"
+        },
+        "pass": true
+      },
+      {
+        "host": "10.2.3.4",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "IP-CIDR,10.0.0.0/8,no-resolve"
+        },
+        "pass": true
+      },
+      {
+        "host": "::1",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "IP-CIDR6,::1/128,no-resolve"
+        },
+        "pass": true
+      },
+      {
+        "host": "fd12::1",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "IP-CIDR6,fc00::/7,no-resolve"
+        },
+        "pass": true
+      },
+      {
+        "host": "fe80::1234",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "IP-CIDR6,fe80::/10,no-resolve"
+        },
+        "pass": true
+      },
+      {
+        "host": "chatgpt.com",
+        "expected": "🤖 OpenAI",
+        "actual": {
+          "policy": "🤖 OpenAI",
+          "origin": "OpenAI",
+          "match": "DOMAIN-SUFFIX,chatgpt.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "api.openai.com",
+        "expected": "🤖 OpenAI",
+        "actual": {
+          "policy": "🤖 OpenAI",
+          "origin": "OpenAI",
+          "match": "DOMAIN-SUFFIX,openai.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "cdn.oaistatic.com",
+        "expected": "🤖 OpenAI",
+        "actual": {
+          "policy": "🤖 OpenAI",
+          "origin": "OpenAI",
+          "match": "DOMAIN-SUFFIX,oaistatic.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "files.oaiusercontent.com",
+        "expected": "🤖 OpenAI",
+        "actual": {
+          "policy": "🤖 OpenAI",
+          "origin": "OpenAI",
+          "match": "DOMAIN-SUFFIX,oaiusercontent.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "chatgpt.livekit.cloud",
+        "expected": "🤖 OpenAI",
+        "actual": {
+          "policy": "🤖 OpenAI",
+          "origin": "OpenAI",
+          "match": "DOMAIN-SUFFIX,chatgpt.livekit.cloud"
+        },
+        "pass": true
+      },
+      {
+        "host": "openaicomproductionae4b.blob.core.windows.net",
+        "expected": "🤖 OpenAI",
+        "actual": {
+          "policy": "🤖 OpenAI",
+          "origin": "OpenAI",
+          "match": "DOMAIN,openaicomproductionae4b.blob.core.windows.net"
+        },
+        "pass": true
+      },
+      {
+        "host": "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
+        "expected": "🤖 OpenAI",
+        "actual": {
+          "policy": "🤖 OpenAI",
+          "origin": "OpenAI",
+          "match": "DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.youtube.com",
+        "expected": "▶️ YouTube",
+        "actual": {
+          "policy": "▶️ YouTube",
+          "origin": "YouTube",
+          "match": "DOMAIN-SUFFIX,youtube.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "r1---sn-a5mekn7z.googlevideo.com",
+        "expected": "▶️ YouTube",
+        "actual": {
+          "policy": "▶️ YouTube",
+          "origin": "YouTube",
+          "match": "DOMAIN-SUFFIX,googlevideo.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "i.ytimg.com",
+        "expected": "▶️ YouTube",
+        "actual": {
+          "policy": "▶️ YouTube",
+          "origin": "YouTube",
+          "match": "DOMAIN-SUFFIX,ytimg.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.google.com",
+        "expected": "🔎 Google",
+        "actual": {
+          "policy": "🔎 Google",
+          "origin": "Google",
+          "match": "DOMAIN-SUFFIX,google.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.google.com.hk",
+        "expected": "🔎 Google",
+        "actual": {
+          "policy": "🔎 Google",
+          "origin": "Google",
+          "match": "DOMAIN-SUFFIX,google.com.hk"
+        },
+        "pass": true
+      },
+      {
+        "host": "drive.google.com",
+        "expected": "🔎 Google",
+        "actual": {
+          "policy": "🔎 Google",
+          "origin": "Google",
+          "match": "DOMAIN-SUFFIX,google.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "github.com",
+        "expected": "🐙 GitHub",
+        "actual": {
+          "policy": "🐙 GitHub",
+          "origin": "GitHub",
+          "match": "DOMAIN-SUFFIX,github.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "raw.githubusercontent.com",
+        "expected": "🐙 GitHub",
+        "actual": {
+          "policy": "🐙 GitHub",
+          "origin": "main",
+          "match": "DOMAIN,raw.githubusercontent.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "api.githubcopilot.com",
+        "expected": "🐙 GitHub",
+        "actual": {
+          "policy": "🐙 GitHub",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,githubcopilot.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.apple.com",
+        "expected": "🍎 Apple",
+        "actual": {
+          "policy": "🍎 Apple",
+          "origin": "Apple",
+          "match": "DOMAIN-SUFFIX,apple.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "icloud.com",
+        "expected": "🍎 Apple",
+        "actual": {
+          "policy": "🍎 Apple",
+          "origin": "Apple",
+          "match": "DOMAIN-SUFFIX,icloud.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "tv.apple.com",
+        "expected": "🍎 Apple 海外",
+        "actual": {
+          "policy": "🍎 Apple 海外",
+          "origin": "AppleProxy",
+          "match": "DOMAIN-SUFFIX,tv.apple.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.microsoft.com",
+        "expected": "🪟 Microsoft",
+        "actual": {
+          "policy": "🪟 Microsoft",
+          "origin": "Microsoft",
+          "match": "DOMAIN-SUFFIX,microsoft.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "login.live.com",
+        "expected": "🪟 Microsoft",
+        "actual": {
+          "policy": "🪟 Microsoft",
+          "origin": "Microsoft",
+          "match": "DOMAIN-SUFFIX,live.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "onedrive.live.com",
+        "expected": "☁️ OneDrive",
+        "actual": {
+          "policy": "☁️ OneDrive",
+          "origin": "OneDrive",
+          "match": "DOMAIN-SUFFIX,onedrive.live.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "1drv.ms",
+        "expected": "☁️ OneDrive",
+        "actual": {
+          "policy": "☁️ OneDrive",
+          "origin": "OneDrive",
+          "match": "DOMAIN-SUFFIX,1drv.ms"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.bing.com",
+        "expected": "💬 Bing / Copilot",
+        "actual": {
+          "policy": "💬 Bing / Copilot",
+          "origin": "Bing",
+          "match": "DOMAIN-SUFFIX,bing.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "copilot.microsoft.com",
+        "expected": "💬 Bing / Copilot",
+        "actual": {
+          "policy": "💬 Bing / Copilot",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,copilot.microsoft.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "copilot.cloud.microsoft",
+        "expected": "💬 Bing / Copilot",
+        "actual": {
+          "policy": "💬 Bing / Copilot",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,copilot.cloud.microsoft"
+        },
+        "pass": true
+      },
+      {
+        "host": "store.steampowered.com",
+        "expected": "🎮 Steam 商店/社区",
+        "actual": {
+          "policy": "🎮 Steam 商店/社区",
+          "origin": "Steam",
+          "match": "DOMAIN-SUFFIX,steampowered.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "steamcommunity.com",
+        "expected": "🎮 Steam 商店/社区",
+        "actual": {
+          "policy": "🎮 Steam 商店/社区",
+          "origin": "Steam",
+          "match": "DOMAIN-SUFFIX,steamcommunity.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "cm.steampowered.com",
+        "expected": "🎮 Steam 登录/下载",
+        "actual": {
+          "policy": "🎮 Steam 登录/下载",
+          "origin": "SteamCN",
+          "match": "DOMAIN-SUFFIX,cm.steampowered.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "cache1.steamcontent.com",
+        "expected": "🎮 Steam 登录/下载",
+        "actual": {
+          "policy": "🎮 Steam 登录/下载",
+          "origin": "SteamCN",
+          "match": "DOMAIN-SUFFIX,steamcontent.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "dl.steam.ksyna.com",
+        "expected": "🎮 Steam 登录/下载",
+        "actual": {
+          "policy": "🎮 Steam 登录/下载",
+          "origin": "SteamCN",
+          "match": "DOMAIN,dl.steam.ksyna.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.bilibili.com",
+        "expected": "🌏 爱奇艺&哔哩哔哩",
+        "actual": {
+          "policy": "🌏 爱奇艺&哔哩哔哩",
+          "origin": "BiliBili",
+          "match": "DOMAIN-SUFFIX,bilibili.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.iqiyi.com",
+        "expected": "🌏 爱奇艺&哔哩哔哩",
+        "actual": {
+          "policy": "🌏 爱奇艺&哔哩哔哩",
+          "origin": "iQIYI",
+          "match": "DOMAIN-SUFFIX,iqiyi.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "ani.gamer.com.tw",
+        "expected": "📺 动画疯",
+        "actual": {
+          "policy": "📺 动画疯",
+          "origin": "Bahamut",
+          "match": "DOMAIN-SUFFIX,gamer.com.tw"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.baidu.com",
+        "expected": "🇨🇳 国内网站",
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "China",
+          "match": "DOMAIN-SUFFIX,baidu.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.qq.com",
+        "expected": "🇨🇳 国内网站",
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "China",
+          "match": "DOMAIN-SUFFIX,qq.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.taobao.com",
+        "expected": "🇨🇳 国内网站",
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "China",
+          "match": "DOMAIN-SUFFIX,taobao.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "example.cn",
+        "expected": "🇨🇳 国内网站",
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "China",
+          "match": "DOMAIN-SUFFIX,cn"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.nature.com",
+        "expected": "🎓学术网站",
+        "actual": {
+          "policy": "🎓学术网站",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,nature.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.cloudflare.com",
+        "expected": "🌩️ Cloudflare",
+        "actual": {
+          "policy": "🌩️ Cloudflare",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,cloudflare.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "ai.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,ai.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "stripe.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,stripe.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "login.auth0.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,auth0.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "api.sentry.io",
+        "expected": "🔰 选择节点",
+        "reason": "Mixed-use SDK is no longer blanket-blocked.",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,sentry.io"
+        },
+        "pass": true
+      },
+      {
+        "host": "doubleclick.net",
+        "expected": "🔎 Google",
+        "reason": "The selected light source lists specific endpoints; do not widen them into a parent suffix.",
+        "actual": {
+          "policy": "🔎 Google",
+          "origin": "Google",
+          "match": "DOMAIN-SUFFIX,doubleclick.net"
+        },
+        "pass": true
+      },
+      {
+        "host": "pagead2.googlesyndication.com",
+        "expected": "🛑 拦截广告",
+        "actual": {
+          "policy": "🛑 拦截广告",
+          "origin": "ConservativeAds",
+          "match": "DOMAIN-SUFFIX,googlesyndication.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "app-measurement.com",
+        "expected": "🔰 选择节点",
+        "reason": "Mixed-use SDK is no longer blanket-blocked.",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,app-measurement.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "challenges.cloudflare.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN,challenges.cloudflare.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "js.stripe.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN,js.stripe.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "api.stripe.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN,api.stripe.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "checkout.stripe.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN,checkout.stripe.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "hooks.stripe.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN,hooks.stripe.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "captcha.hcaptcha.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,hcaptcha.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "client-api.arkoselabs.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,client-api.arkoselabs.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "openai-api.arkoselabs.com",
+        "expected": "🤖 OpenAI",
+        "actual": {
+          "policy": "🤖 OpenAI",
+          "origin": "main",
+          "match": "DOMAIN,openai-api.arkoselabs.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "download.microsoft.com",
+        "expected": "🪟 微软下载",
+        "actual": {
+          "policy": "🪟 微软下载",
+          "origin": "main",
+          "match": "DOMAIN,download.microsoft.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "ntservicepack.microsoft.com",
+        "expected": "🪟 微软下载",
+        "actual": {
+          "policy": "🪟 微软下载",
+          "origin": "main",
+          "match": "DOMAIN,ntservicepack.microsoft.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "ctldl.windowsupdate.com",
+        "expected": "🪟 微软下载",
+        "actual": {
+          "policy": "🪟 微软下载",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,windowsupdate.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "windowsupdate.microsoft.com",
+        "expected": "🪟 微软下载",
+        "actual": {
+          "policy": "🪟 微软下载",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,windowsupdate.microsoft.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "dl.delivery.mp.microsoft.com",
+        "expected": "🪟 微软下载",
+        "actual": {
+          "policy": "🪟 微软下载",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "unclassified-example.invalid",
+        "expected": "🐟 漏网之鱼",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      },
+      {
+        "host": "203.0.113.10",
+        "expected": "🐟 漏网之鱼",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      },
+      {
+        "host": "2001:db8::1234",
+        "expected": "🐟 漏网之鱼",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      },
+      {
+        "host": "203.0.113.123",
+        "expected": "🐟 漏网之鱼",
+        "context": {
+          "asn": 20473
+        },
+        "reason": "Remove broad ASN OpenAI capture; fallback remains ordinary proxy by default.",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      },
+      {
+        "host": "203.0.113.124",
+        "expected": "🇨🇳 国内网站",
+        "context": {
+          "asn": 20473,
+          "country": "CN"
+        },
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "main",
+          "match": "GEOIP,CN"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.douyu.com",
+        "expected": "📺 国内直播",
+        "actual": {
+          "policy": "📺 国内直播",
+          "origin": "Douyu",
+          "match": "DOMAIN-SUFFIX,douyu.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "msg.douyu.com",
+        "expected": "📺 国内直播",
+        "actual": {
+          "policy": "📺 国内直播",
+          "origin": "Douyu",
+          "match": "DOMAIN-SUFFIX,douyu.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "cs-op.douyucdn.cn",
+        "expected": "📺 国内直播",
+        "actual": {
+          "policy": "📺 国内直播",
+          "origin": "Douyu",
+          "match": "DOMAIN-SUFFIX,douyucdn.cn"
+        },
+        "pass": true
+      },
+      {
+        "host": "rtbapi.douyucdn.cn",
+        "expected": "📺 国内直播",
+        "actual": {
+          "policy": "📺 国内直播",
+          "origin": "Douyu",
+          "match": "DOMAIN-SUFFIX,douyucdn.cn"
+        },
+        "pass": true
+      },
+      {
+        "host": "capi.douyucdn.cn",
+        "expected": "📺 国内直播",
+        "actual": {
+          "policy": "📺 国内直播",
+          "origin": "Douyu",
+          "match": "DOMAIN-SUFFIX,douyucdn.cn"
+        },
+        "pass": true
+      },
+      {
+        "host": "dotcounter.douyutv.com",
+        "expected": "📺 国内直播",
+        "actual": {
+          "policy": "📺 国内直播",
+          "origin": "Douyu",
+          "match": "DOMAIN-SUFFIX,douyutv.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "huya.com",
+        "expected": "📺 国内直播",
+        "actual": {
+          "policy": "📺 国内直播",
+          "origin": "HuYa",
+          "match": "DOMAIN-SUFFIX,huya.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.alipay.com",
+        "expected": "💳 国内支付",
+        "actual": {
+          "policy": "💳 国内支付",
+          "origin": "AliPay",
+          "match": "DOMAIN-SUFFIX,alipay.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "render.alipay.com",
+        "expected": "💳 国内支付",
+        "actual": {
+          "policy": "💳 国内支付",
+          "origin": "AliPay",
+          "match": "DOMAIN-SUFFIX,alipay.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "alipayobjects.com",
+        "expected": "💳 国内支付",
+        "actual": {
+          "policy": "💳 国内支付",
+          "origin": "AliPay",
+          "match": "DOMAIN-SUFFIX,alipayobjects.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "unionpay.com",
+        "expected": "💳 国内支付",
+        "actual": {
+          "policy": "💳 国内支付",
+          "origin": "UnionPay",
+          "match": "DOMAIN-SUFFIX,unionpay.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "weixin.qq.com",
+        "expected": "💬 国内通讯",
+        "actual": {
+          "policy": "💬 国内通讯",
+          "origin": "WeChat",
+          "match": "DOMAIN-SUFFIX,weixin.qq.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "servicewechat.com",
+        "expected": "💬 国内通讯",
+        "actual": {
+          "policy": "💬 国内通讯",
+          "origin": "WeChat",
+          "match": "DOMAIN-SUFFIX,servicewechat.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "dingtalk.com",
+        "expected": "💬 国内通讯",
+        "actual": {
+          "policy": "💬 国内通讯",
+          "origin": "DingTalk",
+          "match": "DOMAIN-SUFFIX,dingtalk.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.10086.cn",
+        "expected": "📱 运营商服务",
+        "actual": {
+          "policy": "📱 运营商服务",
+          "origin": "ChinaMobile",
+          "match": "DOMAIN-SUFFIX,10086.cn"
+        },
+        "pass": true
+      },
+      {
+        "host": "app.10010.com",
+        "expected": "📱 运营商服务",
+        "actual": {
+          "policy": "📱 运营商服务",
+          "origin": "ChinaUnicom",
+          "match": "DOMAIN-SUFFIX,10010.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.189.cn",
+        "expected": "📱 运营商服务",
+        "actual": {
+          "policy": "📱 运营商服务",
+          "origin": "ChinaTelecom",
+          "match": "DOMAIN-SUFFIX,189.cn"
+        },
+        "pass": true
+      },
+      {
+        "host": "app.10099.com.cn",
+        "expected": "📱 运营商服务",
+        "actual": {
+          "policy": "📱 运营商服务",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,10099.com.cn"
+        },
+        "pass": true
+      },
+      {
+        "host": "cmpassport.com",
+        "expected": "🇨🇳 国内网站",
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,cmpassport.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "bugly.qq.com",
+        "expected": "🇨🇳 国内网站",
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,bugly.qq.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "api.sensorsdata.cn",
+        "expected": "🇨🇳 国内网站",
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,sensorsdata.cn"
+        },
+        "pass": true
+      },
+      {
+        "host": "msg.umeng.com",
+        "expected": "🇨🇳 国内网站",
+        "actual": {
+          "policy": "🇨🇳 国内网站",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,umeng.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "firebaseremoteconfig.googleapis.com",
+        "expected": "🔎 Google",
+        "actual": {
+          "policy": "🔎 Google",
+          "origin": "main",
+          "match": "DOMAIN,firebaseremoteconfig.googleapis.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "firebaseinstallations.googleapis.com",
+        "expected": "🔎 Google",
+        "actual": {
+          "policy": "🔎 Google",
+          "origin": "main",
+          "match": "DOMAIN,firebaseinstallations.googleapis.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "fcm.googleapis.com",
+        "expected": "🔎 Google",
+        "actual": {
+          "policy": "🔎 Google",
+          "origin": "main",
+          "match": "DOMAIN,fcm.googleapis.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "firebase-settings.crashlytics.com",
+        "expected": "🔎 Google",
+        "actual": {
+          "policy": "🔎 Google",
+          "origin": "main",
+          "match": "DOMAIN,firebase-settings.crashlytics.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "api.configcat.com",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,configcat.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "events.statsigapi.net",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,events.statsigapi.net"
+        },
+        "pass": true
+      },
+      {
+        "host": "ads.douyu.com",
+        "expected": "📺 国内直播",
+        "actual": {
+          "policy": "📺 国内直播",
+          "origin": "Douyu",
+          "match": "DOMAIN-SUFFIX,douyu.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "ads.sentry.io",
+        "expected": "🔰 选择节点",
+        "actual": {
+          "policy": "🔰 选择节点",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,sentry.io"
+        },
+        "pass": true
+      },
+      {
+        "host": "ads.alipay.com",
+        "expected": "💳 国内支付",
+        "actual": {
+          "policy": "💳 国内支付",
+          "origin": "AliPay",
+          "match": "DOMAIN-SUFFIX,alipay.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "pay.example-unclassified.invalid",
+        "expected": "🐟 漏网之鱼",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      },
+      {
+        "host": "api.openai.com.example.net",
+        "expected": "🐟 漏网之鱼",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.douyu.com.example.net",
+        "expected": "🐟 漏网之鱼",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      },
+      {
+        "host": "ad.ae.doubleclick.net",
+        "expected": "🛑 拦截广告",
+        "actual": {
+          "policy": "🛑 拦截广告",
+          "origin": "ConservativeAds",
+          "match": "DOMAIN,ad.ae.doubleclick.net"
+        },
+        "pass": true
+      },
+      {
+        "host": "www.doubleclick.net.example.net",
+        "expected": "🐟 漏网之鱼",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      }
+    ]
+  },
+  "native_import_tested": false,
+  "live_app_playback_tested": false,
+  "limits": [
+    "Rule matching and generated-update simulations only, not live DNS, GeoIP database or iPhone execution.",
+    "Conservative advertising subset intentionally leaves some ads and trackers.",
+    "External modules can override this configuration and may cause independent compatibility issues.",
+    "China Broadnet crashes with VPN connected are not claimed fixed by domain routing."
+  ]
+}

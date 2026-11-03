@@ -1,0 +1,19 @@
+# Precision v3 / UnionPay
+# Source: blackmatrix7/ios_rule_script; domain normalization, GPL-2.0
+# Modified: filtered and normalized; see ../policy.json and ../sync_routing.py.
+DOMAIN-SUFFIX,95516.com
+DOMAIN-SUFFIX,95516.net
+DOMAIN-SUFFIX,airepay.net
+DOMAIN-SUFFIX,chinapay.cn
+DOMAIN-SUFFIX,chinapay.com
+DOMAIN-SUFFIX,chinapayhongkong.com
+DOMAIN-SUFFIX,chinaunionpay.com
+DOMAIN-SUFFIX,chinaunionpay.com.cn
+DOMAIN-SUFFIX,chinaunionpay.net
+DOMAIN-SUFFIX,cup.com.cn
+DOMAIN-SUFFIX,cup62.cn
+DOMAIN-SUFFIX,unionpay.com
+DOMAIN-SUFFIX,unionpay.net
+DOMAIN-SUFFIX,unionpayintl.cn
+DOMAIN-SUFFIX,unionpayintl.com
+DOMAIN-SUFFIX,unionpaysecure.com

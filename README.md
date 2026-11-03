@@ -1,5 +1,7 @@
 # Shadowrocket 开屏广告增强：自动同步筛选版
 
+> 新增：[Shadowrocket Precision v3 分流配置](routing/README.md)。这是独立的完整分流配置，包含保守广告过滤和国内服务分类；原有开屏模块的订阅地址继续保留。
+
 基于 [fmz200/wool_scripts](https://github.com/fmz200/wool_scripts) 的公开规则生成，保留原作者和贡献者署名，以 GPL-3.0 提供。修改于 2026-11-02。
 
 本项目提供独立的 Shadowrocket 模块，叠加在原有分流配置上。没有节点订阅、证书或密码；不会替换你的节点配置。

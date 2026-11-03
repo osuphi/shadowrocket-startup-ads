@@ -1,4 +1,4 @@
-name: Sync reviewed startup-ad module
+name: Sync reviewed module and precision routing
 
 on:
   schedule:
@@ -9,6 +9,9 @@ on:
       - sync_module.py
       - reviewed_rules.json
       - test_sync.py
+      - routing/sync_routing.py
+      - routing/policy.json
+      - routing/test_routing.py
       - .github/workflows/sync.yml
 
 permissions:
@@ -21,22 +24,26 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.12'
-      - name: Run bounded-selection regression tests
+      - name: Test bounded startup module selection
         run: python -m unittest -v test_sync.py
-      - name: Fetch public upstream and regenerate
+      - name: Test routing and functional protection boundaries
+        run: python -m unittest discover -s routing -p test_routing.py -v
+      - name: Regenerate reviewed startup module
         run: python sync_module.py --repository "$GITHUB_REPOSITORY" --branch "$GITHUB_REF_NAME"
-      - name: Commit only checked module and status
+      - name: Regenerate and validate precision routing
+        run: python routing/sync_routing.py --repository "$GITHUB_REPOSITORY"
+      - name: Commit only checked generated resources
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- StartupAds.module UpdateStatus.json
+          git add -- StartupAds.module UpdateStatus.json routing/Shadowrocket-Precision.conf routing/Status.json routing/lists/*.list routing/ads/ConservativeAds.list
           if ! git diff --cached --quiet; then
-            git commit -m 'Update reviewed startup-ad module'
+            git commit -m 'Update checked module and precision routing'
             git push
           fi

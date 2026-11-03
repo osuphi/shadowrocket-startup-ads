@@ -1,0 +1,7 @@
+# Precision v3 / HuYa
+# Source: blackmatrix7/ios_rule_script; domain normalization, GPL-2.0
+# Modified: filtered and normalized; see ../policy.json and ../sync_routing.py.
+DOMAIN-SUFFIX,huya.com
+DOMAIN-SUFFIX,huyagame.cn
+DOMAIN-SUFFIX,peiwanlu.com
+DOMAIN-SUFFIX,snapplay.com
