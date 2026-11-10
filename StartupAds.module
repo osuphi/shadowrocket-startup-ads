@@ -3,8 +3,10 @@
 #!author=Modified from fmz200/wool_scripts and contributors
 #!homepage=https://github.com/osuphi/shadowrocket-startup-ads
 #!raw-url=https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/StartupAds.module
-# GPL-3.0. Modified 2026-11-02. See LICENSE and README.md.
+# Revision: 2026-11-11.1 / reviewed Bilibili, Douyu, Weibo and Zhihu splash handlers.
+# GPL-3.0. Modified 2026-11-11. See LICENSE and README.md.
 # Upstream source: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule
+# Supplemental source: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/weibo.srmodule
 # Upstream date: 2026-10-30 16:26:32
 # This generated subset does not include remote-execution scripts or certificate material.
 
@@ -90,6 +92,12 @@
 # 中国电信
 ^https?://cloud\.189\.cn/include/splash/ - reject
 
+[Body Rewrite]
+# 哔哩哔哩
+http-response-jq ^https?://app\.bilibili\.com/x/v2/splash/(?:list|show|event/list2)(?:\?|$) 'if (.data | type) == "object" then .data |= with_entries(if (.key == "show" or .key == "event_list" or .key == "list") and (.value | type) == "array" then .value = [] else . end) else . end'
+# 知乎
+http-response-jq ^https?://api\.zhihu\.com/commercial_api/(?:launch_v2|real_time_launch_v2)(?:\?|$) 'def clean: if type == "array" then map(clean) elif type == "object" then with_entries(.value |= clean) | (if has("img_play_duration") and (.img_play_duration | type) == "number" then .img_play_duration = 0 else . end) | (if has("launch_timeout") and (.launch_timeout | type) == "number" then .launch_timeout = 0 else . end) elif type == "string" and (contains("img_play_duration") or contains("launch_timeout")) then . as $original | try (fromjson | clean | tojson) catch $original else . end; clean'
+
 [Map Local]
 # 360儿童卫士
 ^https?://ad\.life\.360\.cn/v2/app/advertisement/config\?sdk_ver= data-type=text data="{}" header="Content-Type:application/json"
@@ -107,6 +115,8 @@
 ^https?://delivery\-api\.imdada\.cn/v2_0/dada/promote/imax\?privacyParam data-type=text data="{}" header="Content-Type:application/json"
 # 大疆商城
 ^https://se\-api\.djiits\.com/api/components/launch_ad\.json\?abbrv_url=1&country=cn&language=zh-CN data-type=text data="{}" header="Content-Type:application/json"
+# 斗鱼直播
+^https?://rtbapi\.douyucdn\.cn/japi/sign/app/getinfo(?:\?|$) data-type=text data="{}" header="Content-Type:application/json"
 # e代驾
 ^https?://pic\.edaijia\.cn/adsplash/ data-type=text data=" "
 # 返利网
@@ -213,12 +223,14 @@
 ^https?://vapp\.tmuyun\.com/api/app_start_page/list/new data-type=text data="{}" header="Content-Type:application/json"
 # 掌上英雄联盟
 ^https?://us\.l\.qq\.com/exapp data-type=text data=" "
-# 知乎
-^https://api\.zhihu\.com/commercial_api/(?:launch_v2|real_time_launch_v2) data-type=text data="{}" header="Content-Type:application/json"
 # 中关村在线
 ^https?://apicloud\.zol\.com\.cn/Article/WapLaunchLogo data-type=text data="{}" header="Content-Type:application/json"
 # 住这儿
 ^https?://z\.onewo\.com/passer/api/ads/v1/8/list data-type=text data=" "
+# 微博
+^https?://bootrealtime\.uve\.weibo\.com/v\d+/ad/realtime(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# 微博
+^https?://bootpreload\.uve\.weibo\.com/v\d+/ad/preload(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [MITM]
-hostname = %APPEND% 4gimg.map.qq.com, abcapi.lenovoimage.com, acs.m.goofish.com, acs.m.taobao.com, ad.life.360.cn, ad.lofter.com, amap-aos-info-nogw.amap.com, api-miprint.hannto.com, api.17kjs.com, api.bwton.com, api.fengshows.com, api.internetofcity.cn, api.mcd.cn, api.pinduoduo.com, api.taptapdada.com, api.wmpvp.com, api.xiaoyuzhoufm.com, api.yangkeduo.com, api.yikaobang.com.cn, api.zhihu.com, api0.sparke.cn, api1.sparke.cn, api2.sparke.cn, api2.yaduo.com, api3.sparke.cn, api4.sparke.cn, api5.sparke.cn, api5.youonbike.com, api6.sparke.cn, api7.sparke.cn, api8.sparke.cn, api9.sparke.cn, apicloud.zol.com.cn, app.api.versa-ai.com, app.dewu.com, app.hbooker.com, app.meruki.cn, app.missevan.com, app02.vgtime.com, appapi.51job.com, appapi.51jobapp.com, appapi.huazhu.com, baichuan.baidu.com, bp-api.bestv.com.cn, client-api-v2.oray.com, client.qunar.com, cloud.189.cn, delivery-api.imdada.cn, dudian-oss.oss-cn-shenzhen.aliyuncs.com, e.dangdang.com, editor.sm.cn, facade-api.black-unique.com, gateway.benewtech.cn, gsp.gacmotor.com, gugongmini.dpm.org.cn, h3.open.taou.com, helper.2bulu.com, homefront.qunar.com, imagepc.ctaiot.com, kad.gotokeep.com, l0.51fanli.net, l1.51fanli.net, l2.51fanli.net, l3.51fanli.net, l4.51fanli.net, l5.51fanli.net, l6.51fanli.net, l7.51fanli.net, l8.51fanli.net, l9.51fanli.net, lchttpapi.xczim.com, lens.leoao.com, m.ibuscloud.com, m.tuniu.com, m5.amap.com, mada-travel.17u.cn, mage.if.qidian.com, magev6.if.qidian.com, maicai.api.ddxq.mobi, mall.meituan.com, manager.aiqiangua.com, mangaapi.manhuaren.com, mapi.dianping.com, mapi.txcmapp.com, mime.baidu.com, mobile-consumer-sapp.chery.cn, mrobot.pconline.com.cn, oneapph5.dongfeng-nissan.com.cn, open.qyer.com, open.taou.com, order-app-api.lbdj.com, p0.pipi.cn, pic.edaijia.cn, portal-xunyou.qingcdn.com, pss.txffp.com, qiye.gaoding.com, qt.qq.com, r.inews.qq.com, richmanrules.ksedt.com, router-app-api.jdcloud.com, sdk.1rtb.net, se-api.djiits.com, sh-gateway.shihuo.cn, shcss.suning.com, sso.ifanr.com, tbgapplet.carlsberg.asia, thor.weidian.com, us.l.qq.com, v3.wufazhuce.com, vapp.tmuyun.com, wanciwangdata.oss-cn-beijing.aliyuncs.com, wcprd.hilton.com.cn, www.banyuetanapp.com, www.gcores.com, www.haixue.com, www.oschina.net, www.ymm56.com, wx.17u.cn, xyst.yuanfudao.com, y.gtimg.cn, z.onewo.com, zone.guiderank-app.com, zua.zhidiantianxia.cn
+hostname = %APPEND% 4gimg.map.qq.com, abcapi.lenovoimage.com, acs.m.goofish.com, acs.m.taobao.com, ad.life.360.cn, ad.lofter.com, amap-aos-info-nogw.amap.com, api-miprint.hannto.com, api.17kjs.com, api.bwton.com, api.fengshows.com, api.internetofcity.cn, api.mcd.cn, api.pinduoduo.com, api.taptapdada.com, api.wmpvp.com, api.xiaoyuzhoufm.com, api.yangkeduo.com, api.yikaobang.com.cn, api.zhihu.com, api0.sparke.cn, api1.sparke.cn, api2.sparke.cn, api2.yaduo.com, api3.sparke.cn, api4.sparke.cn, api5.sparke.cn, api5.youonbike.com, api6.sparke.cn, api7.sparke.cn, api8.sparke.cn, api9.sparke.cn, apicloud.zol.com.cn, app.api.versa-ai.com, app.bilibili.com, app.dewu.com, app.hbooker.com, app.meruki.cn, app.missevan.com, app02.vgtime.com, appapi.51job.com, appapi.51jobapp.com, appapi.huazhu.com, baichuan.baidu.com, bootpreload.uve.weibo.com, bootrealtime.uve.weibo.com, bp-api.bestv.com.cn, client-api-v2.oray.com, client.qunar.com, cloud.189.cn, delivery-api.imdada.cn, dudian-oss.oss-cn-shenzhen.aliyuncs.com, e.dangdang.com, editor.sm.cn, facade-api.black-unique.com, gateway.benewtech.cn, gsp.gacmotor.com, gugongmini.dpm.org.cn, h3.open.taou.com, helper.2bulu.com, homefront.qunar.com, imagepc.ctaiot.com, kad.gotokeep.com, l0.51fanli.net, l1.51fanli.net, l2.51fanli.net, l3.51fanli.net, l4.51fanli.net, l5.51fanli.net, l6.51fanli.net, l7.51fanli.net, l8.51fanli.net, l9.51fanli.net, lchttpapi.xczim.com, lens.leoao.com, m.ibuscloud.com, m.tuniu.com, m5.amap.com, mada-travel.17u.cn, mage.if.qidian.com, magev6.if.qidian.com, maicai.api.ddxq.mobi, mall.meituan.com, manager.aiqiangua.com, mangaapi.manhuaren.com, mapi.dianping.com, mapi.txcmapp.com, mime.baidu.com, mobile-consumer-sapp.chery.cn, mrobot.pconline.com.cn, oneapph5.dongfeng-nissan.com.cn, open.qyer.com, open.taou.com, order-app-api.lbdj.com, p0.pipi.cn, pic.edaijia.cn, portal-xunyou.qingcdn.com, pss.txffp.com, qiye.gaoding.com, qt.qq.com, r.inews.qq.com, richmanrules.ksedt.com, router-app-api.jdcloud.com, rtbapi.douyucdn.cn, sdk.1rtb.net, se-api.djiits.com, sh-gateway.shihuo.cn, shcss.suning.com, sso.ifanr.com, tbgapplet.carlsberg.asia, thor.weidian.com, us.l.qq.com, v3.wufazhuce.com, vapp.tmuyun.com, wanciwangdata.oss-cn-beijing.aliyuncs.com, wcprd.hilton.com.cn, www.banyuetanapp.com, www.gcores.com, www.haixue.com, www.oschina.net, www.ymm56.com, wx.17u.cn, xyst.yuanfudao.com, y.gtimg.cn, z.onewo.com, zone.guiderank-app.com, zua.zhidiantianxia.cn

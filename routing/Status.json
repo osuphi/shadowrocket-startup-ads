@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-11-10T08:30:10.148649+00:00",
+  "checked_at_utc": "2026-11-10T17:37:42.663285+00:00",
   "version": 3,
   "source_metadata": {
     "commits": {
       "blackmatrix7/ios_rule_script": "0b6897dc17e0c513d25449c935a9694818e32f0c",
-      "hagezi/dns-blocklists": "a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6"
+      "hagezi/dns-blocklists": "924bb2a8306e609ae8b0113c2b676f5fde072d16"
     },
     "sources": {
       "YouTube.list": {
@@ -112,8 +112,8 @@
         "sha256": "d35eec789ae09a6d2b6dd48ed2c52d6d811f433b1e73a92b2f9246b778fa7923"
       },
       "hagezi-light.txt": {
-        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/a1a3ef83cf7478c8b9cc52bcd2fe30702a7c08d6/wildcard/light-onlydomains.txt",
-        "sha256": "24eaf41d085803da6eea5366e325a8912ed8f07249521467e288e976418295ff"
+        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/924bb2a8306e609ae8b0113c2b676f5fde072d16/wildcard/light-onlydomains.txt",
+        "sha256": "6258b401b93d3345d1e4a35b6c7a28c1bdb5a71b284d5b248f5b950d3544e109"
       }
     }
   },
@@ -142,7 +142,7 @@
     "ChinaMobile": 36,
     "ChinaTelecom": 82,
     "ChinaUnicom": 33,
-    "ConservativeAds": 1364
+    "ConservativeAds": 1369
   },
   "normalization": {
     "YouTube": {
@@ -204,15 +204,15 @@
     }
   },
   "ad_filtering": {
-    "input_domains": 87733,
-    "exact_hosts": 1362,
+    "input_domains": 88073,
+    "exact_hosts": 1367,
     "suffix_families": [
       "adnxs.com",
       "googlesyndication.com"
     ],
     "skipped": {
-      "not-an-explicit-reviewed-ad-shape": 85964,
-      "functional-or-live-protection": 404,
+      "not-an-explicit-reviewed-ad-shape": 86300,
+      "functional-or-live-protection": 403,
       "covered-by-reviewed-ad-family": 2,
       "functional-first-label": 1
     }
@@ -1155,7 +1155,7 @@
     "lists/ChinaMobile.list": "b9ed6fac991a32cf4f6f9012bb8faf3174eebb5ecf77ad417d434351440c6e9f",
     "lists/ChinaTelecom.list": "ecc6585df3a1fb655554b6f4aaf1f0699311122ec1b1e3cef344a5365bf289ae",
     "lists/ChinaUnicom.list": "555cbdebabd99942d72108a7739275b0ecd88a2199d1090b74003b39e1e47acd",
-    "ads/ConservativeAds.list": "0ffa22c4c14851f2d375d6f9320c8bf105d0585cd4bc5503f0f7b236d7a55c6c"
+    "ads/ConservativeAds.list": "3fc2e374c24a1299a134fbff2fbfcd2145ef99030f0eba5f94732469c54d629d"
   },
   "validation": {
     "groups": 29,

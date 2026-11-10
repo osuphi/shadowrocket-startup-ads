@@ -1,26 +1,48 @@
 {
-  "checked_at_utc": "2026-11-10T08:30:04Z",
+  "checked_at_utc": "2026-11-10T17:37:37Z",
   "upstream": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule",
   "upstream_date": "2026-10-30 16:26:32",
   "upstream_sha256": "fa1e8bfe9cd0aa072422e90bce7d30f81649d49cd75c06ddf02d05d77e2dc37c",
-  "module_sha256": "fa61aad34cff0a26c8d441890c709d939337ea88336291bdfa122416384cfa21",
-  "module_changed": false,
-  "rules": 104,
+  "module_sha256": "113a4cf95ff121b81cd1629eedadab8cf0f4bc7546245d86a74166e78624b7b2",
+  "module_changed": true,
+  "rules": 108,
+  "revision": "2026-11-11.1",
+  "section_counts": {
+    "URL Rewrite": 40,
+    "Body Rewrite": 2,
+    "Map Local": 66
+  },
+  "focus_app_counts": {
+    "哔哩哔哩": 1,
+    "斗鱼直播": 1,
+    "微博": 2,
+    "知乎": 1
+  },
+  "supplemental_sources": {
+    "weibo": {
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/weibo.srmodule",
+      "sha256": "46e570c64e21258cd2c70ec4117d45ca00adbf6e0445a719ee1abd265686c2cc"
+    }
+  },
   "input_mode": "public-download",
-  "app_labels": 99,
-  "exact_hosts": 123,
+  "app_labels": 102,
+  "exact_hosts": 127,
   "bounded_updates": 0,
   "skipped": {
-    "app-not-reviewed": 1012,
-    "new-host-requires-review": 94,
+    "app-not-reviewed": 995,
+    "new-host-requires-review": 95,
     "unsupported-new-rule": 15,
-    "not-explicit-startup-ad": 72,
+    "not-explicit-startup-ad": 63,
     "already-covered-by-reviewed-rule": 2,
-    "complex-or-mixed-new-path": 8,
-    "action-not-allowed": 3,
-    "dated-historical-rule": 2
+    "complex-or-mixed-new-path": 4,
+    "action-not-allowed": 2,
+    "response-preservation-requires-review": 29,
+    "body-rewrite-requires-review": 94,
+    "dated-historical-rule": 2,
+    "weibo:app-not-reviewed": 14,
+    "weibo:body-rewrite-requires-review": 2
   },
-  "regression_cases": 32,
+  "regression_cases": 52,
   "retired_positive_fixtures": [],
-  "protected_request_fixtures": 16
+  "protected_request_fixtures": 29
 }
