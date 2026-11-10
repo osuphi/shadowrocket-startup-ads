@@ -10,6 +10,8 @@ on:
       - reviewed_rules.json
       - test_sync.py
       - test_focus_apps.py
+      - test_mainstream.py
+      - coverage_catalog.json
       - routing/sync_routing.py
       - routing/policy.json
       - routing/test_routing.py
@@ -34,7 +36,7 @@ jobs:
       - name: Test bounded startup module selection
         env:
           REQUIRE_JQ: '1'
-        run: python -m unittest -v test_sync.py test_focus_apps.py
+        run: python -m unittest -v test_sync.py test_focus_apps.py test_mainstream.py
       - name: Test routing and functional protection boundaries
         run: python -m unittest discover -s routing -p test_routing.py -v
       - name: Regenerate reviewed startup module
@@ -45,7 +47,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- StartupAds.module UpdateStatus.json routing/Shadowrocket-Precision.conf routing/Status.json routing/lists/*.list routing/ads/ConservativeAds.list
+          git add -- StartupAds.module UpdateStatus.json Coverage.json Coverage.md routing/Shadowrocket-Precision.conf routing/Status.json routing/lists/*.list routing/ads/ConservativeAds.list
           if ! git diff --cached --quiet; then
             git commit -m 'Update checked module and precision routing'
             git push

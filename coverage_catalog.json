@@ -1,0 +1,710 @@
+{
+  "revision": "2026-11-11.2",
+  "categories": [
+    "视频直播",
+    "社交社区",
+    "音乐音频",
+    "购物消费",
+    "外卖餐饮",
+    "出行旅行",
+    "资讯阅读",
+    "工具生活"
+  ],
+  "apps": [
+    {
+      "app": "哔哩哔哩",
+      "category": "视频直播",
+      "source_apps": [
+        "哔哩哔哩"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "斗鱼",
+      "category": "视频直播",
+      "source_apps": [
+        "斗鱼直播"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "虎牙",
+      "category": "视频直播",
+      "source_apps": [
+        "虎牙直播"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "腾讯视频",
+      "category": "视频直播",
+      "source_apps": [
+        "腾讯视频"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "爱奇艺",
+      "category": "视频直播",
+      "source_apps": [
+        "爱奇艺"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "优酷",
+      "category": "视频直播",
+      "source_apps": [
+        "优酷"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "芒果TV",
+      "category": "视频直播",
+      "source_apps": [
+        "芒果TV"
+      ],
+      "scope_note": "当前源混有更新、播放信息或 IP 请求，未将其作为开屏接口封禁。",
+      "partial": false
+    },
+    {
+      "app": "抖音",
+      "category": "视频直播",
+      "source_apps": [
+        "抖音"
+      ],
+      "scope_note": "当前公开源未提供可在本筛选框架内直接采用的独立开屏请求；未加入整域广告/统计封禁。",
+      "partial": false
+    },
+    {
+      "app": "快手",
+      "category": "视频直播",
+      "source_apps": [
+        "快手"
+      ],
+      "scope_note": "按明确广告 API 处理；未改变普通信息流、侧栏或钱包。",
+      "partial": true
+    },
+    {
+      "app": "微博",
+      "category": "社交社区",
+      "source_apps": [
+        "微博"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "知乎",
+      "category": "社交社区",
+      "source_apps": [
+        "知乎"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "小红书",
+      "category": "社交社区",
+      "source_apps": [
+        "小红书"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "豆瓣",
+      "category": "社交社区",
+      "source_apps": [
+        "豆瓣"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "百度贴吧",
+      "category": "社交社区",
+      "source_apps": [
+        "百度贴吧"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "微信",
+      "category": "社交社区",
+      "source_apps": [
+        "微信"
+      ],
+      "scope_note": "未采用登录、消息、支付或普通小程序配置接口作为开屏拦截。",
+      "partial": false
+    },
+    {
+      "app": "QQ",
+      "category": "社交社区",
+      "source_apps": [
+        "QQ"
+      ],
+      "scope_note": "未采用登录、消息、支付或普通业务配置接口作为开屏拦截。",
+      "partial": false
+    },
+    {
+      "app": "QQ音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "QQ音乐"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "网易云音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "网易云音乐"
+      ],
+      "scope_note": "按明确广告 API 处理；部分版本使用加密或批量请求，效果需设备验证。",
+      "partial": true
+    },
+    {
+      "app": "喜马拉雅",
+      "category": "音乐音频",
+      "source_apps": [
+        "喜马拉雅"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true
+    },
+    {
+      "app": "酷狗音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "酷狗音乐"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true
+    },
+    {
+      "app": "酷我音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "酷我音乐"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true
+    },
+    {
+      "app": "汽水音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "汽水音乐"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "小宇宙",
+      "category": "音乐音频",
+      "source_apps": [
+        "小宇宙"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "淘宝",
+      "category": "购物消费",
+      "source_apps": [
+        "淘宝"
+      ],
+      "scope_note": "使用淘宝专属 splash 接口，只清除 taobao-splash 内容；不处理普通商品视频。一淘另计。",
+      "partial": false
+    },
+    {
+      "app": "一淘",
+      "category": "购物消费",
+      "source_apps": [
+        "一淘"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "京东",
+      "category": "购物消费",
+      "source_apps": [
+        "京东"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "拼多多",
+      "category": "购物消费",
+      "source_apps": [
+        "拼多多"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "闲鱼",
+      "category": "购物消费",
+      "source_apps": [
+        "闲鱼"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "得物",
+      "category": "购物消费",
+      "source_apps": [
+        "得物"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "唯品会",
+      "category": "购物消费",
+      "source_apps": [
+        "唯品会"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "苏宁易购",
+      "category": "购物消费",
+      "source_apps": [
+        "苏宁易购"
+      ],
+      "scope_note": "按广告素材目录处理，不能代表所有开屏版本。",
+      "partial": true
+    },
+    {
+      "app": "什么值得买",
+      "category": "购物消费",
+      "source_apps": [
+        "什么值得买"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "转转",
+      "category": "购物消费",
+      "source_apps": [
+        "转转"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "网易考拉",
+      "category": "购物消费",
+      "source_apps": [
+        "网易考拉"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "美团",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "美团 & 美团外卖"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "美团外卖",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "美团 & 美团外卖"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "饿了么",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "饿了么"
+      ],
+      "scope_note": "当前源主要按共享 CDN 图片尺寸匹配，可能误伤普通商品图，未按开屏规则采用。",
+      "partial": false
+    },
+    {
+      "app": "叮咚买菜",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "叮咚买菜"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "盒马",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "盒马"
+      ],
+      "scope_note": "当前源含首页布局和普通场景渲染接口，未整接口替换。",
+      "partial": false
+    },
+    {
+      "app": "小象超市",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "小象超市"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "瑞幸咖啡",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "瑞幸咖啡"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "肯德基",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "肯德基"
+      ],
+      "scope_note": "按广告素材目录处理，菜单和订单保留。",
+      "partial": true
+    },
+    {
+      "app": "麦当劳",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "麦当劳"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "星巴克",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "星巴克"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "高德地图",
+      "category": "出行旅行",
+      "source_apps": [
+        "高德地图"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "百度地图",
+      "category": "出行旅行",
+      "source_apps": [
+        "百度地图"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "腾讯地图",
+      "category": "出行旅行",
+      "source_apps": [
+        "腾讯地图"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "滴滴出行",
+      "category": "出行旅行",
+      "source_apps": [
+        "滴滴出行"
+      ],
+      "scope_note": "未封禁订单、行程、安全中心或普通首页配置。",
+      "partial": false
+    },
+    {
+      "app": "哈啰",
+      "category": "出行旅行",
+      "source_apps": [
+        "哈啰"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "携程",
+      "category": "出行旅行",
+      "source_apps": [
+        "携程"
+      ],
+      "scope_note": "未封禁时区/DNS配置或通用 tripAds 请求。",
+      "partial": false
+    },
+    {
+      "app": "铁路12306",
+      "category": "出行旅行",
+      "source_apps": [
+        "12306"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "去哪儿",
+      "category": "出行旅行",
+      "source_apps": [
+        "去哪儿"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "同程旅行",
+      "category": "出行旅行",
+      "source_apps": [
+        "同程旅行"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "航旅纵横",
+      "category": "出行旅行",
+      "source_apps": [
+        "航旅纵横"
+      ],
+      "scope_note": "通用 native 网关还承担正常功能，未直接封禁。",
+      "partial": false
+    },
+    {
+      "app": "途牛",
+      "category": "出行旅行",
+      "source_apps": [
+        "途牛"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "华住会",
+      "category": "出行旅行",
+      "source_apps": [
+        "华住会"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "亚朵",
+      "category": "出行旅行",
+      "source_apps": [
+        "亚朵开屏"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "腾讯新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "腾讯新闻"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "今日头条",
+      "category": "资讯阅读",
+      "source_apps": [
+        "今日头条"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true
+    },
+    {
+      "app": "网易新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "网易新闻"
+      ],
+      "scope_note": "按上游广告目录限定处理；普通新闻文章接口保留，具体版本待实测。",
+      "partial": true
+    },
+    {
+      "app": "新浪新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "新浪新闻"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "搜狐新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "搜狐新闻"
+      ],
+      "scope_note": "仅明确的 adsense 广告接口，不修改普通新闻和播放配置。",
+      "partial": true
+    },
+    {
+      "app": "百度",
+      "category": "资讯阅读",
+      "source_apps": [
+        "百度"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "澎湃新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "澎湃新闻"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true
+    },
+    {
+      "app": "起点读书",
+      "category": "资讯阅读",
+      "source_apps": [
+        "起点读书"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "WPS",
+      "category": "工具生活",
+      "source_apps": [
+        "WPS"
+      ],
+      "scope_note": "统计请求封禁不等于去开屏，当前没有已采用的独立开屏接口。",
+      "partial": false
+    },
+    {
+      "app": "UC浏览器",
+      "category": "工具生活",
+      "source_apps": [
+        "UC浏览器"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true
+    },
+    {
+      "app": "夸克",
+      "category": "工具生活",
+      "source_apps": [
+        "夸克"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "墨迹天气",
+      "category": "工具生活",
+      "source_apps": [
+        "墨迹天气"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true
+    },
+    {
+      "app": "彩云天气",
+      "category": "工具生活",
+      "source_apps": [
+        "彩云天气"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "中国移动",
+      "category": "工具生活",
+      "source_apps": [
+        "中国移动"
+      ],
+      "scope_note": "仅收录明确广告列表，启动初始化保留。",
+      "partial": true
+    },
+    {
+      "app": "中国联通",
+      "category": "工具生活",
+      "source_apps": [
+        "中国联通"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "天翼云盘",
+      "category": "工具生活",
+      "source_apps": [
+        "天翼云盘",
+        "中国电信"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "中国广电",
+      "category": "工具生活",
+      "source_apps": [
+        "中国广电"
+      ],
+      "scope_note": "用户已报告任何规则下开启 VPN 都闪退，暂不增加该 App 的解密或拦截。",
+      "partial": false
+    },
+    {
+      "app": "网易有道词典",
+      "category": "工具生活",
+      "source_apps": [
+        "网易有道词典"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "前程无忧",
+      "category": "工具生活",
+      "source_apps": [
+        "前程无忧 51Job"
+      ],
+      "scope_note": "",
+      "partial": false
+    },
+    {
+      "app": "Keep",
+      "category": "工具生活",
+      "source_apps": [
+        "Keep"
+      ],
+      "scope_note": "",
+      "partial": false
+    }
+  ],
+  "all_entries_device_tested": false
+}

@@ -1,5 +1,5 @@
 {
-  "policy_version": 2,
+  "policy_version": 3,
   "minimum_rule_count": 52,
   "reviewed_rules": [
     {
@@ -824,7 +824,7 @@
       "source_rule": "^https?:\\/\\/mrobot\\.pconline\\.com\\.cn\\/s-900\\/onlineinfo\\/cms\\/launch data-type=text data=\" \""
     },
     {
-      "app": "淘宝",
+      "app": "一淘",
       "section": "Map Local",
       "pattern": "^https?://acs\\.m\\.taobao\\.com/gw/mtop\\.etao\\.noah\\.query/.+tao_splash",
       "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
@@ -1068,7 +1068,7 @@
       "app": "哔哩哔哩",
       "section": "Body Rewrite",
       "pattern": "^https?://app\\.bilibili\\.com/x/v2/splash/(?:list|show|event/list2)(?:\\?|$)",
-      "action": "'if (.data | type) == \"object\" then .data |= with_entries(if (.key == \"show\" or .key == \"event_list\" or .key == \"list\") and (.value | type) == \"array\" then .value = [] else . end) else . end'",
+      "action": "'if type == \"object\" then if (.data | type) == \"object\" then .data |= with_entries(if (.key == \"show\" or .key == \"event_list\" or .key == \"list\") and (.value | type) == \"array\" then .value = [] else . end) else . end else . end'",
       "hosts": [
         "app.bilibili.com"
       ],
@@ -1105,6 +1105,594 @@
       ],
       "source_rule": "^https?:\\/\\/bootrealtime\\.uve\\.weibo\\.com\\/v\\d\\/ad\\/realtime data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
       "source_id": "weibo"
+    },
+    {
+      "app": "京东",
+      "section": "Body Rewrite",
+      "pattern": "^https?://api\\.m\\.jd\\.com/client\\.action\\?(?:[^#]*&)?functionId=start(?:&|$)",
+      "action": "'if type == \"object\" then (if (.images | type) == \"array\" then .images = [] else . end) | (if (.showTimesDaily | type) == \"number\" then .showTimesDaily = 0 else . end) else . end'",
+      "hosts": [
+        "api.m.jd.com"
+      ],
+      "source_rule": "京东 = type=http-response, pattern=^https:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js, requires-body=true, timeout=60",
+      "review_note": "Explicit advertising/start-screen endpoint only",
+      "source_section": "Script"
+    },
+    {
+      "app": "小红书",
+      "section": "Body Rewrite",
+      "pattern": "^https?://(?:edith\\.rnote\\.com|edith\\.xiaohongshu\\.com)/api/sns/v\\d+/system_service/config(?:\\?|$)",
+      "action": "'if type == \"object\" then if (.data | type) == \"object\" then (if (.data.ads_groups | type) == \"array\" then .data.ads_groups = [] else . end) | del(.data.splash, .data.loading_img) else . end else . end'",
+      "hosts": [
+        "edith.rnote.com",
+        "edith.xiaohongshu.com"
+      ],
+      "source_rule": "小红书开屏广告 = type=http-response, pattern=^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/config\\?, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60",
+      "review_note": "Explicit advertising/start-screen endpoint only",
+      "source_section": "Script"
+    },
+    {
+      "app": "小红书",
+      "section": "Body Rewrite",
+      "pattern": "^https?://(?:edith\\.rnote\\.com|edith\\.xiaohongshu\\.com)/api/sns/v\\d+/system_service/splash_config(?:\\?|$)",
+      "action": "'if type == \"object\" then if (.data | type) == \"object\" then (if (.data.ads_groups | type) == \"array\" then .data.ads_groups = [] else . end) | del(.data.splash, .data.loading_img) else . end else . end'",
+      "hosts": [
+        "edith.rnote.com",
+        "edith.xiaohongshu.com"
+      ],
+      "source_rule": "小红书开屏广告 = type=http-response, pattern=^https?:\\/\\/edith\\.(xiaohongshu|rnote)\\.com\\/api\\/sns\\/v\\d+\\/system_service\\/splash_config, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60",
+      "review_note": "Explicit advertising/start-screen endpoint only",
+      "source_section": "Script"
+    },
+    {
+      "app": "爱奇艺",
+      "section": "Body Rewrite",
+      "pattern": "^https?://(?:kjp\\.cupid\\.iqiyi\\.com|t7z\\.cupid\\.iqiyi\\.com)/mixer(?:\\?|$)",
+      "action": "'if type == \"object\" then if .errorCode == 0 then del(.adSlots, .splashLottieFile, .splashUiConfig) else . end else . end'",
+      "hosts": [
+        "kjp.cupid.iqiyi.com",
+        "t7z.cupid.iqiyi.com"
+      ],
+      "source_rule": "爱奇艺开屏广告,播放广告 = type=http-response, pattern=^https?:\\/\\/(kjp|t7z)\\.cupid\\.iqiyi\\.com\\/mixer\\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60",
+      "review_note": "Explicit advertising/start-screen endpoint only",
+      "source_section": "Script"
+    },
+    {
+      "app": "优酷",
+      "section": "Body Rewrite",
+      "pattern": "^https?://un\\-acs\\.youku\\.com/gw/mtop\\.youku\\.play\\.ups\\.appinfo\\.get(?:/|\\?|$)",
+      "action": "'if type == \"object\" then if (.data | type) == \"object\" then if (.data.data | type) == \"object\" then del(.data.data.ad, .data.data.ykad) else . end else . end else . end'",
+      "hosts": [
+        "un-acs.youku.com"
+      ],
+      "source_rule": "优酷开屏广告 = type=http-response, pattern=^https?:\\/\\/un-acs\\.youku\\.com\\/gw\\/mtop\\.youku\\.play\\.ups\\.appinfo\\.get, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js, requires-body=true, timeout=60",
+      "review_note": "Explicit advertising/start-screen endpoint only",
+      "source_section": "Script"
+    },
+    {
+      "app": "什么值得买",
+      "section": "Body Rewrite",
+      "pattern": "^https?://app\\-api\\.smzdm\\.com/util/loading(?:\\?|$)",
+      "action": "'if type == \"object\" then del(.data) else . end'",
+      "hosts": [
+        "app-api.smzdm.com"
+      ],
+      "source_rule": "Smzdm = type=http-response, pattern=^https?:\\/\\/app-api\\.smzdm\\.com\\/util\\/loading, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/Smzdm.js, requires-body=true, timeout=60",
+      "review_note": "Explicit advertising/start-screen endpoint only",
+      "source_section": "Script"
+    },
+    {
+      "app": "12306",
+      "section": "Body Rewrite",
+      "pattern": "^https?://ad\\.12306\\.cn/ad/ser/getAdList(?:\\?|$)",
+      "action": "'if type == \"object\" then (if (.materialsList | type) == \"array\" then .materialsList = [] else . end) | (if (.advertParam | type) == \"object\" and (.advertParam.skipTime | type) == \"number\" then .advertParam.skipTime = 0 else . end) else . end'",
+      "hosts": [
+        "ad.12306.cn"
+      ],
+      "source_rule": "12306 = type=http-request, pattern=^https?:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList, script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js, requires-body=true, timeout=60",
+      "review_note": "Explicit advertising/start-screen endpoint only",
+      "source_section": "Script"
+    },
+    {
+      "app": "瑞幸咖啡",
+      "section": "Body Rewrite",
+      "pattern": "^https?://capi\\.lkcoffee\\.com/resource/m/sys/app/adposNew(?:\\?|$)",
+      "action": "'if type == \"object\" then {status:\"SUCCESS\"} else . end'",
+      "hosts": [
+        "capi.lkcoffee.com"
+      ],
+      "source_rule": "http-response ^https?:\\/\\/capi\\.lkcoffee\\.com\\/resource\\/m\\/sys\\/app\\/adposNew \\{.+\\} {\"status\":\"SUCCESS\"}",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "美团 & 美团外卖",
+      "section": "Map Local",
+      "pattern": "^https?://wmapi\\.meituan\\.com/api/v\\d+/(?:openscreen|startpicture)(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "wmapi.meituan.com"
+      ],
+      "source_rule": "^https?:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\\? data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "中国联通",
+      "section": "Map Local",
+      "pattern": "^https?://m\\.client\\.10010\\.com/mobileService/(?:activity|customer)/get_startadv(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "m.client.10010.com"
+      ],
+      "source_rule": "^https?:\\/\\/m\\.client\\.10010\\.com\\/mobileService\\/(activity|customer)\\/(accountListData|get_client_adv|get_startadv) data-type=tiny-gif",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "中国联通",
+      "section": "Map Local",
+      "pattern": "^https?://m\\.client\\.10010\\.com/uniAdmsInterface/getWelcomeAd(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "m.client.10010.com"
+      ],
+      "source_rule": "^https?:\\/\\/m\\.client\\.10010\\.com\\/uniAdmsInterface\\/(getHomePageAd|getWelcomeAd) data-type=tiny-gif",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "天翼云盘",
+      "section": "Map Local",
+      "pattern": "^https?://api\\.cloud\\.189\\.cn/guns/getOpenscreenBanners(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "api.cloud.189.cn"
+      ],
+      "source_rule": "^https?:\\/\\/api\\.cloud\\.189\\.cn\\/guns\\/(img\\/recommendedPosition|getOpenscreenBanners) data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "虎牙直播",
+      "section": "URL Rewrite",
+      "pattern": "^https?://business\\.msstatic\\.com/advertiser/material(?:/|\\?|$)",
+      "action": "- reject",
+      "hosts": [
+        "business.msstatic.com"
+      ],
+      "source_rule": "^https?:\\/\\/business\\.msstatic\\.com\\/advertiser\\/material - reject",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "虎牙直播",
+      "section": "Map Local",
+      "pattern": "^https?://cdnfile1\\.msstatic\\.com/cdnfile/appad/",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "cdnfile1.msstatic.com"
+      ],
+      "source_rule": "^https?:\\/\\/cdnfile1\\.msstatic\\.com\\/cdnfile\\/appad\\/ data-type=tiny-gif",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "豆瓣",
+      "section": "Map Local",
+      "pattern": "^https?://api\\.douban\\.com/v\\d+/app_ads/",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "api.douban.com"
+      ],
+      "source_rule": "^https?:\\/\\/api\\.douban\\.com\\/v\\d\\/app_ads\\/ data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "豆瓣",
+      "section": "Map Local",
+      "pattern": "^https?://api\\.douban\\.com/b[^/?#]*/common_ads(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "api.douban.com"
+      ],
+      "source_rule": "^https?:\\/\\/api\\.douban\\.com\\/b.*\\/common_ads\\?.* data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "唯品会",
+      "section": "Map Local",
+      "pattern": "^https?://mapi\\.appvipshop\\.com/vips-mobile/rest/activity/advertisement/get(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "mapi.appvipshop.com"
+      ],
+      "source_rule": "^https?:\\/\\/mapi\\.appvipshop\\.com\\/vips-mobile\\/rest\\/activity\\/advertisement\\/get data-type=text data=\" \"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "苏宁易购",
+      "section": "Map Local",
+      "pattern": "^https?://image\\.suning\\.cn/uimg/ma/ad/",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "image.suning.cn"
+      ],
+      "source_rule": "^https?:\\/\\/image\\.suning\\.cn\\/uimg\\/ma\\/ad\\/ data-type=text data=\" \"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "网易云音乐",
+      "section": "Map Local",
+      "pattern": "^https?://(?:interface\\.music\\.163\\.com|interface0\\.music\\.163\\.com|interface1\\.music\\.163\\.com|interface2\\.music\\.163\\.com|interface3\\.music\\.163\\.com|interface4\\.music\\.163\\.com|interface5\\.music\\.163\\.com|interface6\\.music\\.163\\.com|interface7\\.music\\.163\\.com|interface8\\.music\\.163\\.com|interface9\\.music\\.163\\.com|ipv4\\.music\\.163\\.com)/e?api/ad(?:/|\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "interface.music.163.com",
+        "interface0.music.163.com",
+        "interface1.music.163.com",
+        "interface2.music.163.com",
+        "interface3.music.163.com",
+        "interface4.music.163.com",
+        "interface5.music.163.com",
+        "interface6.music.163.com",
+        "interface7.music.163.com",
+        "interface8.music.163.com",
+        "interface9.music.163.com",
+        "ipv4.music.163.com"
+      ],
+      "source_rule": "https?:\\/\\/(ipv4|interface\\d?)\\.music\\.163.com\\/e?api\\/ad data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "快手",
+      "section": "Map Local",
+      "pattern": "^https://az2\\-api\\.ksapisrv\\.com/rest/n/ad/",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "az2-api.ksapisrv.com"
+      ],
+      "source_rule": "^https:\\/\\/az2-api\\.ksapisrv\\.com\\/rest\\/n\\/ad\\/ data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "肯德基",
+      "section": "URL Rewrite",
+      "pattern": "^https?://res\\.kfc\\.com\\.cn/advertisement/",
+      "action": "- reject",
+      "hosts": [
+        "res.kfc.com.cn"
+      ],
+      "source_rule": "^https?:\\/\\/res\\.kfc\\.com.\\cn\\/advertisement\\/ - reject",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "新浪新闻",
+      "section": "Map Local",
+      "pattern": "^https?://edit\\.sinaapp\\.com/ua\\?(?:[^#]*&)?t=adv(?:&|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "edit.sinaapp.com"
+      ],
+      "source_rule": "^https?:\\/\\/edit\\.sinaapp\\.com\\/ua\\?t=adv data-type=text data=\" \"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "中国移动",
+      "section": "URL Rewrite",
+      "pattern": "^https?://client\\.app\\.coc\\.10086\\.cn/biz-orange/DN/explorePage/getAdverList(?:\\?|$)",
+      "action": "- reject",
+      "hosts": [
+        "client.app.coc.10086.cn"
+      ],
+      "source_rule": "^https?:\\/\\/client\\.app\\.coc\\.10086\\.cn\\/biz-orange\\/DN\\/explorePage\\/getAdverList - reject",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "中国移动云盘",
+      "section": "Map Local",
+      "pattern": "^https?://ad\\.mcloud\\.139\\.com/advertapi/adv-filter/adv-filter/AdInfoFilter/getAdInfos(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "ad.mcloud.139.com"
+      ],
+      "source_rule": "^https?:\\/\\/ad\\.mcloud\\.139\\.com\\/advertapi\\/adv-filter\\/adv-filter\\/AdInfoFilter\\/getAdInfos data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "丁香医生",
+      "section": "URL Rewrite",
+      "pattern": "^https?://dxy\\.com/app/i/ask/biz/feed/launch(?:\\?|$)",
+      "action": "- reject",
+      "hosts": [
+        "dxy.com"
+      ],
+      "source_rule": "^https?:\\/\\/dxy\\.com\\/app\\/i\\/ask\\/biz\\/feed\\/launch - reject",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "联想",
+      "section": "URL Rewrite",
+      "pattern": "^https?://api\\.club\\.lenovo\\.cn/common/open_ad(?:\\?|$)",
+      "action": "- reject",
+      "hosts": [
+        "api.club.lenovo.cn"
+      ],
+      "source_rule": "^https?:\\/\\/api\\.club\\.lenovo\\.cn\\/common\\/open_ad - reject",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "网易考拉",
+      "section": "URL Rewrite",
+      "pattern": "^https?://gw\\.kaola\\.com/gw/dgmobile/newOpenAd(?:\\?|$)",
+      "action": "- reject",
+      "hosts": [
+        "gw.kaola.com"
+      ],
+      "source_rule": "^https?:\\/\\/gw\\.kaola\\.com\\/gw\\/dgmobile\\/newOpenAd - reject",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "网易考拉",
+      "section": "Map Local",
+      "pattern": "^https?://sp\\.kaola\\.com/api/openad(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "sp.kaola.com"
+      ],
+      "source_rule": "^https?:\\/\\/sp\\.kaola\\.com\\/api\\/openad data-type=text data=\" \"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "新片场",
+      "section": "URL Rewrite",
+      "pattern": "^https?://app\\.xinpianchang\\.com/open_screen(?:\\?|$)",
+      "action": "- reject",
+      "hosts": [
+        "app.xinpianchang.com"
+      ],
+      "source_rule": "^https?:\\/\\/app\\.xinpianchang\\.com\\/open_screen\\? - reject",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "优书",
+      "section": "URL Rewrite",
+      "pattern": "^https?://gongdu\\.youshu\\.cc/m/open_screen/list_by_udid(?:\\?|$)",
+      "action": "- reject",
+      "hosts": [
+        "gongdu.youshu.cc"
+      ],
+      "source_rule": "^https?:\\/\\/gongdu\\.youshu\\.cc\\/m\\/open_screen\\/list_by_udid - reject",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "票星球",
+      "section": "Map Local",
+      "pattern": "^https://appapi\\.caiyicloud\\.com/cyy_gatewayapi/home/pub/v3/banners/app_start_page(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "appapi.caiyicloud.com"
+      ],
+      "source_rule": "^https:\\/\\/appapi\\.caiyicloud\\.com\\/cyy_gatewayapi\\/home\\/pub\\/v3\\/banners\\/app_start_page data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "网易有道词典",
+      "section": "Map Local",
+      "pattern": "^https?://cdke\\.youdao\\.com/course3/recommend/dict/startup(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "cdke.youdao.com"
+      ],
+      "source_rule": "^https?:\\/\\/cdke\\.youdao\\.com\\/course3\\/recommend\\/dict\\/startup data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "易校园",
+      "section": "Map Local",
+      "pattern": "^https?://compus\\.xiaofubao\\.com/compus/advertising/getStartupAdvertising(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "compus.xiaofubao.com"
+      ],
+      "source_rule": "^https?:\\/\\/compus\\.xiaofubao\\.com\\/compus\\/advertising\\/getStartupAdvertising data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "转转",
+      "section": "Map Local",
+      "pattern": "^https?://app\\.zhuanzhuan\\.com/zz/v2/zzlogic/getOpenScreen(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "app.zhuanzhuan.com"
+      ],
+      "source_rule": "^https?:\\/\\/app\\.zhuanzhuan\\.com\\/zz\\/v2\\/zzlogic\\/getOpenScreen data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "Weico(微博客户端)",
+      "section": "Map Local",
+      "pattern": "^https?://overseas\\.weico\\.cc/portal\\.php\\?(?:[^#]*&)?a=get_coopen_ads(?:&|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "overseas.weico.cc"
+      ],
+      "source_rule": "^https?:\\/\\/overseas\\.weico\\.cc\\/portal\\.php\\?a=get_coopen_ads data-type=text data=\" \"",
+      "review_note": "Explicit advertising/start-screen endpoint only"
+    },
+    {
+      "app": "腾讯视频",
+      "section": "Rule",
+      "pattern": "splashqqlive.gtimg.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN-SUFFIX,splashqqlive.gtimg.com,REJECT",
+      "review_note": "Narrow upstream suffix to exact dedicated splash-ad host; no MITM"
+    },
+    {
+      "app": "酷狗音乐",
+      "section": "Rule",
+      "pattern": "ads.service.kugou.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,ads.service.kugou.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "酷狗音乐",
+      "section": "Rule",
+      "pattern": "adserviceretry.kugou.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,adserviceretry.kugou.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "酷狗音乐",
+      "section": "Rule",
+      "pattern": "adsfile.bssdlbig.kugou.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,adsfile.bssdlbig.kugou.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "酷我音乐",
+      "section": "Rule",
+      "pattern": "mobilead.kuwo.cn",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,mobilead.kuwo.cn,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "墨迹天气",
+      "section": "Rule",
+      "pattern": "adlaunch.moji.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,adlaunch.moji.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "喜马拉雅",
+      "section": "Rule",
+      "pattern": "adse.ximalaya.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN-SUFFIX,adse.ximalaya.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "喜马拉雅",
+      "section": "Rule",
+      "pattern": "adse-v2.ximalaya.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN-SUFFIX,adse-v2.ximalaya.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "喜马拉雅",
+      "section": "Rule",
+      "pattern": "adsehera.ximalaya.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,adsehera.ximalaya.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "喜马拉雅",
+      "section": "Rule",
+      "pattern": "adse.wsa.ximalaya.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,adse.wsa.ximalaya.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "澎湃新闻",
+      "section": "Rule",
+      "pattern": "adpai.thepaper.cn",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,adpai.thepaper.cn,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "澎湃新闻",
+      "section": "Rule",
+      "pattern": "imgadpai.thepaper.cn",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN,imgadpai.thepaper.cn,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "UC浏览器",
+      "section": "Rule",
+      "pattern": "ads.uc.cn",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN-SUFFIX,ads.uc.cn,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "UC浏览器",
+      "section": "Rule",
+      "pattern": "adslot.uc.cn",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN-SUFFIX,adslot.uc.cn,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "今日头条",
+      "section": "Rule",
+      "pattern": "ad.toutiao.com",
+      "action": "REJECT",
+      "hosts": [],
+      "source_rule": "DOMAIN-SUFFIX,ad.toutiao.com,REJECT",
+      "review_note": "Reviewed exact advertising-service host only; no suffix block, telemetry, business host or MITM; not splash-exclusive."
+    },
+    {
+      "app": "淘宝",
+      "section": "Body Rewrite",
+      "pattern": "^https?://guide\\-acs\\.m\\.taobao\\.com/gw/mtop\\.taobao\\.wireless\\.home\\.splash\\.awesome\\.get(?:/|\\?|$)",
+      "action": "'def clean: if type == \"array\" then map(clean) elif type == \"object\" then with_entries(if .key == \"taobao-splash\" and (.value | type) == \"object\" then .value |= (if (.data | type) == \"array\" then .data = [] else . end) else .value |= clean end) else . end; clean'",
+      "hosts": [
+        "guide-acs.m.taobao.com"
+      ],
+      "source_rule": "淘宝 = type=http-response, pattern=^https?:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js, requires-body=true, timeout=60",
+      "review_note": "Reviewed dedicated splash/advertisement endpoint only; no ordinary product, content, feed, account or playback endpoint.",
+      "source_section": "Script"
+    },
+    {
+      "app": "百度贴吧",
+      "section": "URL Rewrite",
+      "pattern": "^https?://(?:c\\.tieba\\.baidu\\.com|tiebac\\.baidu\\.com)/c/f/ad/getSplashAd(?:\\?|$)",
+      "action": "- reject",
+      "hosts": [
+        "c.tieba.baidu.com",
+        "tiebac.baidu.com"
+      ],
+      "source_rule": "贴吧json = type=http-response, pattern=^http(s:\\/\\/tiebac|:\\/\\/c\\.tieba)\\.baidu\\.com\\/(c\\/(s\\/sync|f\\/(ad\\/getSplashAd|frs\\/(page|threadlist|generalTabList)|pb\\/(pic)?page|excellent\\/personalized))$|tiebaads\\/commonbatch\\?), script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js, requires-body=true, timeout=10",
+      "review_note": "Reviewed dedicated splash/advertisement endpoint only; no ordinary product, content, feed, account or playback endpoint.",
+      "source_section": "Script"
+    },
+    {
+      "app": "网易新闻",
+      "section": "Map Local",
+      "pattern": "^https?://c\\.m\\.163\\.com/nc/gl/",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "c.m.163.com"
+      ],
+      "source_rule": "^https?:\\/\\/c\\.m\\.163\\.com\\/nc\\/gl\\/ data-type=text data=\" \"",
+      "review_note": "Reviewed dedicated splash/advertisement endpoint only; no ordinary product, content, feed, account or playback endpoint."
+    },
+    {
+      "app": "搜狐新闻",
+      "section": "Map Local",
+      "pattern": "^https?://api\\.k\\.sohu\\.com/api/news/adsense(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "api.k.sohu.com"
+      ],
+      "source_rule": "^https?:\\/\\/api\\.k\\.sohu\\.com\\/api\\/news\\/adsense data-type=text data=\" \"",
+      "review_note": "Reviewed dedicated splash/advertisement endpoint only; no ordinary product, content, feed, account or playback endpoint."
     }
   ],
   "regression_cases": [
@@ -1315,6 +1903,438 @@
     {
       "url": "https://api.zhihu.com/commercial_api/launch_v2_extra",
       "expected_section": null
+    },
+    {
+      "url": "https://api.m.jd.com/client.action?client=apple&functionId=start&v=1",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://edith.xiaohongshu.com/api/sns/v2/system_service/config?platform=ios",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://edith.xiaohongshu.com/api/sns/v2/system_service/splash_config?platform=ios",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://kjp.cupid.iqiyi.com/mixer?platform=ios",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://un-acs.youku.com/gw/mtop.youku.play.ups.appinfo.get/1.0/?client=ios",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://app-api.smzdm.com/util/loading?device=ios",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://ad.12306.cn/ad/ser/getAdList?placement=0007",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://capi.lkcoffee.com/resource/m/sys/app/adposNew?platform=ios",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://wmapi.meituan.com/api/v7/openscreen?platform=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://m.client.10010.com/mobileService/customer/get_startadv?platform=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://m.client.10010.com/uniAdmsInterface/getWelcomeAd?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://api.cloud.189.cn/guns/getOpenscreenBanners?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://business.msstatic.com/advertiser/material?client=ios",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://cdnfile1.msstatic.com/cdnfile/appad/start.jpg",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://api.douban.com/v2/app_ads/splash",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://api.douban.com/b3/common_ads?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://mapi.appvipshop.com/vips-mobile/rest/activity/advertisement/get?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://image.suning.cn/uimg/ma/ad/start.jpg",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://interface3.music.163.com/eapi/ad/get",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://az2-api.ksapisrv.com/rest/n/ad/splash",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://res.kfc.com.cn/advertisement/start.json",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://edit.sinaapp.com/ua?t=adv&client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://client.app.coc.10086.cn/biz-orange/DN/explorePage/getAdverList?client=ios",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://ad.mcloud.139.com/advertapi/adv-filter/adv-filter/AdInfoFilter/getAdInfos?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://dxy.com/app/i/ask/biz/feed/launch?client=ios",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://api.club.lenovo.cn/common/open_ad?client=ios",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://gw.kaola.com/gw/dgmobile/newOpenAd?client=ios",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://sp.kaola.com/api/openad?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://app.xinpianchang.com/open_screen?client=ios",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://gongdu.youshu.cc/m/open_screen/list_by_udid?client=ios",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://appapi.caiyicloud.com/cyy_gatewayapi/home/pub/v3/banners/app_start_page?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://cdke.youdao.com/course3/recommend/dict/startup?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://compus.xiaofubao.com/compus/advertising/getStartupAdvertising?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://app.zhuanzhuan.com/zz/v2/zzlogic/getOpenScreen?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://overseas.weico.cc/portal.php?a=get_coopen_ads&client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://splashqqlive.gtimg.com/startup.jpg",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://api.m.jd.com/client.action?functionId=personinfoBusiness",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.m.jd.com/client.action?functionId=orderTrackBusiness",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.m.jd.com/client.action?functionId=startOrder",
+      "expected_section": null
+    },
+    {
+      "url": "https://edith.xiaohongshu.com/api/sns/v2/note/feed?client=ios",
+      "expected_section": null
+    },
+    {
+      "url": "https://edith.xiaohongshu.com/api/sns/v2/user/me",
+      "expected_section": null
+    },
+    {
+      "url": "https://un-acs.youku.com/gw/mtop.youku.play.ups.appinfo.getMore/1.0/",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.m.jd.com.evil.example/client.action?functionId=start",
+      "expected_section": null
+    },
+    {
+      "url": "https://wmapi.meituan.com/api/v7/loadInfo?client=ios",
+      "expected_section": null
+    },
+    {
+      "url": "https://wmapi.meituan.com/api/v7/order/list",
+      "expected_section": null
+    },
+    {
+      "url": "https://m.client.10010.com/mobileService/customer/accountListData",
+      "expected_section": null
+    },
+    {
+      "url": "https://m.client.10010.com/mobileService/customer/getclientconfig.htm",
+      "expected_section": null
+    },
+    {
+      "url": "https://client.app.coc.10086.cn/biz-orange/DN/init/startInit",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.cloud.189.cn/guns/img/recommendedPosition",
+      "expected_section": null
+    },
+    {
+      "url": "https://interface3.music.163.com/eapi/song/enhance/player/url",
+      "expected_section": null
+    },
+    {
+      "url": "https://capi.lkcoffee.com/resource/m/eorder/create",
+      "expected_section": null
+    },
+    {
+      "url": "https://ad.12306.cn/ad/ser/getAdListExtra",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.douban.com/v2/movie/123",
+      "expected_section": null
+    },
+    {
+      "url": "https://res.kfc.com.cn/CRM/menu/list",
+      "expected_section": null
+    },
+    {
+      "url": "https://business.msstatic.com/live/stream/get",
+      "expected_section": null
+    },
+    {
+      "url": "https://app.10099.com.cn/contact-web/api/version/getFlashScreenPage",
+      "expected_section": null
+    },
+    {
+      "url": "https://child.splashqqlive.gtimg.com/image.jpg",
+      "expected_section": null
+    },
+    {
+      "url": "https://www.qq.com/path?target=splashqqlive.gtimg.com",
+      "expected_section": null
+    },
+    {
+      "url": "https://mapi.appvipshop.com/vips-mobile/rest/order/list",
+      "expected_section": null
+    },
+    {
+      "url": "https://overseas.weico.cc/portal.php?a=user_info",
+      "expected_section": null
+    },
+    {
+      "url": "https://ads.service.kugou.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.ads.service.kugou.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adserviceretry.kugou.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adserviceretry.kugou.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adsfile.bssdlbig.kugou.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adsfile.bssdlbig.kugou.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://mobilead.kuwo.cn/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.mobilead.kuwo.cn/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adlaunch.moji.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adlaunch.moji.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adse.ximalaya.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adse.ximalaya.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adse-v2.ximalaya.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adse-v2.ximalaya.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adsehera.ximalaya.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adsehera.ximalaya.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adse.wsa.ximalaya.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adse.wsa.ximalaya.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adpai.thepaper.cn/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adpai.thepaper.cn/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://imgadpai.thepaper.cn/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.imgadpai.thepaper.cn/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://ads.uc.cn/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.ads.uc.cn/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://adslot.uc.cn/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.adslot.uc.cn/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://ad.toutiao.com/advertisement.json",
+      "expected_section": "Rule"
+    },
+    {
+      "url": "https://child.ad.toutiao.com/file",
+      "expected_section": null
+    },
+    {
+      "url": "https://www.ximalaya.com/album/123",
+      "expected_section": null
+    },
+    {
+      "url": "https://mobile.ximalaya.com/mobile-playpage/playpage/123",
+      "expected_section": null
+    },
+    {
+      "url": "https://www.kugou.com/song/123",
+      "expected_section": null
+    },
+    {
+      "url": "https://update.mobile.kugou.com/check",
+      "expected_section": null
+    },
+    {
+      "url": "https://www.kuwo.cn/play_detail/123",
+      "expected_section": null
+    },
+    {
+      "url": "https://weather.moji.com/weather/china",
+      "expected_section": null
+    },
+    {
+      "url": "https://voice-service.uc.cn/asr",
+      "expected_section": null
+    },
+    {
+      "url": "https://safe.ucweb.com/check",
+      "expected_section": null
+    },
+    {
+      "url": "https://www.thepaper.cn/newsDetail_forward_123",
+      "expected_section": null
+    },
+    {
+      "url": "https://www.toutiao.com/article/123",
+      "expected_section": null
+    },
+    {
+      "url": "https://guide-acs.m.taobao.com/gw/mtop.taobao.wireless.home.splash.awesome.get/1.0/",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://tiebac.baidu.com/c/f/ad/getSplashAd",
+      "expected_section": "URL Rewrite"
+    },
+    {
+      "url": "https://c.m.163.com/nc/gl/startup",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://api.k.sohu.com/api/news/adsense?client=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://guide-acs.m.taobao.com/gw/mtop.taobao.cloudvideo.video.query/1.0/",
+      "expected_section": null
+    },
+    {
+      "url": "https://guide-acs.m.taobao.com/gw/mtop.taobao.wireless.home.newface.awesome.get/1.0/",
+      "expected_section": null
+    },
+    {
+      "url": "https://tiebac.baidu.com/c/f/frs/page",
+      "expected_section": null
+    },
+    {
+      "url": "https://tiebac.baidu.com/c/f/pb/page",
+      "expected_section": null
+    },
+    {
+      "url": "https://c.m.163.com/nc/article/list",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.k.sohu.com/api/news/detail/123",
+      "expected_section": null
     }
   ],
   "required_focus_urls": [
@@ -1325,7 +2345,477 @@
     "https://bootpreload.uve.weibo.com/v3/ad/preload?source=ios",
     "https://bootrealtime.uve.weibo.com/v2/ad/realtime",
     "https://api.zhihu.com/commercial_api/real_time_launch_v2?client=ios",
-    "https://api.zhihu.com/commercial_api/launch_v2"
+    "https://api.zhihu.com/commercial_api/launch_v2",
+    "https://api.m.jd.com/client.action?client=apple&functionId=start&v=1",
+    "https://edith.xiaohongshu.com/api/sns/v2/system_service/config?platform=ios",
+    "https://edith.xiaohongshu.com/api/sns/v2/system_service/splash_config?platform=ios",
+    "https://kjp.cupid.iqiyi.com/mixer?platform=ios",
+    "https://un-acs.youku.com/gw/mtop.youku.play.ups.appinfo.get/1.0/?client=ios",
+    "https://app-api.smzdm.com/util/loading?device=ios",
+    "https://ad.12306.cn/ad/ser/getAdList?placement=0007",
+    "https://capi.lkcoffee.com/resource/m/sys/app/adposNew?platform=ios",
+    "https://wmapi.meituan.com/api/v7/openscreen?platform=ios",
+    "https://m.client.10010.com/mobileService/customer/get_startadv?platform=ios",
+    "https://m.client.10010.com/uniAdmsInterface/getWelcomeAd?client=ios",
+    "https://api.cloud.189.cn/guns/getOpenscreenBanners?client=ios",
+    "https://business.msstatic.com/advertiser/material?client=ios",
+    "https://cdnfile1.msstatic.com/cdnfile/appad/start.jpg",
+    "https://api.douban.com/v2/app_ads/splash",
+    "https://api.douban.com/b3/common_ads?client=ios",
+    "https://mapi.appvipshop.com/vips-mobile/rest/activity/advertisement/get?client=ios",
+    "https://image.suning.cn/uimg/ma/ad/start.jpg",
+    "https://interface3.music.163.com/eapi/ad/get",
+    "https://az2-api.ksapisrv.com/rest/n/ad/splash",
+    "https://res.kfc.com.cn/advertisement/start.json",
+    "https://edit.sinaapp.com/ua?t=adv&client=ios",
+    "https://client.app.coc.10086.cn/biz-orange/DN/explorePage/getAdverList?client=ios",
+    "https://ad.mcloud.139.com/advertapi/adv-filter/adv-filter/AdInfoFilter/getAdInfos?client=ios",
+    "https://dxy.com/app/i/ask/biz/feed/launch?client=ios",
+    "https://api.club.lenovo.cn/common/open_ad?client=ios",
+    "https://gw.kaola.com/gw/dgmobile/newOpenAd?client=ios",
+    "https://sp.kaola.com/api/openad?client=ios",
+    "https://app.xinpianchang.com/open_screen?client=ios",
+    "https://gongdu.youshu.cc/m/open_screen/list_by_udid?client=ios",
+    "https://appapi.caiyicloud.com/cyy_gatewayapi/home/pub/v3/banners/app_start_page?client=ios",
+    "https://cdke.youdao.com/course3/recommend/dict/startup?client=ios",
+    "https://compus.xiaofubao.com/compus/advertising/getStartupAdvertising?client=ios",
+    "https://app.zhuanzhuan.com/zz/v2/zzlogic/getOpenScreen?client=ios",
+    "https://overseas.weico.cc/portal.php?a=get_coopen_ads&client=ios",
+    "https://splashqqlive.gtimg.com/startup.jpg",
+    "https://ads.service.kugou.com/advertisement.json",
+    "https://adserviceretry.kugou.com/advertisement.json",
+    "https://adsfile.bssdlbig.kugou.com/advertisement.json",
+    "https://mobilead.kuwo.cn/advertisement.json",
+    "https://adlaunch.moji.com/advertisement.json",
+    "https://adse.ximalaya.com/advertisement.json",
+    "https://adse-v2.ximalaya.com/advertisement.json",
+    "https://adsehera.ximalaya.com/advertisement.json",
+    "https://adse.wsa.ximalaya.com/advertisement.json",
+    "https://adpai.thepaper.cn/advertisement.json",
+    "https://imgadpai.thepaper.cn/advertisement.json",
+    "https://ads.uc.cn/advertisement.json",
+    "https://adslot.uc.cn/advertisement.json",
+    "https://ad.toutiao.com/advertisement.json",
+    "https://guide-acs.m.taobao.com/gw/mtop.taobao.wireless.home.splash.awesome.get/1.0/",
+    "https://tiebac.baidu.com/c/f/ad/getSplashAd",
+    "https://c.m.163.com/nc/gl/startup",
+    "https://api.k.sohu.com/api/news/adsense?client=ios"
   ],
-  "review_revision": "2026-11-11.1"
+  "review_revision": "2026-11-11.2",
+  "dedicated_splash_domain_allowlist": [
+    "splashqqlive.gtimg.com",
+    "ads.service.kugou.com",
+    "adserviceretry.kugou.com",
+    "adsfile.bssdlbig.kugou.com",
+    "mobilead.kuwo.cn",
+    "adlaunch.moji.com",
+    "adse.ximalaya.com",
+    "adse-v2.ximalaya.com",
+    "adsehera.ximalaya.com",
+    "adse.wsa.ximalaya.com",
+    "adpai.thepaper.cn",
+    "imgadpai.thepaper.cn",
+    "ads.uc.cn",
+    "adslot.uc.cn",
+    "ad.toutiao.com"
+  ],
+  "auto_update_hosts": {
+    "12306": [
+      "ad.12306.cn"
+    ],
+    "Keep": [
+      "api.gotokeep.com",
+      "kad.gotokeep.com",
+      "static1.keepcdn.com"
+    ],
+    "QQ音乐": [
+      "music.y.qq.com",
+      "us.l.qq.com",
+      "y.gtimg.cn"
+    ],
+    "WPS": [
+      "ios.wps.cn"
+    ],
+    "一淘": [
+      "acs.m.taobao.com"
+    ],
+    "中国电信": [
+      "cloud.189.cn",
+      "zt-app.go189.cn"
+    ],
+    "中国移动": [
+      "app.10086.cn",
+      "client.app.coc.10086.cn"
+    ],
+    "中国联通": [
+      "m.client.10010.com",
+      "m1.ad.10010.com",
+      "res.mall.10010.cn"
+    ],
+    "亚朵开屏": [
+      "api2.yaduo.com"
+    ],
+    "京东": [
+      "api.m.jd.com"
+    ],
+    "什么值得买": [
+      "app-api.smzdm.com",
+      "article-api.smzdm.com",
+      "haojia-api.smzdm.com",
+      "haojia.m.smzdm.com",
+      "homepage-api.smzdm.com",
+      "qianbao.smzdm.com",
+      "s-api.smzdm.com",
+      "user-api.smzdm.com"
+    ],
+    "优酷": [
+      "acs.youku.com",
+      "push.m.youku.com",
+      "un-acs.youku.com"
+    ],
+    "前程无忧 51Job": [
+      "appapi.51job.com",
+      "appapi.51jobapp.com",
+      "cupid.51job.com",
+      "cupid.51jobapp.com",
+      "img01.51jobcdn.com"
+    ],
+    "华住会": [
+      "appapi.huazhu.com",
+      "hweb-hotel.huazhu.com",
+      "hweb-manager.huazhu.com"
+    ],
+    "去哪儿": [
+      "client.qunar.com",
+      "homefront.qunar.com",
+      "qde.qunar.com"
+    ],
+    "叮咚买菜": [
+      "gw.api.ddxq.mobi",
+      "maicai.api.ddxq.mobi",
+      "user.api.ddxq.mobi"
+    ],
+    "同程旅行": [
+      "mobileapi.ly.com",
+      "mobilehotelapi.elong.com",
+      "tcmobileapi.17usoft.com",
+      "wx.17u.cn"
+    ],
+    "哔哩哔哩": [
+      "api.bilibili.com",
+      "api.live.bilibili.com",
+      "app.bilibili.com",
+      "grpc.biliapi.net",
+      "line3-h5-mobile-api.biligame.com"
+    ],
+    "唯品会": [
+      "b.appsimg.com",
+      "mapi.appvipshop.com"
+    ],
+    "喜马拉雅": [
+      "live.ximalaya.com",
+      "livewsa.ximalaya.com",
+      "m.ximalaya.com",
+      "mobile.ximalaya.com",
+      "mobilehera.ximalaya.com",
+      "mobwsa.ximalaya.com",
+      "mwsa.ximalaya.com",
+      "search.ximalaya.com",
+      "searchwsa.ximalaya.com"
+    ],
+    "天翼云盘": [
+      "api.cloud.189.cn"
+    ],
+    "夸克": [
+      "open-cms-api.quark.cn",
+      "open-cms-api.uc.cn"
+    ],
+    "小宇宙": [
+      "api.xiaoyuzhoufm.com"
+    ],
+    "小红书": [
+      "ci.rnote.com",
+      "ci.xiaohongshu.com",
+      "edith.rnote.com",
+      "edith.xiaohongshu.com",
+      "rec.rnote.com",
+      "rec.xiaohongshu.com",
+      "so.rnote.com",
+      "so.xiaohongshu.com",
+      "www.rnote.com",
+      "www.xiaohongshu.com"
+    ],
+    "小象超市": [
+      "mall.meituan.com",
+      "portal-portm.meituan.com"
+    ],
+    "彩云天气": [
+      "api.caiyunapp.com",
+      "wrapper.cyapi.cn"
+    ],
+    "得物": [
+      "app.dewu.com",
+      "cdn.poizon.com"
+    ],
+    "快手": [
+      "apissl.gifshow.com",
+      "apissl.ksapisrv.com",
+      "az2-api-idc.gifshow.com",
+      "az2-api-idc.ksapisrv.com",
+      "az2-api-js.gifshow.com",
+      "az2-api-js.ksapisrv.com",
+      "az2-api.gifshow.com",
+      "az2-api.ksapisrv.com",
+      "az2-live.ksapisrv.com",
+      "az4-api-idc.ksapisrv.com",
+      "az4-api.ksapisrv.com"
+    ],
+    "拼多多": [
+      "api.pinduoduo.com",
+      "api.yangkeduo.com",
+      "mobile.yangkeduo.com"
+    ],
+    "搜狐": [
+      "agn.aty.sohu.com",
+      "api.k.sohu.com",
+      "hui.sohu.com",
+      "m.aty.sohu.com",
+      "mmg.aty.sohu.com",
+      "photocdn.sohu.com",
+      "pic.k.sohu.com",
+      "s.go.sohu.com",
+      "s1.api.tv.itc.cn"
+    ],
+    "携程": [
+      "m.ctrip.com",
+      "ma-adx.ctrip.com",
+      "mbd.baidu.com"
+    ],
+    "斗鱼直播": [
+      "capi.douyucdn.cn",
+      "daoyu.sdo.com",
+      "douyucdn.cn",
+      "rtbapi.douyucdn.cn",
+      "staticlive.douyucdn.cn"
+    ],
+    "新浪新闻": [
+      "edit.sinaapp.com"
+    ],
+    "汽水音乐": [
+      "api-access.pangolin-sdk-toutiao.com",
+      "api-access.pangolin-sdk-toutiao0.com",
+      "api-access.pangolin-sdk-toutiao1.com",
+      "api-access.pangolin-sdk-toutiao2.com",
+      "api-access.pangolin-sdk-toutiao3.com",
+      "api-access.pangolin-sdk-toutiao4.com",
+      "api-access.pangolin-sdk-toutiao5.com",
+      "api-access.pangolin-sdk-toutiao6.com",
+      "api-access.pangolin-sdk-toutiao7.com",
+      "api-access.pangolin-sdk-toutiao8.com",
+      "api-access.pangolin-sdk-toutiao9.com",
+      "beta-luna.douyin.com",
+      "ether-pack.pangolin-sdk-toutiao.com",
+      "lf-cdn-tos.bytescm.com",
+      "webcast-open.douyin.com"
+    ],
+    "淘宝": [
+      "acs.m.taobao.com",
+      "guide-acs.m.taobao.com",
+      "poplayer.template.alibaba.com"
+    ],
+    "滴滴出行": [
+      "common.diditaxi.com.cn",
+      "conf.diditaxi.com.cn",
+      "ct.xiaojukeji.com",
+      "daijia.kuaidadi.com",
+      "freight.xiaojukeji.com",
+      "hd.xiaojukeji.com",
+      "res.xiaojukeji.com"
+    ],
+    "澎湃新闻": [
+      "adpai.thepaper.cn"
+    ],
+    "爱奇艺": [
+      "access.if.iqiyi.com",
+      "act.vip.iqiyi.com",
+      "cards.iqiyi.com",
+      "comment-card.iqiyi.com",
+      "iface2.iqiyi.com",
+      "kjp.cupid.iqiyi.com",
+      "search.video.iqiyi.com",
+      "t7z.cupid.iqiyi.com"
+    ],
+    "瑞幸咖啡": [
+      "capi.lkcoffee.com",
+      "ecapi.lkcoffee.com",
+      "img01.luckincoffeecdn.com",
+      "img02.luckincoffeecdn.com",
+      "img03.luckincoffeecdn.com",
+      "img04.luckincoffeecdn.com",
+      "img05.luckincoffeecdn.com",
+      "img06.luckincoffeecdn.com",
+      "img07.luckincoffeecdn.com",
+      "img08.luckincoffeecdn.com",
+      "img09.luckincoffeecdn.com",
+      "m.lkcoffee.com"
+    ],
+    "百度": [
+      "afd.baidu.com",
+      "als.baidu.com",
+      "baichuan.baidu.com",
+      "cover.baidu.com",
+      "fcvbjbcebos.baidu.com",
+      "issuecdn.baidupcs.com",
+      "mobads.baidu.com"
+    ],
+    "百度地图": [
+      "dss0.bdstatic.com",
+      "gss0.bdstatic.com",
+      "newclient.map.baidu.com",
+      "ss0.bdstatic.com",
+      "tb1.bdstatic.com",
+      "tb2.bdstatic.com"
+    ],
+    "盒马": [
+      "acs-m.freshippo.com",
+      "acs-m.taobao.com",
+      "acs.m.freshippo.com",
+      "acs.m.taobao.com"
+    ],
+    "知乎": [
+      "api.zhihu.com",
+      "appcloud2.zhihu.com",
+      "link.zhihu.com",
+      "m-cloud.zhihu.com",
+      "page-info.zhihu.com",
+      "www.zhihu.com",
+      "zhstatic.zhihu.com",
+      "zhuanlan.zhihu.com"
+    ],
+    "网易云音乐": [
+      "interface.music.163.com",
+      "interface0.music.163.com",
+      "interface1.music.163.com",
+      "interface2.music.163.com",
+      "interface3.music.163.com",
+      "interface4.music.163.com",
+      "interface5.music.163.com",
+      "interface6.music.163.com",
+      "interface7.music.163.com",
+      "interface8.music.163.com",
+      "interface9.music.163.com",
+      "ipv4.music.163.com"
+    ],
+    "网易新闻": [
+      "c.m.163.com"
+    ],
+    "网易有道词典": [
+      "api-overmind.youdao.com",
+      "cdke.youdao.com",
+      "dict.youdao.com",
+      "dictvip-business.youdao.com",
+      "dsp-impr2.youdao.com",
+      "impservice.dictapp.youdao.com",
+      "oral.youdao.com"
+    ],
+    "网易考拉": [
+      "gw.kaola.com",
+      "sp.kaola.com"
+    ],
+    "美团 & 美团外卖": [
+      "flowplus.meituan.net",
+      "img.meituan.net",
+      "s3plus.meituan.net",
+      "wmapi.meituan.com"
+    ],
+    "肯德基": [
+      "res.kfc.com.cn"
+    ],
+    "腾讯地图": [
+      "4gimg.map.qq.com"
+    ],
+    "腾讯新闻": [
+      "r.inews.qq.com"
+    ],
+    "航旅纵横": [
+      "discardrp.umetrip.com",
+      "oss.umetrip.com",
+      "startup.umetrip.com"
+    ],
+    "芒果TV": [
+      "damang.api.mgtv.com",
+      "dc.bz.mgtv.com",
+      "dc2.bz.mgtv.com",
+      "hb-boom.api.mgtv.com",
+      "me.bz.mgtv.com",
+      "mob-st.bz.mgtv.com",
+      "mobile-thor.api.mgtv.com",
+      "mobile.api.mgtv.com",
+      "mobileso.bz.mgtv.com"
+    ],
+    "苏宁易购": [
+      "image.suning.cn",
+      "luckman.suning.com",
+      "mpcs.suning.com"
+    ],
+    "虎牙直播": [
+      "business.msstatic.com",
+      "cdn.wup.huya.com",
+      "cdnfile1.msstatic.com",
+      "live-ads.huya.com"
+    ],
+    "豆瓣": [
+      "api.douban.com",
+      "erebor.douban.com",
+      "frodo.douban.com",
+      "img0.doubanio.com",
+      "img1.doubanio.com",
+      "img2.doubanio.com",
+      "img3.doubanio.com",
+      "img4.doubanio.com",
+      "img5.doubanio.com",
+      "img6.doubanio.com",
+      "img7.doubanio.com",
+      "img8.doubanio.com",
+      "img9.doubanio.com"
+    ],
+    "起点读书": [
+      "mage.if.qidian.com",
+      "magev6.if.qidian.com",
+      "qidian.qpic.cn"
+    ],
+    "转转": [
+      "app.zhuanzhuan.com"
+    ],
+    "途牛": [
+      "m.tuniu.com"
+    ],
+    "酷我音乐": [
+      "audiobookpay.kuwo.cn",
+      "mgxhtj.kuwo.cn",
+      "musicpay.kuwo.cn",
+      "nmobi.kuwo.cn",
+      "searchrecterm.kuwo.cn",
+      "vip1.kuwo.cn"
+    ],
+    "闲鱼": [
+      "acs.m.goofish.com",
+      "g-acs.m.goofish.com"
+    ],
+    "饿了么": [
+      "cube.elemecdn.com",
+      "elemecdn.com",
+      "fuss10.elemecdn.com",
+      "nr-op.elemecdn.com",
+      "www1.elecfans.com"
+    ],
+    "高德地图": [
+      "amap-aos-info-nogw.amap.com",
+      "m5.amap.com",
+      "optimus-ads.amap.com"
+    ],
+    "麦当劳": [
+      "api.mcd.cn"
+    ]
+  }
 }

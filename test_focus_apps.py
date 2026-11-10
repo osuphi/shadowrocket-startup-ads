@@ -77,7 +77,8 @@ class FocusAppTests(unittest.TestCase):
     def test_target_updates_do_not_add_whole_domain_rejects_or_scripts(self):
         rows = selected_fixture_rows()
         module = sync.render_module(rows, 'osuphi/shadowrocket-startup-ads', 'main', 'fixture')
-        self.assertNotIn('[Rule]', module)
+        native = module.split('[Rule]', 1)[1].split('[URL Rewrite]', 1)[0]
+        self.assertEqual(set(l for l in native.splitlines() if l and not l.startswith('#')), {'DOMAIN,'+host+',REJECT' for host in POLICY['dedicated_splash_domain_allowlist']})
         self.assertNotIn('[Script]', module)
         self.assertNotIn('script-path=', module)
         self.assertNotIn('ca-p12=', module)
