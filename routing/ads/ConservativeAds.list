@@ -25,6 +25,7 @@ DOMAIN,ad.a-a1.ru
 DOMAIN,ad.a-d.fr
 DOMAIN,ad.abema.io
 DOMAIN,ad.about.co.kr
+DOMAIN,ad.about.co.kr.service3.gscdn.net
 DOMAIN,ad.aceplanet.co.kr
 DOMAIN,ad.ad-tracking.tech
 DOMAIN,ad.ad4989.co.kr
@@ -76,13 +77,13 @@ DOMAIN,ad.apl701.online
 DOMAIN,ad.apl706.online
 DOMAIN,ad.apl707.online
 DOMAIN,ad.apl711.online
+DOMAIN,ad.appier.net.akamaized.net
 DOMAIN,ad.asu.edu
 DOMAIN,ad.at.doubleclick.net
 DOMAIN,ad.atleticodemadrid.com
 DOMAIN,ad.atown.jp
 DOMAIN,ad.au.doubleclick.net
 DOMAIN,ad.autoviny.sk
-DOMAIN,ad.avcorpi.click
 DOMAIN,ad.avtm.fr
 DOMAIN,ad.baihemob.com
 DOMAIN,ad.bayescom.com
@@ -153,6 +154,7 @@ DOMAIN,ad.domainprocessor.com
 DOMAIN,ad.donanimhaber.com
 DOMAIN,ad.doorigo.co.kr
 DOMAIN,ad.duga.jp
+DOMAIN,ad.eloan.co.jp.edgekey.net
 DOMAIN,ad.eroplay.tech
 DOMAIN,ad.erzbistum-koeln.de
 DOMAIN,ad.esi.adp.com
@@ -209,6 +211,7 @@ DOMAIN,ad.inmsk.net
 DOMAIN,ad.ino.online
 DOMAIN,ad.inston.ltd
 DOMAIN,ad.intl.xiaomi.com
+DOMAIN,ad.intl.xiaomi.com.mgslb.com
 DOMAIN,ad.intools.dev
 DOMAIN,ad.iot.360.cn
 DOMAIN,ad.iphd.it
@@ -417,6 +420,10 @@ DOMAIN,ad.zankhana.ltd
 DOMAIN,ad.zetacx.net
 DOMAIN,ad.zgjlgr.com
 DOMAIN,ad.zijieapi.com
+DOMAIN,ad.zijieapi.com.51296c5e.c.cdnhwc2.com
+DOMAIN,ad.zijieapi.com.bytedns1.com
+DOMAIN,ad.zijieapi.com.queniukw.com
+DOMAIN,ad.zijieapi.com.w.cdngslb.com
 DOMAIN,ad.zurnal24.si
 DOMAIN,ad.zwangerenportaal.nl
 DOMAIN,adcdn.hpplay.cn
@@ -583,9 +590,11 @@ DOMAIN,ads.codex.md
 DOMAIN,ads.coingecko.com
 DOMAIN,ads.coinserom.com
 DOMAIN,ads.com.mk
+DOMAIN,ads.com.ua
 DOMAIN,ads.comitium.io
 DOMAIN,ads.comperia.pl
 DOMAIN,ads.comprariphonenoboleto.com
+DOMAIN,ads.compro.se
 DOMAIN,ads.consents-management.prod.aws.statista.com
 DOMAIN,ads.contents.fc2.com
 DOMAIN,ads.creatives.no
@@ -613,6 +622,7 @@ DOMAIN,ads.diaolv.com
 DOMAIN,ads.diariosabemos.com
 DOMAIN,ads.digital.disneyadvertising.com
 DOMAIN,ads.digitalfirstmedia.com
+DOMAIN,ads.digitalmedianet.com
 DOMAIN,ads.digiticket.dz
 DOMAIN,ads.disinfestazionebergamopro.it
 DOMAIN,ads.djmag.de
@@ -700,6 +710,7 @@ DOMAIN,ads.golem.de
 DOMAIN,ads.googlemet.com
 DOMAIN,ads.gpm-ssp.ru
 DOMAIN,ads.greengeeks.com
+DOMAIN,ads.greenmedical.info
 DOMAIN,ads.gry-online.pl
 DOMAIN,ads.gsm-exchange.com
 DOMAIN,ads.gsmarena.com
@@ -763,6 +774,7 @@ DOMAIN,ads.iosappsworld.com
 DOMAIN,ads.islamqa.info
 DOMAIN,ads.it.mk
 DOMAIN,ads.itforbusiness.fr
+DOMAIN,ads.jauniauto.lv
 DOMAIN,ads.jauns.lv
 DOMAIN,ads.jetpackdigital.com.akamaized.net
 DOMAIN,ads.jobson.com
@@ -820,6 +832,8 @@ DOMAIN,ads.livetv907.me
 DOMAIN,ads.livetv911.me
 DOMAIN,ads.livetv912.me
 DOMAIN,ads.livetv914.me
+DOMAIN,ads.livetv915.me
+DOMAIN,ads.livetv916.me
 DOMAIN,ads.lmfm.ie
 DOMAIN,ads.locafilm.com
 DOMAIN,ads.localdt2u.com
@@ -849,6 +863,7 @@ DOMAIN,ads.meteored.com
 DOMAIN,ads.metrike.com
 DOMAIN,ads.metzger-suche.de
 DOMAIN,ads.mgmt.somee.com
+DOMAIN,ads.mgnetwork.com
 DOMAIN,ads.mgrealm.com
 DOMAIN,ads.milfinmybed.com
 DOMAIN,ads.minap.hu
@@ -896,6 +911,7 @@ DOMAIN,ads.net.id
 DOMAIN,ads.netavis.dk
 DOMAIN,ads.netflix.com
 DOMAIN,ads.newsbook.com.mt
+DOMAIN,ads.newsquest.co.uk
 DOMAIN,ads.newtarget.com
 DOMAIN,ads.newtention.net
 DOMAIN,ads.nextdoor.com
@@ -905,7 +921,9 @@ DOMAIN,ads.nhadatmoi.net
 DOMAIN,ads.nicoclub.com
 DOMAIN,ads.nicovideo.jp
 DOMAIN,ads.niedziela.pl
+DOMAIN,ads.nj.com
 DOMAIN,ads.nocorspolicy.com
+DOMAIN,ads.nola.com
 DOMAIN,ads.nontonio.com
 DOMAIN,ads.nooriolife.io
 DOMAIN,ads.noroesteenred.com
@@ -966,6 +984,7 @@ DOMAIN,ads.prayatna.co.in
 DOMAIN,ads.princesscum.com
 DOMAIN,ads.prisacom.com
 DOMAIN,ads.privacy.qq.com
+DOMAIN,ads.pro-market.net.akamaized.net
 DOMAIN,ads.production-public.tubi.io
 DOMAIN,ads.produktion.dvag
 DOMAIN,ads.protex.krd
@@ -977,6 +996,7 @@ DOMAIN,ads.qoraplatform.com
 DOMAIN,ads.qrz.ru
 DOMAIN,ads.quadratin.com.mx
 DOMAIN,ads.quoterush.com
+DOMAIN,ads.r2ads.net
 DOMAIN,ads.radiokielce.pl
 DOMAIN,ads.rahavard365.com
 DOMAIN,ads.raidrive.com
@@ -1027,6 +1047,7 @@ DOMAIN,ads.shacknews.com
 DOMAIN,ads.shasha.watch
 DOMAIN,ads.shesinmybed.com
 DOMAIN,ads.shinigami.io
+DOMAIN,ads.shopee.vn
 DOMAIN,ads.siamphone.com
 DOMAIN,ads.sibernetworks.com
 DOMAIN,ads.simpli.padsquad.com
@@ -1042,6 +1063,7 @@ DOMAIN,ads.soberberlin.com
 DOMAIN,ads.societe.com
 DOMAIN,ads.sonataplatform.com
 DOMAIN,ads.soul.media
+DOMAIN,ads.space.com
 DOMAIN,ads.sparkflow.net
 DOMAIN,ads.speedifynetworks.com
 DOMAIN,ads.sportradar.com
@@ -1107,6 +1129,7 @@ DOMAIN,ads.tpumedia.com
 DOMAIN,ads.tr4cker.net
 DOMAIN,ads.traffictrck.com
 DOMAIN,ads.travelaudience.com
+DOMAIN,ads.trinitymirror.co.uk
 DOMAIN,ads.tripod.lycos.nl
 DOMAIN,ads.tritondigital.com
 DOMAIN,ads.truenas.com
@@ -1174,7 +1197,6 @@ DOMAIN,ads.wortise.com
 DOMAIN,ads.wuazu.net
 DOMAIN,ads.x5.ru
 DOMAIN,ads.xfastest.com
-DOMAIN,ads.xn--wxtr44c.live
 DOMAIN,ads.xnavxx.com
 DOMAIN,ads.xrocket.ch
 DOMAIN,ads.xtra.co.nz
@@ -1187,6 +1209,7 @@ DOMAIN,ads.zestlink.net
 DOMAIN,ads.zhios.cn
 DOMAIN,adserv.snigelweb.com
 DOMAIN,adserver.20nine.nl
+DOMAIN,adserver.43plc.com
 DOMAIN,adserver.4x4community.co.za
 DOMAIN,adserver.71i.de
 DOMAIN,adserver.acdsolutions.it
@@ -1266,6 +1289,7 @@ DOMAIN,adserver.molbuk.cv.ua
 DOMAIN,adserver.mtrust.cn
 DOMAIN,adserver.myhomeapps.com
 DOMAIN,adserver.ogcnice.com
+DOMAIN,adserver.omroepzeeland.nl
 DOMAIN,adserver.pandora.com
 DOMAIN,adserver.partcommunity.com
 DOMAIN,adserver.partner-versicherung.de
@@ -1295,6 +1319,7 @@ DOMAIN,adserver.tvn.hu
 DOMAIN,adserver.umi.ru
 DOMAIN,adserver.upb.ro
 DOMAIN,adserver.wunschimmo.de
+DOMAIN,adserver.wunschimmo.de.cname.immovativ.de
 DOMAIN,adserver.xornaldelugo.gal
 DOMAIN,adserver.yaboo.com
 DOMAIN,adserver.yahoo.com
