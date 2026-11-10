@@ -1,0 +1,1188 @@
+{
+  "revision": "2026-11-11.2",
+  "summary": {
+    "catalog_apps": 77,
+    "categories": 8,
+    "with_configured_rules": 60,
+    "pending_catalog_apps": 17,
+    "all_selected_app_labels": 144,
+    "app_versions_device_tested": 0,
+    "new_or_unadopted_startup_candidates": 41
+  },
+  "apps": [
+    {
+      "app": "哔哩哔哩",
+      "category": "视频直播",
+      "source_apps": [
+        "哔哩哔哩"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "斗鱼",
+      "category": "视频直播",
+      "source_apps": [
+        "斗鱼直播"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "虎牙",
+      "category": "视频直播",
+      "source_apps": [
+        "虎牙直播"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "腾讯视频",
+      "category": "视频直播",
+      "source_apps": [
+        "腾讯视频"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "爱奇艺",
+      "category": "视频直播",
+      "source_apps": [
+        "爱奇艺"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "优酷",
+      "category": "视频直播",
+      "source_apps": [
+        "优酷"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "芒果TV",
+      "category": "视频直播",
+      "source_apps": [
+        "芒果TV"
+      ],
+      "scope_note": "当前源混有更新、播放信息或 IP 请求，未将其作为开屏接口封禁。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "抖音",
+      "category": "视频直播",
+      "source_apps": [
+        "抖音"
+      ],
+      "scope_note": "当前公开源未提供可在本筛选框架内直接采用的独立开屏请求；未加入整域广告/统计封禁。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "快手",
+      "category": "视频直播",
+      "source_apps": [
+        "快手"
+      ],
+      "scope_note": "按明确广告 API 处理；未改变普通信息流、侧栏或钱包。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "微博",
+      "category": "社交社区",
+      "source_apps": [
+        "微博"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "知乎",
+      "category": "社交社区",
+      "source_apps": [
+        "知乎"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "小红书",
+      "category": "社交社区",
+      "source_apps": [
+        "小红书"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "豆瓣",
+      "category": "社交社区",
+      "source_apps": [
+        "豆瓣"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "百度贴吧",
+      "category": "社交社区",
+      "source_apps": [
+        "百度贴吧"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "微信",
+      "category": "社交社区",
+      "source_apps": [
+        "微信"
+      ],
+      "scope_note": "未采用登录、消息、支付或普通小程序配置接口作为开屏拦截。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "QQ",
+      "category": "社交社区",
+      "source_apps": [
+        "QQ"
+      ],
+      "scope_note": "未采用登录、消息、支付或普通业务配置接口作为开屏拦截。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "QQ音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "QQ音乐"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "网易云音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "网易云音乐"
+      ],
+      "scope_note": "按明确广告 API 处理；部分版本使用加密或批量请求，效果需设备验证。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "喜马拉雅",
+      "category": "音乐音频",
+      "source_apps": [
+        "喜马拉雅"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 4,
+      "device_tested": false
+    },
+    {
+      "app": "酷狗音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "酷狗音乐"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 3,
+      "device_tested": false
+    },
+    {
+      "app": "酷我音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "酷我音乐"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "汽水音乐",
+      "category": "音乐音频",
+      "source_apps": [
+        "汽水音乐"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "小宇宙",
+      "category": "音乐音频",
+      "source_apps": [
+        "小宇宙"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "淘宝",
+      "category": "购物消费",
+      "source_apps": [
+        "淘宝"
+      ],
+      "scope_note": "使用淘宝专属 splash 接口，只清除 taobao-splash 内容；不处理普通商品视频。一淘另计。",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "一淘",
+      "category": "购物消费",
+      "source_apps": [
+        "一淘"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "京东",
+      "category": "购物消费",
+      "source_apps": [
+        "京东"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "拼多多",
+      "category": "购物消费",
+      "source_apps": [
+        "拼多多"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "闲鱼",
+      "category": "购物消费",
+      "source_apps": [
+        "闲鱼"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "得物",
+      "category": "购物消费",
+      "source_apps": [
+        "得物"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "唯品会",
+      "category": "购物消费",
+      "source_apps": [
+        "唯品会"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "苏宁易购",
+      "category": "购物消费",
+      "source_apps": [
+        "苏宁易购"
+      ],
+      "scope_note": "按广告素材目录处理，不能代表所有开屏版本。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "什么值得买",
+      "category": "购物消费",
+      "source_apps": [
+        "什么值得买"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "转转",
+      "category": "购物消费",
+      "source_apps": [
+        "转转"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "网易考拉",
+      "category": "购物消费",
+      "source_apps": [
+        "网易考拉"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "美团",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "美团 & 美团外卖"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "美团外卖",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "美团 & 美团外卖"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "饿了么",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "饿了么"
+      ],
+      "scope_note": "当前源主要按共享 CDN 图片尺寸匹配，可能误伤普通商品图，未按开屏规则采用。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "叮咚买菜",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "叮咚买菜"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "盒马",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "盒马"
+      ],
+      "scope_note": "当前源含首页布局和普通场景渲染接口，未整接口替换。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "小象超市",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "小象超市"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "瑞幸咖啡",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "瑞幸咖啡"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "肯德基",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "肯德基"
+      ],
+      "scope_note": "按广告素材目录处理，菜单和订单保留。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "麦当劳",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "麦当劳"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "星巴克",
+      "category": "外卖餐饮",
+      "source_apps": [
+        "星巴克"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "高德地图",
+      "category": "出行旅行",
+      "source_apps": [
+        "高德地图"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "百度地图",
+      "category": "出行旅行",
+      "source_apps": [
+        "百度地图"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "腾讯地图",
+      "category": "出行旅行",
+      "source_apps": [
+        "腾讯地图"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "滴滴出行",
+      "category": "出行旅行",
+      "source_apps": [
+        "滴滴出行"
+      ],
+      "scope_note": "未封禁订单、行程、安全中心或普通首页配置。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "哈啰",
+      "category": "出行旅行",
+      "source_apps": [
+        "哈啰"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "携程",
+      "category": "出行旅行",
+      "source_apps": [
+        "携程"
+      ],
+      "scope_note": "未封禁时区/DNS配置或通用 tripAds 请求。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "铁路12306",
+      "category": "出行旅行",
+      "source_apps": [
+        "12306"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "去哪儿",
+      "category": "出行旅行",
+      "source_apps": [
+        "去哪儿"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "同程旅行",
+      "category": "出行旅行",
+      "source_apps": [
+        "同程旅行"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "航旅纵横",
+      "category": "出行旅行",
+      "source_apps": [
+        "航旅纵横"
+      ],
+      "scope_note": "通用 native 网关还承担正常功能，未直接封禁。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "途牛",
+      "category": "出行旅行",
+      "source_apps": [
+        "途牛"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "华住会",
+      "category": "出行旅行",
+      "source_apps": [
+        "华住会"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "亚朵",
+      "category": "出行旅行",
+      "source_apps": [
+        "亚朵开屏"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "腾讯新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "腾讯新闻"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "今日头条",
+      "category": "资讯阅读",
+      "source_apps": [
+        "今日头条"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "网易新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "网易新闻"
+      ],
+      "scope_note": "按上游广告目录限定处理；普通新闻文章接口保留，具体版本待实测。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "新浪新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "新浪新闻"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "搜狐新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "搜狐新闻"
+      ],
+      "scope_note": "仅明确的 adsense 广告接口，不修改普通新闻和播放配置。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "百度",
+      "category": "资讯阅读",
+      "source_apps": [
+        "百度"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "澎湃新闻",
+      "category": "资讯阅读",
+      "source_apps": [
+        "澎湃新闻"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "起点读书",
+      "category": "资讯阅读",
+      "source_apps": [
+        "起点读书"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "WPS",
+      "category": "工具生活",
+      "source_apps": [
+        "WPS"
+      ],
+      "scope_note": "统计请求封禁不等于去开屏，当前没有已采用的独立开屏接口。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "UC浏览器",
+      "category": "工具生活",
+      "source_apps": [
+        "UC浏览器"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "夸克",
+      "category": "工具生活",
+      "source_apps": [
+        "夸克"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "墨迹天气",
+      "category": "工具生活",
+      "source_apps": [
+        "墨迹天气"
+      ],
+      "scope_note": "仅拦截明确广告专用主机，精确匹配、不增加HTTPS解密；不是仅开屏规则，仍需设备验证。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "彩云天气",
+      "category": "工具生活",
+      "source_apps": [
+        "彩云天气"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "中国移动",
+      "category": "工具生活",
+      "source_apps": [
+        "中国移动"
+      ],
+      "scope_note": "仅收录明确广告列表，启动初始化保留。",
+      "partial": true,
+      "state": "部分广告接口",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "中国联通",
+      "category": "工具生活",
+      "source_apps": [
+        "中国联通"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "天翼云盘",
+      "category": "工具生活",
+      "source_apps": [
+        "天翼云盘",
+        "中国电信"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 2,
+      "device_tested": false
+    },
+    {
+      "app": "中国广电",
+      "category": "工具生活",
+      "source_apps": [
+        "中国广电"
+      ],
+      "scope_note": "用户已报告任何规则下开启 VPN 都闪退，暂不增加该 App 的解密或拦截。",
+      "partial": false,
+      "state": "待完善",
+      "active_rule_count": 0,
+      "device_tested": false
+    },
+    {
+      "app": "网易有道词典",
+      "category": "工具生活",
+      "source_apps": [
+        "网易有道词典"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "前程无忧",
+      "category": "工具生活",
+      "source_apps": [
+        "前程无忧 51Job"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    },
+    {
+      "app": "Keep",
+      "category": "工具生活",
+      "source_apps": [
+        "Keep"
+      ],
+      "scope_note": "",
+      "partial": false,
+      "state": "已有针对性规则",
+      "active_rule_count": 1,
+      "device_tested": false
+    }
+  ],
+  "review_candidates": [
+    {
+      "app": "航旅纵横",
+      "section": "URL Rewrite",
+      "declaration_preview": "^http?:\\/\\/(discardrp|startup)\\.umetrip\\.com\\/gateway\\/api\\/umetrip\\/native - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "虎牙直播",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/cdn\\.wup\\.huya\\.com\\/launch\\/queryHttpDns$ - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "漫画人",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/.*mangaapi\\.manhuaren\\.\\w{2,4}\\/v\\d\\/public\\/(getStartUpMessage|getStartPageAds|getShelfActivity) - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "浦发银行",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/wap\\.spdb\\.com\\.cn\\/mspmk-web-homeassist\\/OpenScreenAdv\\.ah$ - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "前程无忧 51Job",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/appapi\\.51job(app)?\\.com\\/api\\/market\\/(?>adtrace|get_launch|get_prompt) - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "前程无忧 51Job",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/cupid\\.51job(app)?\\.com\\/launch-hub\\/open\\/noauth\\/popUp - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "QQ音乐",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/.+?\\/music\\/common\\/upload\\/t_splash_info\\/ - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "QQ音乐",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/((25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)\\/music\\/common\\/upload\\/t_splash_info\\/ - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "小睡眠",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/api\\.psy-1\\.com\\/cosleep\\/startup - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "一号店",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/venus\\.yhd\\.com\\/memhome\\/launchConfig - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "一淘",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.etao\\.noah\\.query\\/.+tao_splash - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "快递100",
+      "section": "Body Rewrite",
+      "declaration_preview": "http-response-jq ^https?:\\/\\/p\\.kuaidi100\\.com\\/mobile\\/mobileapi\\.do$ 'delpaths([[\"adsplash\"]])'",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "快手",
+      "section": "Body Rewrite",
+      "declaration_preview": "http-response-jq ^https:\\/\\/(apissl|az2-api(-js|-idc)?)\\.(gifshow|ksapisrv)\\.com\\/rest\\/system\\/startup\\? 'delpaths([[\"reskinConfig\"]])'",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "快手",
+      "section": "Body Rewrite",
+      "declaration_preview": "http-response-jq ^https:\\/\\/(apissl|az2-api(-js|-idc)?)\\.(gifshow|ksapisrv)\\.com\\/rest\\/system\\/startup\\? 'delpaths([[\"sidebarExSquareStyle\",\"moreList\"]])'",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "快手",
+      "section": "Body Rewrite",
+      "declaration_preview": "http-response-jq ^https:\\/\\/(apissl|az2-api(-js|-idc)?)\\.(gifshow|ksapisrv)\\.com\\/rest\\/system\\/startup\\? 'delpaths([[\"sidebarExSquareStyle\",\"topList\"]])'",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "快手",
+      "section": "Body Rewrite",
+      "declaration_preview": "http-response-jq ^https:\\/\\/(apissl|az2-api(-js|-idc)?)\\.(gifshow|ksapisrv)\\.com\\/rest\\/system\\/startup\\? '.sidebarExSquareStyle.commonlyUsedList |= map(select(.title == \"设置\" or .title == \"历史记录\" or .title == \"草稿箱\" or .title == \"我的钱包\" or .title == \"小程序\" or .title == \"未成年人模式\" or .title == \"官方客服\" or .title == \"内容偏好\" or .title == \"离线模式\" or .title == \"稍后再看\" or .title == \"举报中心\" or .title == \"挂件\"))'",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "小特 - 首选特斯拉中文社区",
+      "section": "Body Rewrite",
+      "declaration_preview": "http-response ^https?:\\/\\/lcen\\.xiaote\\.net\\/api\\/graphql screenSplashAd fmz200",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "一汽大众",
+      "section": "Body Rewrite",
+      "declaration_preview": "http-response-jq ^https?:\\/\\/oneapp-api\\.faw-vw\\.com\\/content\\/booth\\/getBoothList\\/v1\\?.*showPositionCode=VWAPP_(ICE|MEB)_(OPEN_SCREEN_ADS|CAR_ZHIHU_COLLEGE) '. = { returnStatus: \"SUCCEED\", hasMore: false, data: [] }'",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "阿里巴巴",
+      "section": "Map Local",
+      "declaration_preview": "^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.etao\\.noah\\.query\\/.+tao_splash data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "安徽掌上10000",
+      "section": "Map Local",
+      "declaration_preview": "^https?:\\/\\/www\\.ahzs10000\\.com\\/palmhall\\/client\\/base\\/newVerson_getStartUp\\.action data-type=text data=\" \"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "潮玩宇宙",
+      "section": "Map Local",
+      "declaration_preview": "^https?:\\/\\/ios-api\\.lucklyworld\\.com\\/v6\\/api\\/config\\/startup data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "返利网",
+      "section": "Map Local",
+      "declaration_preview": "^https?:\\/\\/l[0-9]{1}\\.51fanli\\.net\\/app\\/images\\/splash\\/2022\\/0[4-9]{1}\\/.*.jpg data-type=text data=\" \"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "返利网",
+      "section": "Map Local",
+      "declaration_preview": "^https?:\\/\\/l[0-9]{1}\\.51fanli\\.net\\/app\\/images\\/splash\\/2022\\/1[0-2]{1}\\/.*.jpg data-type=text data=\" \"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "买单吧",
+      "section": "Map Local",
+      "declaration_preview": "^https?:\\/\\/creditcardapp\\.bankcomm\\.(com|cn)\\/mappweb_interface\\/common\\/(qryPopAds|qryLaunchAds)\\.do data-type=text data=\" \"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "同程旅行",
+      "section": "Map Local",
+      "declaration_preview": "^https:\\/\\/tcmobileapi\\.17usoft\\.com\\/appindexnew\\/index\\/openscreen data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "兴业证券",
+      "section": "Map Local",
+      "declaration_preview": "^https?:\\/\\/static.xyzq.cn\\/image\\/splash\\/opera3.*.jpg data-type=text data=\" \"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "雪球",
+      "section": "Map Local",
+      "declaration_preview": "^https:\\/\\/api\\.xueqiu\\.com\\/snowpard\\/launch_strategy\\/query\\.json\\?channel=1&height=932 data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "雪球",
+      "section": "Map Local",
+      "declaration_preview": "^https:\\/\\/api\\.xueqiu\\.com\\/snowpard\\/launch_strategy\\/query\\.json\\?channel=1&location=0&model=6&page=4 data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "雪球",
+      "section": "Map Local",
+      "declaration_preview": "^https:\\/\\/api\\.xueqiu\\.com\\/snowpard\\/launch_strategy\\/query\\.json\\?channel=1&location=0&model=1&page=(4|6) data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "雪球",
+      "section": "Map Local",
+      "declaration_preview": "^https:\\/\\/api\\.xueqiu\\.com\\/lightsnow\\/launch\\/plan\\/bee\\/query\\.json\\?channel=1&ip_label=&label_json=.+new_customer=1 data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "中国人保",
+      "section": "Map Local",
+      "declaration_preview": "^https?:\\/\\/zgrb\\.epicc\\.com\\.cn\\/G-HAPP\\/a\\/update\\/startupPage\\/v data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "阿里巴巴",
+      "section": "Script",
+      "declaration_preview": "阿里巴巴广告 = type=http-response, pattern=^https:\\/\\/guide-acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.taobao\\.(cloudvideo\\.video\\.query|wireless\\.home\\.splash\\.awesome\\.get), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "粉笔",
+      "section": "Script",
+      "declaration_preview": "粉笔开屏广告 = type=http-response, pattern=^https?:\\/\\/tiku\\.fenbi\\.com\\/activity\\/app\\/launcher\\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fenbi.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "罗森点点",
+      "section": "Script",
+      "declaration_preview": "罗森点点 = type=http-response, pattern=^https:\\/\\/lawsonapi\\.yorentown\\.com\\/portal\\/app\\/globalLaunch\\/listAdvert, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lawson.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "美丽修行",
+      "section": "Script",
+      "declaration_preview": "美丽修行广告 = type=http-response, pattern=^https:\\/\\/api\\.bevol\\.com\\/(?:appmain\\/app\\/home\\/page|usercenter\\/account\\/info|personal\\/page|appmain\\/app\\/home\\/launch|trialbox\\/shop\\/app\\/homePage)$, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/mlxx/mlxx.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "朴朴超市",
+      "section": "Script",
+      "declaration_preview": "朴朴超市 = type=http-response, pattern=^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/search\\/hot_keywords\\/v3, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "朴朴超市",
+      "section": "Script",
+      "declaration_preview": "朴朴超市 = type=http-response, pattern=^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/a朴朴超市,, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "朴朴超市",
+      "section": "Script",
+      "declaration_preview": "朴朴超市 = type=http-response, pattern=^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/marketing\\/advertisement\\/v1, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "朴朴超市",
+      "section": "Script",
+      "declaration_preview": "朴朴超市 = type=http-response, pattern=^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/search\\/hub\\/search_box\\/products\\/v6, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "朴朴超市",
+      "section": "Script",
+      "declaration_preview": "朴朴超市 = type=http-response, pattern=^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/order_settlement\\/detail, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "朴朴超市",
+      "section": "Script",
+      "declaration_preview": "朴朴超市 = type=http-response, pattern=^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/order\\/orders\\/list\\/v4, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60",
+      "status": "发现候选，不代表已启用或实测"
+    }
+  ],
+  "note": "规则与合成响应检查不等于设备实测。已配置、部分接口、待完善分别列示；不将应用标签数当作已验证 App 数量。"
+}

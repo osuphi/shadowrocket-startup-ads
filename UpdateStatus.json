@@ -1,16 +1,26 @@
 {
-  "checked_at_utc": "2026-11-10T17:37:37Z",
+  "checked_at_utc": "2026-11-10T18:08:13Z",
   "upstream": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule",
   "upstream_date": "2026-10-30 16:26:32",
   "upstream_sha256": "fa1e8bfe9cd0aa072422e90bce7d30f81649d49cd75c06ddf02d05d77e2dc37c",
-  "module_sha256": "113a4cf95ff121b81cd1629eedadab8cf0f4bc7546245d86a74166e78624b7b2",
+  "module_sha256": "53f46a2685f08cef8527469eb2c189daccf994334a50e468a3e2f792fafc28ba",
   "module_changed": true,
-  "rules": 108,
-  "revision": "2026-11-11.1",
+  "rules": 163,
+  "revision": "2026-11-11.2",
+  "coverage_summary": {
+    "catalog_apps": 77,
+    "categories": 8,
+    "with_configured_rules": 60,
+    "pending_catalog_apps": 17,
+    "all_selected_app_labels": 144,
+    "app_versions_device_tested": 0,
+    "new_or_unadopted_startup_candidates": 41
+  },
   "section_counts": {
-    "URL Rewrite": 40,
-    "Body Rewrite": 2,
-    "Map Local": 66
+    "Rule": 15,
+    "URL Rewrite": 49,
+    "Body Rewrite": 11,
+    "Map Local": 88
   },
   "focus_app_counts": {
     "哔哩哔哩": 1,
@@ -25,24 +35,28 @@
     }
   },
   "input_mode": "public-download",
-  "app_labels": 102,
-  "exact_hosts": 127,
-  "bounded_updates": 0,
+  "app_labels": 144,
+  "exact_hosts": 178,
+  "native_exact_ad_domain_rules": 15,
+  "pre_reviewed_update_hosts": 267,
+  "bounded_updates": 1,
   "skipped": {
-    "app-not-reviewed": 995,
-    "new-host-requires-review": 95,
-    "unsupported-new-rule": 15,
-    "not-explicit-startup-ad": 63,
-    "already-covered-by-reviewed-rule": 2,
-    "complex-or-mixed-new-path": 4,
-    "action-not-allowed": 2,
-    "response-preservation-requires-review": 29,
-    "body-rewrite-requires-review": 94,
+    "native-rule-or-script-source-requires-review": 3152,
+    "app-not-reviewed": 824,
+    "not-explicit-startup-ad": 202,
+    "unsupported-new-rule": 28,
+    "complex-or-mixed-new-path": 14,
+    "new-host-requires-review": 47,
+    "already-covered-by-reviewed-rule": 3,
+    "response-preservation-requires-review": 53,
+    "action-not-allowed": 4,
+    "body-rewrite-requires-review": 93,
     "dated-historical-rule": 2,
+    "weibo:native-rule-or-script-source-requires-review": 49,
     "weibo:app-not-reviewed": 14,
     "weibo:body-rewrite-requires-review": 2
   },
-  "regression_cases": 52,
+  "regression_cases": 160,
   "retired_positive_fixtures": [],
-  "protected_request_fixtures": 29
+  "protected_request_fixtures": 83
 }
