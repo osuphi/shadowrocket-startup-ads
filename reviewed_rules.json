@@ -1,5 +1,5 @@
 {
-  "policy_version": 1,
+  "policy_version": 2,
   "minimum_rule_count": 52,
   "reviewed_rules": [
     {
@@ -1035,13 +1035,14 @@
     },
     {
       "app": "知乎",
-      "section": "Map Local",
-      "pattern": "^https://api\\.zhihu\\.com/commercial_api/(?:launch_v2|real_time_launch_v2)",
-      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "section": "Body Rewrite",
+      "pattern": "^https?://api\\.zhihu\\.com/commercial_api/(?:launch_v2|real_time_launch_v2)(?:\\?|$)",
+      "action": "'def clean: if type == \"array\" then map(clean) elif type == \"object\" then with_entries(.value |= clean) | (if has(\"img_play_duration\") and (.img_play_duration | type) == \"number\" then .img_play_duration = 0 else . end) | (if has(\"launch_timeout\") and (.launch_timeout | type) == \"number\" then .launch_timeout = 0 else . end) elif type == \"string\" and (contains(\"img_play_duration\") or contains(\"launch_timeout\")) then . as $original | try (fromjson | clean | tojson) catch $original else . end; clean'",
       "hosts": [
         "api.zhihu.com"
       ],
-      "source_rule": "^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/(?:answer\\/\\d+\\/bottom-v2|article\\/\\d+\\/bottom-v2|banners_v3\\/app_topstory_banner|launch_v2|real_time_launch_v2) data-type=text data=\"{}\" header=\"Content-Type:application/json\""
+      "source_rule": "^https:\\/\\/api\\.zhihu\\.com\\/commercial_api\\/(?:answer\\/\\d+\\/bottom-v2|article\\/\\d+\\/bottom-v2|banners_v3\\/app_topstory_banner|launch_v2|real_time_launch_v2) data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "source_section": "Map Local"
     },
     {
       "app": "中关村在线",
@@ -1062,6 +1063,48 @@
         "z.onewo.com"
       ],
       "source_rule": "^https?:\\/\\/z\\.onewo\\.com\\/passer\\/api\\/ads\\/v1\\/8\\/list data-type=text data=\" \""
+    },
+    {
+      "app": "哔哩哔哩",
+      "section": "Body Rewrite",
+      "pattern": "^https?://app\\.bilibili\\.com/x/v2/splash/(?:list|show|event/list2)(?:\\?|$)",
+      "action": "'if (.data | type) == \"object\" then .data |= with_entries(if (.key == \"show\" or .key == \"event_list\" or .key == \"list\") and (.value | type) == \"array\" then .value = [] else . end) else . end'",
+      "hosts": [
+        "app.bilibili.com"
+      ],
+      "source_rule": "http-response-jq ^https:\\/\\/app\\.bilibili\\.com\\/x\\/v2\\/splash\\/(list|show|event\\/list2)\\? '.data |= with_entries(if .key | IN(\"show\", \"event_list\") then .value = [] else . end)'"
+    },
+    {
+      "app": "斗鱼直播",
+      "section": "Map Local",
+      "pattern": "^https?://rtbapi\\.douyucdn\\.cn/japi/sign/app/getinfo(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" header=\"Content-Type:application/json\"",
+      "hosts": [
+        "rtbapi.douyucdn.cn"
+      ],
+      "source_rule": "^https?:\\/\\/rtbapi\\.douyucdn\\.cn\\/japi\\/sign\\/app\\/getinfo data-type=text data=\"{}\" header=\"Content-Type:application/json\""
+    },
+    {
+      "app": "微博",
+      "section": "Map Local",
+      "pattern": "^https?://bootpreload\\.uve\\.weibo\\.com/v\\d+/ad/preload(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+      "hosts": [
+        "bootpreload.uve.weibo.com"
+      ],
+      "source_rule": "^https?:\\/\\/bootpreload\\.uve\\.weibo\\.com\\/v\\d\\/ad\\/preload data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+      "source_id": "weibo"
+    },
+    {
+      "app": "微博",
+      "section": "Map Local",
+      "pattern": "^https?://bootrealtime\\.uve\\.weibo\\.com/v\\d+/ad/realtime(?:\\?|$)",
+      "action": "data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+      "hosts": [
+        "bootrealtime.uve.weibo.com"
+      ],
+      "source_rule": "^https?:\\/\\/bootrealtime\\.uve\\.weibo\\.com\\/v\\d\\/ad\\/realtime data-type=text data=\"{}\" status-code=200 header=\"Content-Type:application/json\"",
+      "source_id": "weibo"
     }
   ],
   "regression_cases": [
@@ -1091,7 +1134,7 @@
     },
     {
       "url": "https://api.zhihu.com/commercial_api/launch_v2",
-      "expected_section": "Map Local"
+      "expected_section": "Body Rewrite"
     },
     {
       "url": "https://api.zhihu.com/commercial_api/answer/123/bottom-v2",
@@ -1192,6 +1235,97 @@
     {
       "url": "https://bluedot.is.autonavi.com.gds.alibabadns.com/clls/wloc",
       "expected_section": null
+    },
+    {
+      "url": "https://app.bilibili.com/x/v2/splash/list?build=1",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://app.bilibili.com/x/v2/splash/show?build=1",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://app.bilibili.com/x/v2/splash/event/list2",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://rtbapi.douyucdn.cn/japi/sign/app/getinfo?client_sys=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://bootpreload.uve.weibo.com/v3/ad/preload?source=ios",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://bootrealtime.uve.weibo.com/v2/ad/realtime",
+      "expected_section": "Map Local"
+    },
+    {
+      "url": "https://api.zhihu.com/commercial_api/real_time_launch_v2?client=ios",
+      "expected_section": "Body Rewrite"
+    },
+    {
+      "url": "https://app.bilibili.com/x/v2/feed/index?build=1",
+      "expected_section": null
+    },
+    {
+      "url": "https://app.bilibili.com/x/v2/account/mine?build=1",
+      "expected_section": null
+    },
+    {
+      "url": "https://app.bilibili.com/x/v2/splash/listen?build=1",
+      "expected_section": null
+    },
+    {
+      "url": "https://app.bilibili.com.evil.example/x/v2/splash/list",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom",
+      "expected_section": null
+    },
+    {
+      "url": "https://capi.douyucdn.cn/lapi/live/getH5Play/1",
+      "expected_section": null
+    },
+    {
+      "url": "https://capi.douyucdn.cn/api/ios_app/check_update",
+      "expected_section": null
+    },
+    {
+      "url": "https://msg.douyu.com/login",
+      "expected_section": null
+    },
+    {
+      "url": "https://rtbapi.douyucdn.cn/japi/sign/app/getinformation",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.weibo.cn/2/statuses/friends_timeline",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.weibo.cn/2/messages",
+      "expected_section": null
+    },
+    {
+      "url": "https://bootpreload.uve.weibo.com/v3/ad/preload_config",
+      "expected_section": null
+    },
+    {
+      "url": "https://api.zhihu.com/commercial_api/launch_v2_extra",
+      "expected_section": null
     }
-  ]
+  ],
+  "required_focus_urls": [
+    "https://app.bilibili.com/x/v2/splash/list?build=1",
+    "https://app.bilibili.com/x/v2/splash/show?build=1",
+    "https://app.bilibili.com/x/v2/splash/event/list2",
+    "https://rtbapi.douyucdn.cn/japi/sign/app/getinfo?client_sys=ios",
+    "https://bootpreload.uve.weibo.com/v3/ad/preload?source=ios",
+    "https://bootrealtime.uve.weibo.com/v2/ad/realtime",
+    "https://api.zhihu.com/commercial_api/real_time_launch_v2?client=ios",
+    "https://api.zhihu.com/commercial_api/launch_v2"
+  ],
+  "review_revision": "2026-11-11.1"
 }

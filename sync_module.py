@@ -21,11 +21,17 @@ import urllib.request
 from urllib.parse import urlsplit
 
 SOURCE_URL = "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule"
+EXTRA_SOURCE_URLS = {"weibo": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/weibo.srmodule"}
 ROOT = Path(__file__).resolve().parent
-SECTIONS = {"URL Rewrite", "Map Local"}
+BODY_TRANSFORMS = {
+    "bilibili-splash": 'if (.data | type) == "object" then .data |= with_entries(if (.key == "show" or .key == "event_list" or .key == "list") and (.value | type) == "array" then .value = [] else . end) else . end',
+    "zhihu-launch": 'def clean: if type == "array" then map(clean) elif type == "object" then with_entries(.value |= clean) | (if has("img_play_duration") and (.img_play_duration | type) == "number" then .img_play_duration = 0 else . end) | (if has("launch_timeout") and (.launch_timeout | type) == "number" then .launch_timeout = 0 else . end) elif type == "string" and (contains("img_play_duration") or contains("launch_timeout")) then . as $original | try (fromjson | clean | tojson) catch $original else . end; clean',
+}
+SECTIONS = {"URL Rewrite", "Map Local", "Body Rewrite"}
 ACTIONS = {
     "URL Rewrite": {"- reject"},
-    "Map Local": {'data-type=text data="{}" header="Content-Type:application/json"', 'data-type=text data=" "', 'data-type=tiny-gif'},
+    "Map Local": {'data-type=text data="{}" header="Content-Type:application/json"', 'data-type=text data="{}" status-code=200 header="Content-Type:application/json"', 'data-type=text data=" "', 'data-type=tiny-gif'},
+    "Body Rewrite": {"'" + expression + "'" for expression in BODY_TRANSFORMS.values()},
 }
 AD_PATH = re.compile(r"splash|start_?screen_?ads?|start_?page|launch_?ads?|open_?ads?|open_?screen|flash_?screen", re.I)
 NON_AD_PATH = re.compile(r"login|account|receipt|pay(?:ment)?|token|userinfo|profile|init|config|dns|upgrade", re.I)
@@ -110,6 +116,7 @@ def parse_source(source):
         line = line.strip()
         if line.startswith("[") and line.endswith("]"):
             section = line[1:-1]
+            app = ""
         elif line.startswith("# > "):
             app = line[4:].strip()
         elif section in SECTIONS and line and not line.startswith("#"):
@@ -117,8 +124,8 @@ def parse_source(source):
     return rows
 
 
-def select_rules(source, policy):
-    seeds = {(r["section"], r["source_rule"]): r for r in policy["reviewed_rules"]}
+def select_rules(source, policy, source_id="common"):
+    seeds = {(r.get("source_section", r["section"]), r["source_rule"]): r for r in policy["reviewed_rules"] if r.get("source_id", "common") == source_id}
     allowed = defaultdict(set)
     for row in policy["reviewed_rules"]:
         allowed[row["app"]].update(row["hosts"])
@@ -133,6 +140,12 @@ def select_rules(source, policy):
             row = {k: seed[k] for k in ("app", "section", "pattern", "action", "hosts")}
             row["selection"] = "reviewed-endpoint"
         else:
+            if upstream['section'] == 'Body Rewrite':
+                skipped['body-rewrite-requires-review'] += 1
+                continue
+            if any(seed['app'] == upstream['app'] and seed['section'] == 'Body Rewrite' for seed in policy['reviewed_rules']):
+                skipped['response-preservation-requires-review'] += 1
+                continue
             if upstream["app"] not in allowed:
                 skipped["app-not-reviewed"] += 1
                 continue
@@ -196,7 +209,11 @@ def validate_rules(rows, policy, require_baseline=True):
         actual = hit["section"] if hit else None
         if case["expected_section"] is None and actual is not None:
             raise ValueError("Normal/protected request would be intercepted; retain last publication: " + case["url"])
+        if case['expected_section'] is not None and actual is not None and actual != case['expected_section']:
+            raise ValueError('Unexpected response handling for reviewed endpoint: ' + case['url'])
         if case["expected_section"] is not None and actual is None:
+            if require_baseline and case['url'] in policy.get('required_focus_urls', []):
+                raise ValueError('Required app splash coverage disappeared; retain previous publication: ' + case['url'])
             # A retired upstream endpoint must not freeze all future updates. Track it
             # in public status while still enforcing minimum coverage and all negatives.
             retired.append(case["url"])
@@ -215,26 +232,31 @@ def render_module(rows, repository, branch, upstream_date):
         "#!author=Modified from fmz200/wool_scripts and contributors",
         "#!homepage=https://github.com/" + repository,
         "#!raw-url=" + url,
-        "# GPL-3.0. Modified 2026-11-02. See LICENSE and README.md.",
+        "# Revision: 2026-11-11.1 / reviewed Bilibili, Douyu, Weibo and Zhihu splash handlers.",
+        "# GPL-3.0. Modified 2026-11-11. See LICENSE and README.md.",
         "# Upstream source: " + SOURCE_URL,
+        "# Supplemental source: " + EXTRA_SOURCE_URLS['weibo'],
         "# Upstream date: " + upstream_date,
         "# This generated subset does not include remote-execution scripts or certificate material.",
     ]
-    for section in ("URL Rewrite", "Map Local"):
+    for section in ("URL Rewrite", "Body Rewrite", "Map Local"):
         lines.extend(["", "[" + section + "]"])
         for row in rows:
             if row["section"] == section:
-                lines.extend(["# " + row["app"], row["pattern"] + " " + row["action"]])
+                prefix = 'http-response-jq ' if section == 'Body Rewrite' else ''
+                lines.extend(["# " + row["app"], prefix + row["pattern"] + " " + row["action"]])
     hosts = sorted({h for row in rows for h in row["hosts"]})
     lines.extend(["", "[MITM]", "hostname = %APPEND% " + ", ".join(hosts), ""])
     return "\n".join(lines)
 
 
-def download():
+def download(source_url=SOURCE_URL):
+    if source_url not in {SOURCE_URL, *EXTRA_SOURCE_URLS.values()}:
+        raise ValueError('Unapproved public source URL')
     last_error = None
     for attempt in range(3):
         try:
-            req = urllib.request.Request(SOURCE_URL, headers={"User-Agent": "startup-module-reviewed-sync/1.0"})
+            req = urllib.request.Request(source_url, headers={"User-Agent": "startup-module-reviewed-sync/2.0"})
             with urllib.request.urlopen(req, timeout=30) as response:
                 final = urlsplit(response.geturl())
                 if final.scheme != "https" or final.hostname != "raw.githubusercontent.com":
@@ -264,11 +286,17 @@ def main():
     ap.add_argument("--repository", required=True)
     ap.add_argument("--branch", default="main")
     ap.add_argument("--source-file", type=Path, help="Offline public fixture; normal scheduled runs download the fixed upstream URL")
+    ap.add_argument("--weibo-source-file", type=Path, help="Offline public Weibo fixture")
     ap.add_argument("--output-dir", type=Path, default=ROOT)
     args = ap.parse_args()
     policy = json.loads((ROOT / "reviewed_rules.json").read_text(encoding="utf-8"))
     source = args.source_file.read_text(encoding="utf-8") if args.source_file else download()
     rows, skipped = select_rules(source, policy)
+    extra_source = args.weibo_source_file.read_text(encoding='utf-8') if args.weibo_source_file else download(EXTRA_SOURCE_URLS['weibo'])
+    extra_rows, extra_skipped = select_rules(extra_source, policy, source_id='weibo')
+    rows.extend(extra_rows)
+    for reason, count in extra_skipped.items():
+        skipped['weibo:' + reason] = count
     checked = validate_rules(rows, policy)
     updated = re.search(r"^#!date=(.*)$", source, re.M)
     upstream_date = updated.group(1).strip() if updated else "not supplied"
@@ -284,6 +312,10 @@ def main():
         "upstream_sha256": hashlib.sha256(source.encode()).hexdigest(),
         "module_sha256": hashlib.sha256(current.read_bytes()).hexdigest(),
         "module_changed": changed, "rules": len(rows),
+        "revision": "2026-11-11.1",
+        "section_counts": dict(Counter(r['section'] for r in rows)),
+        "focus_app_counts": {app:sum(r['app'] == app for r in rows) for app in ('哔哩哔哩','斗鱼直播','微博','知乎')},
+        "supplemental_sources": {"weibo": {"url": EXTRA_SOURCE_URLS['weibo'], "sha256": hashlib.sha256(extra_source.encode()).hexdigest()}},
         "input_mode": "local-public-fixture" if args.source_file else "public-download",
         "app_labels": len({r["app"] for r in rows}),
         "exact_hosts": len({h for r in rows for h in r["hosts"]}),

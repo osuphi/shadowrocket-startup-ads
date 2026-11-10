@@ -9,6 +9,7 @@ on:
       - sync_module.py
       - reviewed_rules.json
       - test_sync.py
+      - test_focus_apps.py
       - routing/sync_routing.py
       - routing/policy.json
       - routing/test_routing.py
@@ -31,7 +32,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test bounded startup module selection
-        run: python -m unittest -v test_sync.py
+        env:
+          REQUIRE_JQ: '1'
+        run: python -m unittest -v test_sync.py test_focus_apps.py
       - name: Test routing and functional protection boundaries
         run: python -m unittest discover -s routing -p test_routing.py -v
       - name: Regenerate reviewed startup module
