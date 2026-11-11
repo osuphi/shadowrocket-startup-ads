@@ -1,6 +1,26 @@
-# Shadowrocket 开屏广告增强：自动同步筛选版
+# Shadowrocket 与 FlClash 分流和开屏去广告
 
-> 新增：[Shadowrocket Precision v3 分流配置](routing/README.md)。这是独立的完整分流配置，包含保守广告过滤和国内服务分类；原有开屏模块的订阅地址继续保留。
+## 下载与导入
+
+按设备和用途选择链接。三个文件都有各自的导入入口。已有节点订阅继续在原客户端使用。
+
+| 设备和用途 | 下载地址 | 导入入口 | 自动更新范围 |
+| --- | --- | --- | --- |
+| iPhone · Shadowrocket 主分流 | [Shadowrocket-Precision.conf](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/Shadowrocket-Precision.conf) | 在「配置」页添加远程配置，下载后点「使用配置」 | 在「设置 → 配置」开启自动后台更新后，刷新远程 `.conf` 及其引用的 `.list` 规则。详见[手机分流说明](routing/README.md)。 |
+| iPhone · Shadowrocket 开屏去广告 | [StartupAds.module](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/StartupAds.module) | 在「配置 → 模块 → +」粘贴链接并启用 | 在「设置 → 模块」开启自动后台更新后，刷新 `.module`。首次启用见下方的证书和解密说明。 |
+| 电脑 · FlClash 分流 | [下载 Desktop-Routing.js](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/desktop/Desktop-Routing.js) | 下载 `.js` 文件，导入当前节点订阅的「扩展 → 脚本」 | Mihomo 运行时每 24 小时尝试刷新脚本引用的 GitHub `.yaml` 规则集。脚本版本升级需要手动替换。 |
+
+### FlClash 电脑分流
+
+1. 在「配置」页打开当前节点订阅的卡片菜单，选择「扩展」。
+2. 扩展模式选「脚本」，点「前往配置脚本」，再通过 `+ → 通过文件导入` 选择下载的 `Desktop-Routing.js`。已经绑定旧版时，可以用新版文件的全部内容替换原脚本。
+3. 返回扩展页选中脚本，点「立即应用」，保持「规则」模式。在「精细分流 · 节点选择」里选一个可用节点。
+
+新版脚本内置 `api.day.app` 规则，命中「精细分流 · Bark」。如果之前的节点报 `SSL UNEXPECTED_EOF`，可在 Bark 组里单独选另一个节点，再打开 [Bark `/ping`](https://api.day.app/ping) 检查。GitHub `.yaml` 名单更新由 Mihomo 完成。Bark 这类内置规则、分组和规则顺序随 `.js` 版本发布。
+
+导入路径以 [FlClash v0.9.2 源码](https://github.com/chen08209/FlClash/blob/v0.9.2/lib/views/config/scripts.dart) 为准。规则集刷新行为见 [Mihomo 规则集合说明](https://wiki.metacubex.one/config/rule-providers/)。
+
+## Shadowrocket 开屏去广告
 
 基于 [fmz200/wool_scripts](https://github.com/fmz200/wool_scripts) 的公开规则生成，保留原作者和贡献者署名，以 GPL-3.0 提供。模块修订：2026-11-11.2。
 
@@ -10,9 +30,7 @@
 
 ## 安装模块
 
-当前部署的订阅地址：[StartupAds.module](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/StartupAds.module)。复制这个链接地址到 Shadowrocket，不要把整个 GitHub 仓库地址填进模块订阅。
-
-公开部署后，在 Shadowrocket“配置 → 模块 → 右上角 +”中填入本仓库 `StartupAds.module` 的 Raw 地址，下载并启用。不要复制 GitHub 的网页预览地址。
+复制上表的 `StartupAds.module` 下载地址到 Shadowrocket 的模块页。已经安装同一地址的远程模块时，在模块页更新即可。
 
 如果安装过旧的本地“开屏广告增强”模块，先停用旧版，再启用这份远程模块。分流可使用上方 Precision v3；如果之前导入了内置同一套开屏规则的完整增强 `.conf`，不要再重复叠加同一模块。WLOC 是独立定位模块。
 
@@ -22,7 +40,7 @@
 
 解密按主机发生，这些主机上的正常请求也可能由客户端在本机解密；仅列出的开屏请求被改写/拒绝。WLOC 的定位域名不在本模块范围内。不能保证所有 App 或所有版本均去除开屏广告，缓存、证书固定和混合响应仍有局限。
 
-## 自动更新分两步
+### 开屏模块自动更新
 
 1. 仓库里的 GitHub Actions 每天北京时间约 09:23 检查公开上游，筛选、校验并更新模块；也支持手动运行。
 2. 在 Shadowrocket“设置 → 模块”中开启“自动后台更新”，间隔可选 1 天，并允许 iOS“后台 App 刷新”。手机会刷新这个固定地址的模块。
