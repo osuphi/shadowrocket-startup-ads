@@ -58,6 +58,9 @@
     "IP-CIDR6,ff00::/8,DIRECT,no-resolve"
   ],
   "essential_rules": [
+    "DOMAIN,cable.auth.com,DIRECT",
+    "DOMAIN,app-site-association.cdn-apple.com,DIRECT",
+    "DOMAIN,app-site-association.networking.apple,DIRECT",
     "DOMAIN,raw.githubusercontent.com,🐙 GitHub",
     "DOMAIN,challenges.cloudflare.com,🔰 选择节点",
     "DOMAIN,js.stripe.com,🔰 选择节点",
@@ -357,6 +360,8 @@
     "alipay.com",
     "alipayobjects.com",
     "app-measurement.com",
+    "app-site-association.cdn-apple.com",
+    "app-site-association.networking.apple",
     "apple.com",
     "auth0.com",
     "biliapi.com",
@@ -364,6 +369,7 @@
     "bilibili.com",
     "bugly.qq.com",
     "bytefcdnrd.com",
+    "cable.auth.com",
     "challenges.cloudflare.com",
     "cmpassport.com",
     "configcat.com",
@@ -428,6 +434,9 @@
     "weixin.qq.com"
   ],
   "protected_test_hosts": [
+    "cable.auth.com",
+    "app-site-association.cdn-apple.com",
+    "app-site-association.networking.apple",
     "msg.douyu.com",
     "cs-op.douyucdn.cn",
     "rtbapi.douyucdn.cn",
@@ -564,6 +573,18 @@
     {
       "host": "login.live.com",
       "expected": "🪟 Microsoft"
+    },
+    {
+      "host": "cable.auth.com",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "app-site-association.cdn-apple.com",
+      "expected": "DIRECT"
+    },
+    {
+      "host": "app-site-association.networking.apple",
+      "expected": "DIRECT"
     },
     {
       "host": "onedrive.live.com",

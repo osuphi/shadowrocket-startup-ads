@@ -22,6 +22,7 @@ https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/S
 
 ## 这次解决的结构问题
 
+- Microsoft Authenticator 的 iOS 跨设备通行密钥连接使用三个精确直连规则：`cable.auth.com`、`app-site-association.cdn-apple.com` 和 `app-site-association.networking.apple`。这些规则优先于广告和服务分类，更新当前远程配置后生效。域名见 [微软的通行密钥排查说明](https://learn.microsoft.com/en-us/entra/identity/authentication/passkey-faq#why-do-cross-device-sign-in-and-registration-fail-with-device-couldnt-connect)。
 - 广告层不再直接加载旧的 AdvertisingLite 全量域名文件。改从 [HaGeZi Multi LIGHT](https://github.com/hagezi/dns-blocklists#light) 提取已列出的明确广告端点。除少量明确审核的广告域族外，输出使用精确 DOMAIN，不把单个主机扩大成整域及所有子域。
 - 消息、接口、统计、故障上报、配置和推送的名称不因被上游收录就自动封禁。维护明确功能保护范围；国内通讯、支付、直播和 Apple 系统服务优先于广告名单。
 - 新增国内直播、国内通讯、国内支付、运营商服务四个策略组。补齐斗鱼及 CDN、虎牙、微信、钉钉、支付宝、银联、移动、电信、联通分类；广电的 10099.com.cn 仅作域名直连，并不能关闭系统 VPN 或保证修复其闪退。
