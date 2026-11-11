@@ -8,7 +8,7 @@
 # GPL-3.0. Modified 2026-11-11. See LICENSE and README.md.
 # Upstream source: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule
 # Supplemental source: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/weibo.srmodule
-# Upstream date: 2026-10-30 16:26:32
+# Upstream date: 2026-11-11 22:01:38
 # This generated subset does not include remote-execution scripts or certificate material.
 
 [Rule]

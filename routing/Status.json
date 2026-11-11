@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-11-11T07:50:44.246515+00:00",
+  "checked_at_utc": "2026-11-11T17:19:43.710534+00:00",
   "version": 3,
   "source_metadata": {
     "commits": {
       "blackmatrix7/ios_rule_script": "0b6897dc17e0c513d25449c935a9694818e32f0c",
-      "hagezi/dns-blocklists": "83011e7e9e691eb68aae5402cbd2e7d5bd13baa4"
+      "hagezi/dns-blocklists": "f046f558d9be3059f1ee48508c47fb4fc1acfba2"
     },
     "sources": {
       "YouTube.list": {
@@ -112,8 +112,8 @@
         "sha256": "d35eec789ae09a6d2b6dd48ed2c52d6d811f433b1e73a92b2f9246b778fa7923"
       },
       "hagezi-light.txt": {
-        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/83011e7e9e691eb68aae5402cbd2e7d5bd13baa4/wildcard/light-onlydomains.txt",
-        "sha256": "dac15a07568de976044afbaec08fbd895033ca1a964498e4f48d941eb7a5336e"
+        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/f046f558d9be3059f1ee48508c47fb4fc1acfba2/wildcard/light-onlydomains.txt",
+        "sha256": "9bcbd2fce42de007fd0012863f0c7e4f17e2f9c70c121d9b14338f8c6b7aa82c"
       }
     }
   },
@@ -142,7 +142,7 @@
     "ChinaMobile": 36,
     "ChinaTelecom": 82,
     "ChinaUnicom": 33,
-    "ConservativeAds": 1367
+    "ConservativeAds": 1365
   },
   "normalization": {
     "YouTube": {
@@ -204,17 +204,17 @@
     }
   },
   "ad_filtering": {
-    "input_domains": 88053,
-    "exact_hosts": 1365,
+    "input_domains": 88455,
+    "exact_hosts": 1363,
     "suffix_families": [
       "adnxs.com",
       "googlesyndication.com"
     ],
     "skipped": {
-      "not-an-explicit-reviewed-ad-shape": 86282,
-      "functional-or-live-protection": 403,
-      "functional-first-label": 1,
-      "covered-by-reviewed-ad-family": 2
+      "not-an-explicit-reviewed-ad-shape": 86687,
+      "functional-or-live-protection": 402,
+      "covered-by-reviewed-ad-family": 2,
+      "functional-first-label": 1
     }
   },
   "removed_lower_priority_exact_duplicates": [
@@ -1130,7 +1130,7 @@
     }
   ],
   "file_sha256": {
-    "Shadowrocket-Precision.conf": "861569cd4fc3a0e160db1c104363e4c966bcb79cd2d21ace6936448570c315d5",
+    "Shadowrocket-Precision.conf": "f59c42182393a1a749456ae8be8c3feffe273776f1afb9bf29f6dc7e6222adab",
     "lists/YouTube.list": "f05d91e4630e08c5e262f30881c75a503f104ebe3e6a402b994fd66d4d2d01b6",
     "lists/Google.list": "1366d742a271f82508a1ccb7b1ec3aa1fd4d8e97b4af418503053d651458e047",
     "lists/GitHub.list": "e42251e1530d5a2eef8dcdcd4954fb1c29dd9b55d54e70cc09d6bdab8c13a42f",
@@ -1155,16 +1155,16 @@
     "lists/ChinaMobile.list": "b9ed6fac991a32cf4f6f9012bb8faf3174eebb5ecf77ad417d434351440c6e9f",
     "lists/ChinaTelecom.list": "ecc6585df3a1fb655554b6f4aaf1f0699311122ec1b1e3cef344a5365bf289ae",
     "lists/ChinaUnicom.list": "555cbdebabd99942d72108a7739275b0ecd88a2199d1090b74003b39e1e47acd",
-    "ads/ConservativeAds.list": "92823d6842516f05fa26f81cc1232c3507dd0e1317c8a8da9167c1e9b8e38bde"
+    "ads/ConservativeAds.list": "ca3c70ffaeb0f9fc3f89a30245e780638f00531e42715a39f87f8989f277bb50"
   },
   "validation": {
     "groups": 29,
-    "main_rules": 151,
+    "main_rules": 154,
     "remote_resources": 25,
     "expanded_exact_duplicate_matchers": 0,
-    "route_cases_passed": 108,
-    "functional_hosts_protected": 23,
-    "synthetic_update_protection_cases_passed": 23,
+    "route_cases_passed": 111,
+    "functional_hosts_protected": 26,
+    "synthetic_update_protection_cases_passed": 26,
     "cases": [
       {
         "host": "localhost",
@@ -1443,6 +1443,36 @@
           "policy": "🪟 Microsoft",
           "origin": "Microsoft",
           "match": "DOMAIN-SUFFIX,live.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "cable.auth.com",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "DOMAIN,cable.auth.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "app-site-association.cdn-apple.com",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "DOMAIN,app-site-association.cdn-apple.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "app-site-association.networking.apple",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "DOMAIN,app-site-association.networking.apple"
         },
         "pass": true
       },

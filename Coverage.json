@@ -7,7 +7,7 @@
     "pending_catalog_apps": 17,
     "all_selected_app_labels": 144,
     "app_versions_device_tested": 0,
-    "new_or_unadopted_startup_candidates": 41
+    "new_or_unadopted_startup_candidates": 43
   },
   "apps": [
     {
@@ -937,6 +937,18 @@
     }
   ],
   "review_candidates": [
+    {
+      "app": "CSDN",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/app-gw\\.csdn\\.net\\/silkroad-api\\/api\\/v\\d\\/assemble\\/list\\/pub\\/channel\\/app_open_screen_ad - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
+    {
+      "app": "CSDN",
+      "section": "URL Rewrite",
+      "declaration_preview": "^https?:\\/\\/gw\\.csdn\\.net\\/cms-app\\/v\\d+\\/home_page\\/open_advertisement - reject",
+      "status": "发现候选，不代表已启用或实测"
+    },
     {
       "app": "航旅纵横",
       "section": "URL Rewrite",

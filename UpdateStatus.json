@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-11-11T07:50:39Z",
+  "checked_at_utc": "2026-11-11T17:19:38Z",
   "upstream": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule",
-  "upstream_date": "2026-10-30 16:26:32",
-  "upstream_sha256": "fa1e8bfe9cd0aa072422e90bce7d30f81649d49cd75c06ddf02d05d77e2dc37c",
-  "module_sha256": "53f46a2685f08cef8527469eb2c189daccf994334a50e468a3e2f792fafc28ba",
-  "module_changed": false,
+  "upstream_date": "2026-11-11 22:01:38",
+  "upstream_sha256": "ec4eedca3a381777dfda1681c40a20a20f038ae344f43c7a93b84da8d5428c02",
+  "module_sha256": "baa8f9388791641da100aae8af41e6d8b80dd8c6c84ee2d06bfcac3891d1f2f9",
+  "module_changed": true,
   "rules": 163,
   "revision": "2026-11-11.2",
   "coverage_summary": {
@@ -14,7 +14,7 @@
     "pending_catalog_apps": 17,
     "all_selected_app_labels": 144,
     "app_versions_device_tested": 0,
-    "new_or_unadopted_startup_candidates": 41
+    "new_or_unadopted_startup_candidates": 43
   },
   "section_counts": {
     "Rule": 15,
@@ -41,8 +41,8 @@
   "pre_reviewed_update_hosts": 267,
   "bounded_updates": 1,
   "skipped": {
-    "native-rule-or-script-source-requires-review": 3152,
-    "app-not-reviewed": 824,
+    "native-rule-or-script-source-requires-review": 3162,
+    "app-not-reviewed": 830,
     "not-explicit-startup-ad": 202,
     "unsupported-new-rule": 28,
     "complex-or-mixed-new-path": 14,
