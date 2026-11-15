@@ -1,6 +1,7 @@
 # Precision v3 / ConservativeAds
 # Source: HaGeZi Multi LIGHT; conservative derivative, GPL-3.0
 # Modified: filtered and normalized; see ../policy.json and ../sync_routing.py.
+DOMAIN,a.adsrvr.org
 DOMAIN,ad.001zb.com
 DOMAIN,ad.107.163.52.12.cn
 DOMAIN,ad.107.163.53.12.cn
@@ -39,6 +40,7 @@ DOMAIN,ad.adpon-plus.net
 DOMAIN,ad.ads-ing.de
 DOMAIN,ad.adserverst.com
 DOMAIN,ad.adserving.tech
+DOMAIN,ad.adsrvr.org
 DOMAIN,ad.adtrck5.de
 DOMAIN,ad.advst.cibnvst.com
 DOMAIN,ad.adwiser.kr
@@ -119,6 +121,7 @@ DOMAIN,ad.chuandong.com
 DOMAIN,ad.citynews.it
 DOMAIN,ad.cj.sina.cn
 DOMAIN,ad.clicrbs.com.br
+DOMAIN,ad.clipcentric.com
 DOMAIN,ad.cnr.cn
 DOMAIN,ad.com.iq
 DOMAIN,ad.comoba.com
@@ -171,6 +174,7 @@ DOMAIN,ad.fh-bielefeld.de
 DOMAIN,ad.finetech.cz
 DOMAIN,ad.flipboard.com
 DOMAIN,ad.flo.financial
+DOMAIN,ad.foxitsoftware.com
 DOMAIN,ad.fptdata.net
 DOMAIN,ad.froster.org
 DOMAIN,ad.fuco.us
@@ -201,6 +205,7 @@ DOMAIN,ad.hbv.de
 DOMAIN,ad.hbwxfwl.top
 DOMAIN,ad.heylocate.mobi
 DOMAIN,ad.hotroadgaming.com
+DOMAIN,ad.huvle.com
 DOMAIN,ad.hva.nl
 DOMAIN,ad.ibacon.com
 DOMAIN,ad.ibotomo.com
@@ -246,6 +251,7 @@ DOMAIN,ad.line-scdn.net
 DOMAIN,ad.linkedin.com
 DOMAIN,ad.linkflowhub.net
 DOMAIN,ad.linksynergy.com
+DOMAIN,ad.lionmobi.com
 DOMAIN,ad.localking.com.tw
 DOMAIN,ad.long.tv
 DOMAIN,ad.luxnet.ua
@@ -258,6 +264,7 @@ DOMAIN,ad.mediaprimaplus.com.my
 DOMAIN,ad.mediastrmx.com
 DOMAIN,ad.medyanetads.com
 DOMAIN,ad.meeraiapps.com
+DOMAIN,ad.meetyouintl.com
 DOMAIN,ad.meine-vrm.de
 DOMAIN,ad.mh.163.com
 DOMAIN,ad.mhzxx.com
@@ -304,6 +311,7 @@ DOMAIN,ad.petel.bg
 DOMAIN,ad.pistorius.schule
 DOMAIN,ad.pixelsagarpg.com
 DOMAIN,ad.planbplus.co.kr
+DOMAIN,ad.planetizen.com
 DOMAIN,ad.platformio.org
 DOMAIN,ad.playfun788.com
 DOMAIN,ad.playgame24.com
@@ -333,6 +341,7 @@ DOMAIN,ad.ruti.ch
 DOMAIN,ad.scrollx.org
 DOMAIN,ad.seidensticker.de
 DOMAIN,ad.senior.pl
+DOMAIN,ad.setn.com
 DOMAIN,ad.sexplex.com
 DOMAIN,ad.shobo.cn
 DOMAIN,ad.shuaiyitang.cn
@@ -430,6 +439,7 @@ DOMAIN,ad.zwangerenportaal.nl
 DOMAIN,adcdn.hpplay.cn
 DOMAIN,adcdn.ster.nl
 DOMAIN,ads-api.daum.net
+DOMAIN,ads-api.ft.com
 DOMAIN,ads-api.reddit.com
 DOMAIN,ads-api.stuff.co.nz
 DOMAIN,ads-api.tiktok.com
@@ -462,6 +472,7 @@ DOMAIN,ads.adsense.al
 DOMAIN,ads.adsflyapp.com
 DOMAIN,ads.adsflydev.com
 DOMAIN,ads.adsmedia.ro
+DOMAIN,ads.adspro.name
 DOMAIN,ads.adstore.com.cy
 DOMAIN,ads.adsvelio.com
 DOMAIN,ads.adultdvdtalk.com
@@ -503,9 +514,9 @@ DOMAIN,ads.arnextech.kz
 DOMAIN,ads.arrl.org
 DOMAIN,ads.artofaddiction.org
 DOMAIN,ads.aryzap.com
+DOMAIN,ads.as.criteo.com
 DOMAIN,ads.as4x.tmcs.net
 DOMAIN,ads.asanpardakht.ir
-DOMAIN,ads.associationmediagroup.com
 DOMAIN,ads.astian.org
 DOMAIN,ads.audmetrix.net
 DOMAIN,ads.auftragsverwaltung.ovh
@@ -533,6 +544,7 @@ DOMAIN,ads.bestads.com.queniuaa.com
 DOMAIN,ads.bestit.ee
 DOMAIN,ads.betfair.com
 DOMAIN,ads.bettergroup.fr
+DOMAIN,ads.bidstreamserver.com
 DOMAIN,ads.bigchurch.com
 DOMAIN,ads.bigfoot.net
 DOMAIN,ads.bigtal.com
@@ -658,6 +670,7 @@ DOMAIN,ads.epsilonscan.to
 DOMAIN,ads.epsilonsoft.to
 DOMAIN,ads.erotictouch.com
 DOMAIN,ads.estrenarvivienda.com
+DOMAIN,ads.eu.criteo.com
 DOMAIN,ads.eu.interpals.net
 DOMAIN,ads.eu.prod.channels.firetv.amazon.dev
 DOMAIN,ads.euronet.net.tr
@@ -688,6 +701,7 @@ DOMAIN,ads.furany.de
 DOMAIN,ads.gaming1.com
 DOMAIN,ads.gelbe-liste.de
 DOMAIN,ads.gemeindezeitung.de
+DOMAIN,ads.gemini.media
 DOMAIN,ads.geniustv.geniussystems.com.np
 DOMAIN,ads.genloc.network
 DOMAIN,ads.genoads.com
@@ -704,6 +718,7 @@ DOMAIN,ads.glassdoor.com
 DOMAIN,ads.global-fashion-group.com
 DOMAIN,ads.globo.com
 DOMAIN,ads.gmodules.com
+DOMAIN,ads.go2perseo.com
 DOMAIN,ads.godlikeproductions.com
 DOMAIN,ads.gogel.al
 DOMAIN,ads.goldbach-germany.de
@@ -965,6 +980,7 @@ DOMAIN,ads.petitehdporn.com
 DOMAIN,ads.philaseiten.de
 DOMAIN,ads.phonepe.com
 DOMAIN,ads.phonepe.com.cdn.cloudflare.net
+DOMAIN,ads.phpclasses.org
 DOMAIN,ads.pinger.com
 DOMAIN,ads.pinger.com.cdn.cloudflare.net
 DOMAIN,ads.planetwin365affiliate.com
@@ -1001,7 +1017,6 @@ DOMAIN,ads.rahavard365.com
 DOMAIN,ads.raidrive.com
 DOMAIN,ads.rainbowcondogames.com
 DOMAIN,ads.ramadalimited.com
-DOMAIN,ads.rapt-c-0.net
 DOMAIN,ads.razorpay.com
 DOMAIN,ads.rc-network.de
 DOMAIN,ads.rcs.it
@@ -1051,6 +1066,7 @@ DOMAIN,ads.shopee.com.br
 DOMAIN,ads.shopee.vn
 DOMAIN,ads.siamphone.com
 DOMAIN,ads.sibernetworks.com
+DOMAIN,ads.simpli.fi
 DOMAIN,ads.simpli.padsquad.com
 DOMAIN,ads.sixbiz.com
 DOMAIN,ads.skiberg.dk
@@ -1084,6 +1100,7 @@ DOMAIN,ads.sul21.com.br
 DOMAIN,ads.sumyou.com
 DOMAIN,ads.superawesome.tv
 DOMAIN,ads.supplyframe.com
+DOMAIN,ads.synapsix.io
 DOMAIN,ads.syniumsoftware.com
 DOMAIN,ads.t.proga.space
 DOMAIN,ads.tajrishclinic.com
@@ -1143,6 +1160,7 @@ DOMAIN,ads.tyrepress.com
 DOMAIN,ads.umsmtech.com
 DOMAIN,ads.unity3d.com
 DOMAIN,ads.unitychina.cn
+DOMAIN,ads.uol.com.br
 DOMAIN,ads.uolevi.net
 DOMAIN,ads.upbit.com
 DOMAIN,ads.uptodown.dev
@@ -1202,6 +1220,7 @@ DOMAIN,ads.xnavxx.com
 DOMAIN,ads.xrocket.ch
 DOMAIN,ads.xtra.co.nz
 DOMAIN,ads.yahoo.com
+DOMAIN,ads.yandex.com
 DOMAIN,ads.yirmidort.tv
 DOMAIN,ads.youngermommy.com
 DOMAIN,ads.youtube.com
@@ -1274,6 +1293,7 @@ DOMAIN,adserver.juicyads.com
 DOMAIN,adserver.kecsup.hu
 DOMAIN,adserver.kipuworks.com
 DOMAIN,adserver.kiteforum.com
+DOMAIN,adserver.kl-youniverse.com
 DOMAIN,adserver.konograma.com
 DOMAIN,adserver.l-iz.de
 DOMAIN,adserver.latinon.com
@@ -1341,17 +1361,24 @@ DOMAIN,advert.rabaldermedia.se
 DOMAIN,advertising.a2z.com
 DOMAIN,advertising.amazon.dev
 DOMAIN,advertising.civitai.com
+DOMAIN,advertising.entensity.net
 DOMAIN,advertising.freefy.app
 DOMAIN,advertising.microsoft.com
 DOMAIN,advertising.twitter.com
 DOMAIN,advertising.yahoo.com
 DOMAIN,advertising.yandex.ru
 DOMAIN,afs.googleadservices.com
+DOMAIN,d2.adsrvr.org
+DOMAIN,data.adsrvr.org
+DOMAIN,direct.adsrvr.org
 DOMAIN,dmp.doubleclick.net
 DOMAIN,ff.doubleclick.net
 DOMAIN,fls.doubleclick.net
 DOMAIN,g.doubleclick.net
+DOMAIN,html5.adsrvr.org
 DOMAIN,insight.adsrvr.org
+DOMAIN,jp1-bid-ga.adsrvr.org
+DOMAIN,jp1-bid.adsrvr.org
 DOMAIN,js.adsrvr.org
 DOMAIN,m.doubleclick.net
 DOMAIN,match.adsrvr.org
@@ -1360,8 +1387,11 @@ DOMAIN,n4052ad.doubleclick.net
 DOMAIN,pagead2.googleadservices.com
 DOMAIN,partnerad.l.doubleclick.net
 DOMAIN,serverside.doubleclick.net
+DOMAIN,sg2-bid.adsrvr.org
 DOMAIN,static.doubleclick.net
 DOMAIN,stats.l.doubleclick.net
 DOMAIN,td.doubleclick.net
+DOMAIN,update.adsrvr.org
+DOMAIN,v.adsrvr.org
 DOMAIN-SUFFIX,adnxs.com
 DOMAIN-SUFFIX,googlesyndication.com
