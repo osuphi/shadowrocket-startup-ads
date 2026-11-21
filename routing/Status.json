@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-11-20T08:41:54.910008+00:00",
+  "checked_at_utc": "2026-11-21T08:22:56.334197+00:00",
   "version": 3,
   "source_metadata": {
     "commits": {
       "blackmatrix7/ios_rule_script": "0b6897dc17e0c513d25449c935a9694818e32f0c",
-      "hagezi/dns-blocklists": "9e19f30deb20aa5240c2e1262b7145abe22b3cba"
+      "hagezi/dns-blocklists": "6033fe872ee360ff34da5a9e826558030938fc7e"
     },
     "sources": {
       "YouTube.list": {
@@ -112,8 +112,8 @@
         "sha256": "d35eec789ae09a6d2b6dd48ed2c52d6d811f433b1e73a92b2f9246b778fa7923"
       },
       "hagezi-light.txt": {
-        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/9e19f30deb20aa5240c2e1262b7145abe22b3cba/wildcard/light-onlydomains.txt",
-        "sha256": "2affeaa09fbec4aa7e2ec365e285c463e9efba7796b24780f9406f8f4c091ae6"
+        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/6033fe872ee360ff34da5a9e826558030938fc7e/wildcard/light-onlydomains.txt",
+        "sha256": "bd6322c986832ef5fe27e3f3ea0b00cc4e9960e2558c8f38bd197014f66ecdb8"
       }
     }
   },
@@ -142,7 +142,7 @@
     "ChinaMobile": 36,
     "ChinaTelecom": 82,
     "ChinaUnicom": 33,
-    "ConservativeAds": 1382
+    "ConservativeAds": 1387
   },
   "normalization": {
     "YouTube": {
@@ -204,14 +204,14 @@
     }
   },
   "ad_filtering": {
-    "input_domains": 92319,
-    "exact_hosts": 1380,
+    "input_domains": 91706,
+    "exact_hosts": 1385,
     "suffix_families": [
       "adnxs.com",
       "googlesyndication.com"
     ],
     "skipped": {
-      "not-an-explicit-reviewed-ad-shape": 90536,
+      "not-an-explicit-reviewed-ad-shape": 89918,
       "functional-or-live-protection": 400,
       "covered-by-reviewed-ad-family": 2,
       "functional-first-label": 1
@@ -1155,7 +1155,7 @@
     "lists/ChinaMobile.list": "b9ed6fac991a32cf4f6f9012bb8faf3174eebb5ecf77ad417d434351440c6e9f",
     "lists/ChinaTelecom.list": "ecc6585df3a1fb655554b6f4aaf1f0699311122ec1b1e3cef344a5365bf289ae",
     "lists/ChinaUnicom.list": "555cbdebabd99942d72108a7739275b0ecd88a2199d1090b74003b39e1e47acd",
-    "ads/ConservativeAds.list": "655556c0ce45d3038618b7479bf381ef273ea32f46f20058c23148d436bfe4e8"
+    "ads/ConservativeAds.list": "92d5187fb5ed653379f9798c3211e81129e7e0f31f539ba543f6e73cfc72360d"
   },
   "validation": {
     "groups": 29,
