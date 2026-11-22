@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-11-21T08:22:56.334197+00:00",
+  "checked_at_utc": "2026-11-22T07:50:40.315835+00:00",
   "version": 3,
   "source_metadata": {
     "commits": {
       "blackmatrix7/ios_rule_script": "0b6897dc17e0c513d25449c935a9694818e32f0c",
-      "hagezi/dns-blocklists": "6033fe872ee360ff34da5a9e826558030938fc7e"
+      "hagezi/dns-blocklists": "c15030cf263d495b4a2fa2ace43937a59b4ce1d2"
     },
     "sources": {
       "YouTube.list": {
@@ -112,8 +112,8 @@
         "sha256": "d35eec789ae09a6d2b6dd48ed2c52d6d811f433b1e73a92b2f9246b778fa7923"
       },
       "hagezi-light.txt": {
-        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/6033fe872ee360ff34da5a9e826558030938fc7e/wildcard/light-onlydomains.txt",
-        "sha256": "bd6322c986832ef5fe27e3f3ea0b00cc4e9960e2558c8f38bd197014f66ecdb8"
+        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/c15030cf263d495b4a2fa2ace43937a59b4ce1d2/wildcard/light-onlydomains.txt",
+        "sha256": "9e7885c011fed02f8d00fdd3e066f92668e96509a9787597fdac9a4c8d7a4ae9"
       }
     }
   },
@@ -126,7 +126,7 @@
     "AppleProxy": 39,
     "Apple": 1553,
     "Microsoft": 644,
-    "SteamCN": 17,
+    "SteamCN": 18,
     "Steam": 54,
     "BiliBili": 115,
     "iQIYI": 34,
@@ -142,7 +142,7 @@
     "ChinaMobile": 36,
     "ChinaTelecom": 82,
     "ChinaUnicom": 33,
-    "ConservativeAds": 1387
+    "ConservativeAds": 1633
   },
   "normalization": {
     "YouTube": {
@@ -204,14 +204,14 @@
     }
   },
   "ad_filtering": {
-    "input_domains": 91706,
-    "exact_hosts": 1385,
+    "input_domains": 93230,
+    "exact_hosts": 1631,
     "suffix_families": [
       "adnxs.com",
       "googlesyndication.com"
     ],
     "skipped": {
-      "not-an-explicit-reviewed-ad-shape": 89918,
+      "not-an-explicit-reviewed-ad-shape": 91196,
       "functional-or-live-protection": 400,
       "covered-by-reviewed-ad-family": 2,
       "functional-first-label": 1
@@ -1130,7 +1130,7 @@
     }
   ],
   "file_sha256": {
-    "Shadowrocket-Precision.conf": "f59c42182393a1a749456ae8be8c3feffe273776f1afb9bf29f6dc7e6222adab",
+    "Shadowrocket-Precision.conf": "fc478c4c5ea14163fc7964c0f87a9a1f53993cac7e830160a9278fc1782125fd",
     "lists/YouTube.list": "f05d91e4630e08c5e262f30881c75a503f104ebe3e6a402b994fd66d4d2d01b6",
     "lists/Google.list": "1366d742a271f82508a1ccb7b1ec3aa1fd4d8e97b4af418503053d651458e047",
     "lists/GitHub.list": "e42251e1530d5a2eef8dcdcd4954fb1c29dd9b55d54e70cc09d6bdab8c13a42f",
@@ -1139,7 +1139,7 @@
     "lists/AppleProxy.list": "bdafb2ce3fd33f740b871bd9ae388b850e35096b4996273f5ef7fdcf0bf7f7eb",
     "lists/Apple.list": "072750622b1c82935dcbac0597291b070757b27aaf9743759f7000e1b2b93bc7",
     "lists/Microsoft.list": "110ee473e37967248f5a46a99434a3ee6f66f7b1aff74ca77740fcd38096cce3",
-    "lists/SteamCN.list": "313ce173dd42f37999c763655f98d8be39a2f0d1f581496283603b39d95962c9",
+    "lists/SteamCN.list": "725a6d14789e0465a84cd4aa64213bc7116dcf2e89b4ca48c477e31bf5df740c",
     "lists/Steam.list": "3a7ca50f2ab98639a69fac2e94cf1f02f5071fe76340326f2fb8c8448f44891e",
     "lists/BiliBili.list": "745fcc43407fca55681b2c989ef5673aa9244e1bf3c11a0100b06a4aad3a69bd",
     "lists/iQIYI.list": "8fcf5affaad9303c59617b3c79938005a71d7a783145f778de419c8b2d5d0cc5",
@@ -1155,16 +1155,16 @@
     "lists/ChinaMobile.list": "b9ed6fac991a32cf4f6f9012bb8faf3174eebb5ecf77ad417d434351440c6e9f",
     "lists/ChinaTelecom.list": "ecc6585df3a1fb655554b6f4aaf1f0699311122ec1b1e3cef344a5365bf289ae",
     "lists/ChinaUnicom.list": "555cbdebabd99942d72108a7739275b0ecd88a2199d1090b74003b39e1e47acd",
-    "ads/ConservativeAds.list": "92d5187fb5ed653379f9798c3211e81129e7e0f31f539ba543f6e73cfc72360d"
+    "ads/ConservativeAds.list": "55b42fea971ee95e71ef1a22728e7963bdb891c24a441140632e8b3681e02ff2"
   },
   "validation": {
     "groups": 29,
-    "main_rules": 154,
+    "main_rules": 155,
     "remote_resources": 25,
     "expanded_exact_duplicate_matchers": 0,
-    "route_cases_passed": 111,
-    "functional_hosts_protected": 26,
-    "synthetic_update_protection_cases_passed": 26,
+    "route_cases_passed": 114,
+    "functional_hosts_protected": 28,
+    "synthetic_update_protection_cases_passed": 28,
     "cases": [
       {
         "host": "localhost",
@@ -1573,6 +1573,36 @@
           "policy": "🎮 Steam 登录/下载",
           "origin": "SteamCN",
           "match": "DOMAIN,dl.steam.ksyna.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "xz.sycontroller.com",
+        "expected": "🎮 Steam 登录/下载",
+        "actual": {
+          "policy": "🎮 Steam 登录/下载",
+          "origin": "SteamCN",
+          "match": "DOMAIN,xz.sycontroller.com"
+        },
+        "pass": true
+      },
+      {
+        "host": "other.sycontroller.com",
+        "expected": "🐟 漏网之鱼",
+        "actual": {
+          "policy": "🐟 漏网之鱼",
+          "origin": "main",
+          "match": "FINAL"
+        },
+        "pass": true
+      },
+      {
+        "host": "courier.push.apple.com",
+        "expected": "DIRECT",
+        "actual": {
+          "policy": "DIRECT",
+          "origin": "main",
+          "match": "DOMAIN-SUFFIX,push.apple.com"
         },
         "pass": true
       },

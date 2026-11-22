@@ -1,4 +1,4 @@
-// Desktop routing extension v3 — FlClash 0.9.2 / Clash Verge Rev 2.5.8.
+// Desktop routing extension v4 — FlClash / Clash Verge Rev.
 // Import as a SCRIPT attached to an existing subscription; this is not a node subscription.
 // Synchronous main(config) is shared by both clients. No network, filesystem, or host APIs.
 // Existing proxies, proxy-providers, DNS, ports, TUN, and other settings remain in the local app.
@@ -11,32 +11,61 @@ function main(config) {
     throw new Error("请把脚本挂到已有节点订阅的扩展脚本中。");
   }
   const spec = {
-  "version": 3,
+  "version": 4,
   "prefix": "精细分流 · ",
   "providerPrefix": "fine-bm7-",
   "groups": {
+    "Bark": "精细分流 · Bark",
     "🔰 选择节点": "精细分流 · 节点选择",
     "🤖 OpenAI": "精细分流 · OpenAI",
     "▶️ YouTube": "精细分流 · YouTube",
     "🔎 Google": "精细分流 · Google",
     "🐙 GitHub": "精细分流 · GitHub",
-    "🍎 Apple": "精细分流 · Apple",
     "🍎 Apple 海外": "精细分流 · Apple 海外",
-    "🪟 Microsoft": "精细分流 · Microsoft",
-    "🪟 微软下载": "精细分流 · 微软下载",
     "💬 Bing / Copilot": "精细分流 · Bing / Copilot",
     "☁️ OneDrive": "精细分流 · OneDrive",
-    "🎮 Steam 登录/下载": "精细分流 · Steam 登录/下载",
     "🎮 Steam 商店/社区": "精细分流 · Steam 商店/社区",
-    "🇨🇳 国内网站": "精细分流 · 国内网站",
+    "🌩️ Cloudflare": "精细分流 · Cloudflare",
+    "🪟 Microsoft": "精细分流 · Microsoft",
+    "🍎 Apple": "精细分流 · Apple",
+    "🪟 微软下载": "精细分流 · 微软下载",
+    "🎮 Steam 登录/下载": "精细分流 · Steam 登录/下载",
     "🌏 爱奇艺&哔哩哔哩": "精细分流 · 爱奇艺&哔哩哔哩",
     "📺 动画疯": "精细分流 · 动画疯",
-    "🌩️ Cloudflare": "精细分流 · Cloudflare",
     "🎓学术网站": "精细分流 · 学术网站",
+    "🇨🇳 国内网站": "精细分流 · 国内网站",
     "🛑 拦截广告": "精细分流 · 拦截广告",
     "🐟 漏网之鱼": "精细分流 · 漏网之鱼",
-    "Bark": "精细分流 · Bark"
+    "📺 国内直播": "精细分流 · 国内直播",
+    "💬 国内通讯": "精细分流 · 国内通讯",
+    "💳 国内支付": "精细分流 · 国内支付",
+    "📱 运营商服务": "精细分流 · 运营商服务"
   },
+  "directGroups": [
+    "🍎 Apple",
+    "🪟 微软下载",
+    "🎮 Steam 登录/下载",
+    "🌏 爱奇艺&哔哩哔哩",
+    "🎓学术网站",
+    "🇨🇳 国内网站",
+    "📺 国内直播",
+    "💬 国内通讯",
+    "💳 国内支付",
+    "📱 运营商服务"
+  ],
+  "proxyGroups": [
+    "🤖 OpenAI",
+    "▶️ YouTube",
+    "🔎 Google",
+    "🐙 GitHub",
+    "🍎 Apple 海外",
+    "💬 Bing / Copilot",
+    "☁️ OneDrive",
+    "🎮 Steam 商店/社区",
+    "🌩️ Cloudflare",
+    "🪟 Microsoft",
+    "📺 动画疯"
+  ],
   "regions": [
     {
       "name": "精细分流 · 香港节点",
@@ -60,165 +89,228 @@ function main(config) {
     }
   ],
   "providers": {
-    "fine-bm7-AdvertisingLite_Domain": {
-      "type": "http",
-      "behavior": "domain",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.yaml",
-      "path": "./ruleset/fine-bm7/AdvertisingLite_Domain.yaml",
-      "interval": 86400,
-      "proxy": "精细分流 · 节点选择"
-    },
-    "fine-bm7-YouTube": {
-      "type": "http",
-      "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml",
-      "path": "./ruleset/fine-bm7/YouTube.yaml",
-      "interval": 86400,
-      "proxy": "精细分流 · 节点选择"
-    },
-    "fine-bm7-Google": {
-      "type": "http",
-      "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml",
-      "path": "./ruleset/fine-bm7/Google.yaml",
-      "interval": 86400,
-      "proxy": "精细分流 · 节点选择"
-    },
-    "fine-bm7-GitHub": {
-      "type": "http",
-      "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml",
-      "path": "./ruleset/fine-bm7/GitHub.yaml",
-      "interval": 86400,
-      "proxy": "精细分流 · 节点选择"
-    },
-    "fine-bm7-OneDrive": {
-      "type": "http",
-      "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml",
-      "path": "./ruleset/fine-bm7/OneDrive.yaml",
-      "interval": 86400,
-      "proxy": "精细分流 · 节点选择"
-    },
-    "fine-bm7-Bing": {
-      "type": "http",
-      "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml",
-      "path": "./ruleset/fine-bm7/Bing.yaml",
-      "interval": 86400,
-      "proxy": "精细分流 · 节点选择"
-    },
     "fine-bm7-AppleProxy": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleProxy/AppleProxy.yaml",
-      "path": "./ruleset/fine-bm7/AppleProxy.yaml",
-      "interval": 86400,
-      "proxy": "精细分流 · 节点选择"
-    },
-    "fine-bm7-Apple_Domain": {
-      "type": "http",
-      "behavior": "domain",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Domain.yaml",
-      "path": "./ruleset/fine-bm7/Apple_Domain.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/AppleProxy.list",
+      "path": "./ruleset/fine-precision/AppleProxy.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
     "fine-bm7-Apple": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml",
-      "path": "./ruleset/fine-bm7/Apple.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/Apple.list",
+      "path": "./ruleset/fine-precision/Apple.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
-    "fine-bm7-Microsoft": {
+    "fine-bm7-AliPay": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml",
-      "path": "./ruleset/fine-bm7/Microsoft.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/AliPay.list",
+      "path": "./ruleset/fine-precision/AliPay.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
-    "fine-bm7-SteamCN": {
+    "fine-bm7-UnionPay": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml",
-      "path": "./ruleset/fine-bm7/SteamCN.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/UnionPay.list",
+      "path": "./ruleset/fine-precision/UnionPay.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
-    "fine-bm7-Steam": {
+    "fine-bm7-WeChat": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml",
-      "path": "./ruleset/fine-bm7/Steam.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/WeChat.list",
+      "path": "./ruleset/fine-precision/WeChat.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-DingTalk": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/DingTalk.list",
+      "path": "./ruleset/fine-precision/DingTalk.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-ChinaMobile": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/ChinaMobile.list",
+      "path": "./ruleset/fine-precision/ChinaMobile.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-ChinaTelecom": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/ChinaTelecom.list",
+      "path": "./ruleset/fine-precision/ChinaTelecom.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-ChinaUnicom": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/ChinaUnicom.list",
+      "path": "./ruleset/fine-precision/ChinaUnicom.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-Douyu": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/Douyu.list",
+      "path": "./ruleset/fine-precision/Douyu.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-HuYa": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/HuYa.list",
+      "path": "./ruleset/fine-precision/HuYa.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
     "fine-bm7-BiliBili": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml",
-      "path": "./ruleset/fine-bm7/BiliBili.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/BiliBili.list",
+      "path": "./ruleset/fine-precision/BiliBili.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
     "fine-bm7-iQIYI": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/iQIYI/iQIYI.yaml",
-      "path": "./ruleset/fine-bm7/iQIYI.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/iQIYI.list",
+      "path": "./ruleset/fine-precision/iQIYI.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
-    "fine-bm7-Bahamut": {
+    "fine-bm7-SteamCN": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml",
-      "path": "./ruleset/fine-bm7/Bahamut.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/SteamCN.list",
+      "path": "./ruleset/fine-precision/SteamCN.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
-    "fine-bm7-China_Domain": {
-      "type": "http",
-      "behavior": "domain",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Domain.yaml",
-      "path": "./ruleset/fine-bm7/China_Domain.yaml",
-      "interval": 86400,
-      "proxy": "精细分流 · 节点选择"
-    },
-    "fine-bm7-China": {
+    "fine-bm7-ConservativeAds": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml",
-      "path": "./ruleset/fine-bm7/China.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/ads/ConservativeAds.list",
+      "path": "./ruleset/fine-precision/ConservativeAds.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     },
     "fine-bm7-OpenAI": {
       "type": "http",
       "behavior": "classical",
-      "format": "yaml",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml",
-      "path": "./ruleset/fine-bm7/OpenAI.yaml",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/OpenAI.list",
+      "path": "./ruleset/fine-precision/OpenAI.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-YouTube": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/YouTube.list",
+      "path": "./ruleset/fine-precision/YouTube.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-Google": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/Google.list",
+      "path": "./ruleset/fine-precision/Google.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-GitHub": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/GitHub.list",
+      "path": "./ruleset/fine-precision/GitHub.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-OneDrive": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/OneDrive.list",
+      "path": "./ruleset/fine-precision/OneDrive.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-Bing": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/Bing.list",
+      "path": "./ruleset/fine-precision/Bing.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-Microsoft": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/Microsoft.list",
+      "path": "./ruleset/fine-precision/Microsoft.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-Steam": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/Steam.list",
+      "path": "./ruleset/fine-precision/Steam.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-Bahamut": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/Bahamut.list",
+      "path": "./ruleset/fine-precision/Bahamut.list",
+      "interval": 86400,
+      "proxy": "精细分流 · 节点选择"
+    },
+    "fine-bm7-China": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "text",
+      "url": "https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/lists/China.list",
+      "path": "./ruleset/fine-precision/China.list",
       "interval": 86400,
       "proxy": "精细分流 · 节点选择"
     }
@@ -241,6 +333,10 @@ function main(config) {
     "IP-CIDR6,fc00::/7,DIRECT,no-resolve",
     "IP-CIDR6,fe80::/10,DIRECT,no-resolve",
     "IP-CIDR6,ff00::/8,DIRECT,no-resolve",
+    "DOMAIN,cable.auth.com,DIRECT",
+    "DOMAIN,app-site-association.cdn-apple.com,DIRECT",
+    "DOMAIN,app-site-association.networking.apple,DIRECT",
+    "DOMAIN-SUFFIX,push.apple.com,DIRECT",
     "DOMAIN,raw.githubusercontent.com,精细分流 · GitHub",
     "DOMAIN,challenges.cloudflare.com,精细分流 · 节点选择",
     "DOMAIN,js.stripe.com,精细分流 · 节点选择",
@@ -251,40 +347,89 @@ function main(config) {
     "DOMAIN-SUFFIX,auth0.com,精细分流 · 节点选择",
     "DOMAIN-SUFFIX,client-api.arkoselabs.com,精细分流 · 节点选择",
     "DOMAIN-SUFFIX,hcaptcha.com,精细分流 · 节点选择",
-    "RULE-SET,fine-bm7-AdvertisingLite_Domain,精细分流 · 拦截广告",
-    "DOMAIN,chat.openai.com.cdn.cloudflare.net,精细分流 · OpenAI",
-    "DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,精细分流 · OpenAI",
-    "DOMAIN,openaicomproductionae4b.blob.core.windows.net,精细分流 · OpenAI",
-    "DOMAIN,production-openaicom-storage.azureedge.net,精细分流 · OpenAI",
-    "DOMAIN-SUFFIX,chatgpt.com,精细分流 · OpenAI",
-    "DOMAIN-SUFFIX,chatgpt.livekit.cloud,精细分流 · OpenAI",
-    "DOMAIN-SUFFIX,oaistatic.com,精细分流 · OpenAI",
-    "DOMAIN-SUFFIX,oaiusercontent.com,精细分流 · OpenAI",
-    "DOMAIN-SUFFIX,openai.com,精细分流 · OpenAI",
-    "DOMAIN-SUFFIX,openaiapi-site.azureedge.net,精细分流 · OpenAI",
-    "DOMAIN-SUFFIX,openaicom.imgix.net,精细分流 · OpenAI",
+    "DOMAIN,browser-intake-datadoghq.com,精细分流 · 节点选择",
+    "DOMAIN,static.cloudflareinsights.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,ai.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,algolia.net,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,api.statsig.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,events.statsigapi.net,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,featuregates.org,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,host.livekit.cloud,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,identrust.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,intercom.io,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,intercomcdn.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,launchdarkly.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,observeit.net,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,segment.io,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,sentry.io,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,stripe.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,turn.livekit.cloud,精细分流 · 节点选择",
+    "DOMAIN,firebaseinstallations.googleapis.com,精细分流 · Google",
+    "DOMAIN,firebaseremoteconfig.googleapis.com,精细分流 · Google",
+    "DOMAIN,firebase-settings.crashlytics.com,精细分流 · Google",
+    "DOMAIN,fcm.googleapis.com,精细分流 · Google",
+    "DOMAIN-SUFFIX,sentry-cdn.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,crashlytics.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,app-measurement.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,firebaseio.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,firebaseapp.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,statsig.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,statsigapi.net,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,configcat.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,split.io,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,segment.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,mixpanel.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,mparticle.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,optimizely.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,onesignal.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,pusher.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,pushwoosh.com,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,recaptcha.net,精细分流 · 节点选择",
+    "DOMAIN-SUFFIX,bugly.qq.com,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,sensorsdata.cn,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,sensorsdata.io,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,umeng.com,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,umeng.co,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,umengcloud.com,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,umengacs.com,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,cmpassport.com,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,id6.me,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,onepass.geetest.com,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,geetest.com,精细分流 · 国内网站",
+    "DOMAIN-SUFFIX,gtimg.com,精细分流 · 国内网站",
+    "RULE-SET,fine-bm7-AppleProxy,精细分流 · Apple 海外",
+    "RULE-SET,fine-bm7-Apple,精细分流 · Apple",
+    "RULE-SET,fine-bm7-AliPay,精细分流 · 国内支付",
+    "RULE-SET,fine-bm7-UnionPay,精细分流 · 国内支付",
+    "RULE-SET,fine-bm7-WeChat,精细分流 · 国内通讯",
+    "RULE-SET,fine-bm7-DingTalk,精细分流 · 国内通讯",
+    "RULE-SET,fine-bm7-ChinaMobile,精细分流 · 运营商服务",
+    "RULE-SET,fine-bm7-ChinaTelecom,精细分流 · 运营商服务",
+    "RULE-SET,fine-bm7-ChinaUnicom,精细分流 · 运营商服务",
+    "RULE-SET,fine-bm7-Douyu,精细分流 · 国内直播",
+    "RULE-SET,fine-bm7-HuYa,精细分流 · 国内直播",
+    "RULE-SET,fine-bm7-BiliBili,精细分流 · 爱奇艺&哔哩哔哩",
+    "RULE-SET,fine-bm7-iQIYI,精细分流 · 爱奇艺&哔哩哔哩",
+    "RULE-SET,fine-bm7-SteamCN,精细分流 · Steam 登录/下载",
+    "DOMAIN-SUFFIX,10099.com.cn,精细分流 · 运营商服务",
+    "RULE-SET,fine-bm7-ConservativeAds,精细分流 · 拦截广告",
     "DOMAIN-SUFFIX,copilot.microsoft.com,精细分流 · Bing / Copilot",
     "DOMAIN-SUFFIX,copilot.cloud.microsoft,精细分流 · Bing / Copilot",
     "DOMAIN-SUFFIX,githubcopilot.com,精细分流 · GitHub",
-    "RULE-SET,fine-bm7-YouTube,精细分流 · YouTube",
-    "RULE-SET,fine-bm7-Google,精细分流 · Google",
-    "RULE-SET,fine-bm7-GitHub,精细分流 · GitHub",
-    "RULE-SET,fine-bm7-OneDrive,精细分流 · OneDrive",
-    "RULE-SET,fine-bm7-Bing,精细分流 · Bing / Copilot",
-    "RULE-SET,fine-bm7-AppleProxy,精细分流 · Apple 海外",
-    "RULE-SET,fine-bm7-Apple_Domain,精细分流 · Apple",
-    "RULE-SET,fine-bm7-Apple,精细分流 · Apple",
     "DOMAIN,download.microsoft.com,精细分流 · 微软下载",
     "DOMAIN,ntservicepack.microsoft.com,精细分流 · 微软下载",
     "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com,精细分流 · 微软下载",
     "DOMAIN-SUFFIX,update.microsoft.com,精细分流 · 微软下载",
     "DOMAIN-SUFFIX,windowsupdate.microsoft.com,精细分流 · 微软下载",
     "DOMAIN-SUFFIX,windowsupdate.com,精细分流 · 微软下载",
+    "RULE-SET,fine-bm7-OpenAI,精细分流 · OpenAI",
+    "RULE-SET,fine-bm7-YouTube,精细分流 · YouTube",
+    "RULE-SET,fine-bm7-Google,精细分流 · Google",
+    "RULE-SET,fine-bm7-GitHub,精细分流 · GitHub",
+    "RULE-SET,fine-bm7-OneDrive,精细分流 · OneDrive",
+    "RULE-SET,fine-bm7-Bing,精细分流 · Bing / Copilot",
     "RULE-SET,fine-bm7-Microsoft,精细分流 · Microsoft",
-    "RULE-SET,fine-bm7-SteamCN,精细分流 · Steam 登录/下载",
     "RULE-SET,fine-bm7-Steam,精细分流 · Steam 商店/社区",
-    "RULE-SET,fine-bm7-BiliBili,精细分流 · 爱奇艺&哔哩哔哩",
-    "RULE-SET,fine-bm7-iQIYI,精细分流 · 爱奇艺&哔哩哔哩",
     "RULE-SET,fine-bm7-Bahamut,精细分流 · 动画疯",
     "DOMAIN-SUFFIX,webofscience.com,精细分流 · 学术网站",
     "DOMAIN-SUFFIX,sciencedirect.com,精细分流 · 学术网站",
@@ -324,28 +469,8 @@ function main(config) {
     "DOMAIN-SUFFIX,videodelivery.net,精细分流 · Cloudflare",
     "DOMAIN-SUFFIX,warp.plus,精细分流 · Cloudflare",
     "DOMAIN-SUFFIX,workers.dev,精细分流 · Cloudflare",
-    "DOMAIN,browser-intake-datadoghq.com,精细分流 · 节点选择",
-    "DOMAIN,static.cloudflareinsights.com,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,ai.com,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,algolia.net,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,api.statsig.com,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,events.statsigapi.net,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,featuregates.org,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,host.livekit.cloud,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,identrust.com,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,intercom.io,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,intercomcdn.com,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,launchdarkly.com,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,observeit.net,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,segment.io,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,sentry.io,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,stripe.com,精细分流 · 节点选择",
-    "DOMAIN-SUFFIX,turn.livekit.cloud,精细分流 · 节点选择",
-    "RULE-SET,fine-bm7-China_Domain,精细分流 · 国内网站",
     "RULE-SET,fine-bm7-China,精细分流 · 国内网站",
     "GEOIP,CN,精细分流 · 国内网站",
-    "IP-ASN,20473,精细分流 · 节点选择,no-resolve",
-    "RULE-SET,fine-bm7-OpenAI,精细分流 · OpenAI",
     "MATCH,精细分流 · 漏网之鱼"
   ]
 };
@@ -406,13 +531,12 @@ function main(config) {
     regions.push(region.name);
   }
 
-  for (const key of ["🤖 OpenAI", "▶️ YouTube", "🔎 Google", "🐙 GitHub", "🍎 Apple 海外", "💬 Bing / Copilot", "☁️ OneDrive", "🎮 Steam 商店/社区", "🌩️ Cloudflare", "🪟 Microsoft"]) {
+  for (const key of spec.proxyGroups) {
     select(g[key], [primary].concat(regions, ["DIRECT"]));
   }
-  for (const key of ["🍎 Apple", "🪟 微软下载", "🎮 Steam 登录/下载", "🌏 爱奇艺&哔哩哔哩", "🇨🇳 国内网站", "🎓学术网站"]) {
+  for (const key of spec.directGroups) {
     select(g[key], ["DIRECT", primary]);
   }
-  select(g["📺 动画疯"], [primary].concat(regions, ["DIRECT"]));
   select(g["🛑 拦截广告"], ["REJECT", primary, "DIRECT"]);
   select(g["🐟 漏网之鱼"], [primary, "DIRECT"]);
   // Bark can select its own node, including nodes loaded by the subscription providers.
