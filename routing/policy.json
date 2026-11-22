@@ -61,6 +61,7 @@
     "DOMAIN,cable.auth.com,DIRECT",
     "DOMAIN,app-site-association.cdn-apple.com,DIRECT",
     "DOMAIN,app-site-association.networking.apple,DIRECT",
+    "DOMAIN-SUFFIX,push.apple.com,DIRECT",
     "DOMAIN,raw.githubusercontent.com,🐙 GitHub",
     "DOMAIN,challenges.cloudflare.com,🔰 选择节点",
     "DOMAIN,js.stripe.com,🔰 选择节点",
@@ -308,6 +309,12 @@
     "openaicom.imgix.net"
   ],
   "category_additions": {
+    "SteamCN": [
+      [
+        "DOMAIN",
+        "xz.sycontroller.com"
+      ]
+    ],
     "OneDrive": [
       [
         "DOMAIN-SUFFIX",
@@ -431,10 +438,13 @@
     "umengcloud.com",
     "unionpay.com",
     "wechat.com",
-    "weixin.qq.com"
+    "weixin.qq.com",
+    "xz.sycontroller.com"
   ],
   "protected_test_hosts": [
     "cable.auth.com",
+    "courier.push.apple.com",
+    "xz.sycontroller.com",
     "app-site-association.cdn-apple.com",
     "app-site-association.networking.apple",
     "msg.douyu.com",
@@ -625,6 +635,18 @@
     {
       "host": "dl.steam.ksyna.com",
       "expected": "🎮 Steam 登录/下载"
+    },
+    {
+      "host": "xz.sycontroller.com",
+      "expected": "🎮 Steam 登录/下载"
+    },
+    {
+      "host": "other.sycontroller.com",
+      "expected": "🐟 漏网之鱼"
+    },
+    {
+      "host": "courier.push.apple.com",
+      "expected": "DIRECT"
     },
     {
       "host": "www.bilibili.com",

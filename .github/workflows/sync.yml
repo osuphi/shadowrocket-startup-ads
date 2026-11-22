@@ -15,6 +15,8 @@ on:
       - routing/sync_routing.py
       - routing/policy.json
       - routing/test_routing.py
+      - desktop/generate.py
+      - desktop/routing-template.js
       - .github/workflows/sync.yml
 
 permissions:
@@ -43,11 +45,15 @@ jobs:
         run: python sync_module.py --repository "$GITHUB_REPOSITORY" --branch "$GITHUB_REF_NAME"
       - name: Regenerate and validate precision routing
         run: python routing/sync_routing.py --repository "$GITHUB_REPOSITORY"
+      - name: Generate desktop extension from the checked routing configuration
+        run: |
+          python -m desktop.generate
+          node --check desktop/Desktop-Routing.js
       - name: Commit only checked generated resources
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- StartupAds.module UpdateStatus.json Coverage.json Coverage.md routing/Shadowrocket-Precision.conf routing/Status.json routing/lists/*.list routing/ads/ConservativeAds.list
+          git add -- StartupAds.module UpdateStatus.json Coverage.json Coverage.md routing/Shadowrocket-Precision.conf routing/Status.json routing/lists/*.list routing/ads/ConservativeAds.list desktop/Desktop-Routing.js
           if ! git diff --cached --quiet; then
             git commit -m 'Update checked module and precision routing'
             git push

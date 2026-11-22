@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | iPhone · Shadowrocket 主分流 | [Shadowrocket-Precision.conf](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/routing/Shadowrocket-Precision.conf) | 在「配置」页添加远程配置，下载后点「使用配置」 | 在「设置 → 配置」开启自动后台更新后，刷新远程 `.conf` 及其引用的 `.list` 规则。详见[手机分流说明](routing/README.md)。 |
 | iPhone · Shadowrocket 开屏去广告 | [StartupAds.module](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/StartupAds.module) | 在「配置 → 模块 → +」粘贴链接并启用 | 在「设置 → 模块」开启自动后台更新后，刷新 `.module`。首次启用见下方的证书和解密说明。 |
-| 电脑 · FlClash 分流 | [下载 Desktop-Routing.js](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/desktop/Desktop-Routing.js) | 下载 `.js` 文件，导入当前节点订阅的「扩展 → 脚本」 | Mihomo 运行时每 24 小时尝试刷新脚本引用的 GitHub `.yaml` 规则集。脚本版本升级需要手动替换。 |
+| 电脑 · FlClash 分流 | [下载 Desktop-Routing.js](https://raw.githubusercontent.com/osuphi/shadowrocket-startup-ads/main/desktop/Desktop-Routing.js) | 下载 `.js` 文件，导入当前节点订阅的「扩展 → 脚本」 | Mihomo 运行时每 24 小时尝试刷新本仓库的 `.list` 规则集。分组或规则顺序有变化时，下载并替换 `.js`。 |
 
 ### FlClash 电脑分流
 
@@ -16,7 +16,9 @@
 2. 扩展模式选「脚本」，点「前往配置脚本」，再通过 `+ → 通过文件导入` 选择下载的 `Desktop-Routing.js`。已经绑定旧版时，可以用新版文件的全部内容替换原脚本。
 3. 返回扩展页选中脚本，点「立即应用」，保持「规则」模式。在「精细分流 · 节点选择」里选一个可用节点。
 
-新版脚本内置 `api.day.app` 规则，命中「精细分流 · Bark」。如果之前的节点报 `SSL UNEXPECTED_EOF`，可在 Bark 组里单独选另一个节点，再打开 [Bark `/ping`](https://api.day.app/ping) 检查。GitHub `.yaml` 名单更新由 Mihomo 完成。Bark 这类内置规则、分组和规则顺序随 `.js` 版本发布。
+桌面 v4 按手机配置已校验的规则顺序生成，并自动刷新同一套业务和广告名单。国内直播、通讯、支付、运营商及 Steam 国内下载的规则优先于广告名单。已观察到的 Steam 下载跳转主机 `xz.sycontroller.com` 只按完整域名加入下载组。`push.apple.com` 及其子域优先直连。DNS 和 TUN 由客户端设置管理。
+
+桌面脚本内置 `api.day.app` 规则，命中「精细分流 · Bark」。如果之前的节点报 `SSL UNEXPECTED_EOF`，可在 Bark 组里单独选另一个节点，再打开 [Bark `/ping`](https://api.day.app/ping) 检查。
 
 导入路径以 [FlClash v0.9.2 源码](https://github.com/chen08209/FlClash/blob/v0.9.2/lib/views/config/scripts.dart) 为准。规则集刷新行为见 [Mihomo 规则集合说明](https://wiki.metacubex.one/config/rule-providers/)。
 
