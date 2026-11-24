@@ -50,6 +50,7 @@ DOMAIN,ad.adwiser.kr
 DOMAIN,ad.ae.doubleclick.net
 DOMAIN,ad.affitoma.com
 DOMAIN,ad.afftrck.com
+DOMAIN,ad.ah.jrgphq.cn
 DOMAIN,ad.ajitad.co.kr
 DOMAIN,ad.allboxing.ru
 DOMAIN,ad.alpinadigital.io
@@ -61,14 +62,28 @@ DOMAIN,ad.amtrk.net
 DOMAIN,ad.anuntis.com
 DOMAIN,ad.api.attribuly.com
 DOMAIN,ad.api.moji.com
+DOMAIN,ad.apkunlocked.com
 DOMAIN,ad.apl5.xyz
+DOMAIN,ad.apl603.online
 DOMAIN,ad.apl606.online
+DOMAIN,ad.apl609.online
 DOMAIN,ad.apl610.online
 DOMAIN,ad.apl615.online
 DOMAIN,ad.apl618.online
+DOMAIN,ad.apl619.online
+DOMAIN,ad.apl621.online
+DOMAIN,ad.apl622.online
+DOMAIN,ad.apl623.online
+DOMAIN,ad.apl624.online
 DOMAIN,ad.apl635.online
 DOMAIN,ad.apl638.online
 DOMAIN,ad.apl640.online
+DOMAIN,ad.apl644.online
+DOMAIN,ad.apl700.online
+DOMAIN,ad.apl701.online
+DOMAIN,ad.apl706.online
+DOMAIN,ad.apl707.online
+DOMAIN,ad.apl711.online
 DOMAIN,ad.appier.net.akamaized.net
 DOMAIN,ad.asu.edu
 DOMAIN,ad.at.doubleclick.net
@@ -100,11 +115,13 @@ DOMAIN,ad.broadstreetads.com
 DOMAIN,ad.bsmartad.net
 DOMAIN,ad.c-web.it
 DOMAIN,ad.c.ximalaya.com
+DOMAIN,ad.cam-hub.top
 DOMAIN,ad.cardbbs.net
 DOMAIN,ad.ccmbg.com
 DOMAIN,ad.centrum.cz
 DOMAIN,ad.cgi.cz
 DOMAIN,ad.cgv.co.kr
+DOMAIN,ad.charltonmedia.com
 DOMAIN,ad.choiric.vip
 DOMAIN,ad.chovatelahospodar.sk
 DOMAIN,ad.christophg.iserv.dev
@@ -161,6 +178,7 @@ DOMAIN,ad.ettoday.net
 DOMAIN,ad.eu.xiaomi.com
 DOMAIN,ad.everytime.kr
 DOMAIN,ad.exited.de
+DOMAIN,ad.f1cd.ru
 DOMAIN,ad.f3.af9e.ip4.static.sl-reverse.com
 DOMAIN,ad.fanxingnet.cn
 DOMAIN,ad.fe-ts.jp
@@ -174,8 +192,10 @@ DOMAIN,ad.froster.org
 DOMAIN,ad.fuco.us
 DOMAIN,ad.fujita-kanko.co.jp
 DOMAIN,ad.fuzoku.jp
+DOMAIN,ad.game-unlimit.com
 DOMAIN,ad.gamebooster.cc
 DOMAIN,ad.gameley.com
+DOMAIN,ad.gamemodapk.net
 DOMAIN,ad.garvisor.com
 DOMAIN,ad.geetanjali.studio
 DOMAIN,ad.georgofili.it
@@ -196,12 +216,14 @@ DOMAIN,ad.hankookilbo.com
 DOMAIN,ad.happi.com
 DOMAIN,ad.hbv.de
 DOMAIN,ad.hbwxfwl.top
+DOMAIN,ad.heylocate.mobi
 DOMAIN,ad.hotroadgaming.com
 DOMAIN,ad.huyct.net
 DOMAIN,ad.hva.nl
 DOMAIN,ad.hyena.cz
 DOMAIN,ad.ibacon.com
 DOMAIN,ad.ibotomo.com
+DOMAIN,ad.igdjvlox.cc
 DOMAIN,ad.iinfo.cz
 DOMAIN,ad.ilcdn.fi
 DOMAIN,ad.india.xiaomi.com
@@ -234,6 +256,7 @@ DOMAIN,ad.kartina.tv
 DOMAIN,ad.keenspace.com
 DOMAIN,ad.kingnetsmart.com.tw
 DOMAIN,ad.klix.app
+DOMAIN,ad.kubiserves.icu
 DOMAIN,ad.kuttoai.com
 DOMAIN,ad.kws.lkfd.de
 DOMAIN,ad.laowang.vip
@@ -276,6 +299,7 @@ DOMAIN,ad.mojisead.co.kr
 DOMAIN,ad.monetate.net
 DOMAIN,ad.moonton.cn
 DOMAIN,ad.mox.tv
+DOMAIN,ad.mudah.com
 DOMAIN,ad.multispaces.net
 DOMAIN,ad.musicmatch.com
 DOMAIN,ad.mychannels.video
@@ -306,6 +330,7 @@ DOMAIN,ad.ourplay.com.cn
 DOMAIN,ad.ourplay.net
 DOMAIN,ad.pagosocial.com
 DOMAIN,ad.palmmerchant.com
+DOMAIN,ad.pandora.tv
 DOMAIN,ad.parkvv.com
 DOMAIN,ad.particlenews.com
 DOMAIN,ad.partner.gifshow.com
@@ -330,6 +355,7 @@ DOMAIN,ad.profiwin.de
 DOMAIN,ad.promvideo.com
 DOMAIN,ad.propellerads.com
 DOMAIN,ad.publicidees.com
+DOMAIN,ad.puwei.top
 DOMAIN,ad.qararfintech.sa
 DOMAIN,ad.qero-srv.de
 DOMAIN,ad.qianfanyun.com
@@ -356,6 +382,7 @@ DOMAIN,ad.sitelement.sk
 DOMAIN,ad.skyflag.jp
 DOMAIN,ad.skylinewebcams.com
 DOMAIN,ad.smartinmedia.co.kr
+DOMAIN,ad.smartmediarep.com
 DOMAIN,ad.snaptube.app
 DOMAIN,ad.snaptube.app.eo.dnse3.com
 DOMAIN,ad.softcatala.org
@@ -394,6 +421,7 @@ DOMAIN,ad.trialsport.ru
 DOMAIN,ad.truerun.com
 DOMAIN,ad.trw.com
 DOMAIN,ad.tv2.no
+DOMAIN,ad.twitchguru.com
 DOMAIN,ad.tzockt.beer
 DOMAIN,ad.ultrashow.me
 DOMAIN,ad.umassmed.edu
@@ -413,6 +441,7 @@ DOMAIN,ad.vpnlight.mobi
 DOMAIN,ad.wavu.hu
 DOMAIN,ad.weibo.com
 DOMAIN,ad.wiegaarden.dk
+DOMAIN,ad.winrar.com.cn
 DOMAIN,ad.woman.mynavi.jp
 DOMAIN,ad.ws-server.org
 DOMAIN,ad.ws.pho.to
@@ -464,6 +493,7 @@ DOMAIN,ads.1mindrama.net
 DOMAIN,ads.24hourfamily.com
 DOMAIN,ads.24ur.si
 DOMAIN,ads.2win.pl
+DOMAIN,ads.5ci.lt
 DOMAIN,ads.9gag.com.cdn.cloudflare.net
 DOMAIN,ads.abicheck.de
 DOMAIN,ads.abovetopsecret.com
@@ -548,6 +578,7 @@ DOMAIN,ads.awsflds.autotrader.com
 DOMAIN,ads.baadesaba.ir
 DOMAIN,ads.babbel.com
 DOMAIN,ads.baca.co.id
+DOMAIN,ads.badteenspunished.com
 DOMAIN,ads.bajajfinserv.in
 DOMAIN,ads.balkanweb.com
 DOMAIN,ads.ball-pythons.net
@@ -569,6 +600,7 @@ DOMAIN,ads.bigfoot.net
 DOMAIN,ads.bigtal.com
 DOMAIN,ads.bing.com
 DOMAIN,ads.birdforum.net
+DOMAIN,ads.bisniskini.biz.id
 DOMAIN,ads.bittorrent.com
 DOMAIN,ads.biznisinfo.mk
 DOMAIN,ads.bizwd.net
@@ -585,6 +617,7 @@ DOMAIN,ads.bonniercorp.com
 DOMAIN,ads.botasot.info
 DOMAIN,ads.boylesports.com
 DOMAIN,ads.brancherx-hvs.com
+DOMAIN,ads.brandadvance.co.uk
 DOMAIN,ads.brandcdn.com
 DOMAIN,ads.brattymilf.com
 DOMAIN,ads.brattysis.com
@@ -595,6 +628,8 @@ DOMAIN,ads.broadsolutionsgroup.com
 DOMAIN,ads.burdadigital.cz
 DOMAIN,ads.businessnews.com.tn
 DOMAIN,ads.bwr-media.de
+DOMAIN,ads.bzdcom.com
+DOMAIN,ads.cactus11.ru
 DOMAIN,ads.cad3d.it
 DOMAIN,ads.caixabank.es
 DOMAIN,ads.cakalnedobe.si
@@ -641,6 +676,7 @@ DOMAIN,ads.com.mk
 DOMAIN,ads.com.ua
 DOMAIN,ads.comitium.io
 DOMAIN,ads.comperia.pl
+DOMAIN,ads.comprariphonenoboleto.com
 DOMAIN,ads.consents-management.prod.aws.statista.com
 DOMAIN,ads.contents.fc2.com
 DOMAIN,ads.contextweb.com
@@ -657,6 +693,7 @@ DOMAIN,ads.datakontext.com
 DOMAIN,ads.db.com
 DOMAIN,ads.debati.bg
 DOMAIN,ads.deeplush.com
+DOMAIN,ads.deepzero.com
 DOMAIN,ads.delivery.autodesk.com
 DOMAIN,ads.deltha.hu
 DOMAIN,ads.deltra.de
@@ -668,6 +705,7 @@ DOMAIN,ads.detentiongirls.com
 DOMAIN,ads.deviantart.com
 DOMAIN,ads.dgshahr.com
 DOMAIN,ads.dhakatimes24.com
+DOMAIN,ads.diamondpratas.com.br
 DOMAIN,ads.diariosabemos.com
 DOMAIN,ads.digital-digest.com
 DOMAIN,ads.digital.disneyadvertising.com
@@ -703,6 +741,7 @@ DOMAIN,ads.ecodellojonio.it
 DOMAIN,ads.economist.com
 DOMAIN,ads.edadeal.ru
 DOMAIN,ads.educatio.hu
+DOMAIN,ads.egrana.com.br
 DOMAIN,ads.ehosts.info
 DOMAIN,ads.einmedia.com
 DOMAIN,ads.electrocelt.com
@@ -711,9 +750,11 @@ DOMAIN,ads.elsalvador.com
 DOMAIN,ads.emirates.net.ae
 DOMAIN,ads.ennaharonline.com
 DOMAIN,ads.ens.dk
+DOMAIN,ads.epi.es
 DOMAIN,ads.epiotrkow.pl
 DOMAIN,ads.epp.mk
 DOMAIN,ads.epsilonscan.to
+DOMAIN,ads.epsilonsoft.to
 DOMAIN,ads.erotictouch.com
 DOMAIN,ads.estrenarvivienda.com
 DOMAIN,ads.eu.interpals.net
@@ -764,6 +805,7 @@ DOMAIN,ads.gaming1.com
 DOMAIN,ads.gawker.com
 DOMAIN,ads.gelbe-liste.de
 DOMAIN,ads.gemeindezeitung.de
+DOMAIN,ads.geniustv.geniussystems.com.np
 DOMAIN,ads.genloc.network
 DOMAIN,ads.genoads.com
 DOMAIN,ads.geocities.ws
@@ -831,6 +873,7 @@ DOMAIN,ads.hostedcontents.de
 DOMAIN,ads.huabango.com
 DOMAIN,ads.huan.tv
 DOMAIN,ads.hunga1k47.com
+DOMAIN,ads.hunttrck.com
 DOMAIN,ads.hussverlag.de
 DOMAIN,ads.ibay.com.mv
 DOMAIN,ads.ibest.com.br
@@ -845,6 +888,7 @@ DOMAIN,ads.imgur.com
 DOMAIN,ads.imkerei-scholz-kessler.de
 DOMAIN,ads.imnotyourmommy.com
 DOMAIN,ads.imprezzer.com
+DOMAIN,ads.impulsosocial.online
 DOMAIN,ads.in.tiktok.com
 DOMAIN,ads.indeed.com
 DOMAIN,ads.indiglamour.com
@@ -865,6 +909,7 @@ DOMAIN,ads.inttherapeutics.com
 DOMAIN,ads.inventory.schibsted.io
 DOMAIN,ads.iorgana.com
 DOMAIN,ads.iosappsworld.com
+DOMAIN,ads.ipowerweb.com
 DOMAIN,ads.islamqa.info
 DOMAIN,ads.it.mk
 DOMAIN,ads.itforbusiness.fr
@@ -916,6 +961,7 @@ DOMAIN,ads.leipziger-messe.de
 DOMAIN,ads.lemanbleu.ch
 DOMAIN,ads.lentepubblica.it
 DOMAIN,ads.lesbianpersonals.com
+DOMAIN,ads.letterstudio.cc
 DOMAIN,ads.lexpressiondz.com
 DOMAIN,ads.lgtvcommon.com
 DOMAIN,ads.libertas.mk
@@ -927,17 +973,21 @@ DOMAIN,ads.linkedin.com
 DOMAIN,ads.linuxsecurity.com
 DOMAIN,ads.livegigs.de
 DOMAIN,ads.livenation.com
+DOMAIN,ads.livetv-bg2.com
 DOMAIN,ads.livetv-de2.com
 DOMAIN,ads.livetv-ua.com
+DOMAIN,ads.livetv904.me
 DOMAIN,ads.livetv905.me
 DOMAIN,ads.livetv906.me
 DOMAIN,ads.livetv907.me
+DOMAIN,ads.livetv911.me
 DOMAIN,ads.livetv912.me
 DOMAIN,ads.livetv914.me
 DOMAIN,ads.livetv916.me
 DOMAIN,ads.livetv918.me
 DOMAIN,ads.lmfm.ie
 DOMAIN,ads.locafilm.com
+DOMAIN,ads.localdt2u.com
 DOMAIN,ads.localmediahq.com
 DOMAIN,ads.lvb-software.com
 DOMAIN,ads.lwl.org
@@ -946,6 +996,7 @@ DOMAIN,ads.madridiario.es
 DOMAIN,ads.mahersakka.com
 DOMAIN,ads.mandeta.com
 DOMAIN,ads.manguoguo.com
+DOMAIN,ads.market.accountnorton.com
 DOMAIN,ads.marketeers.com
 DOMAIN,ads.marketing-boerse.de
 DOMAIN,ads.martinsfontespaulista.com.br
@@ -1086,6 +1137,7 @@ DOMAIN,ads.papi.homes
 DOMAIN,ads.partner.mercari.com.cdn.cloudflare.net
 DOMAIN,ads.pennet.com
 DOMAIN,ads.penreader.com
+DOMAIN,ads.periodistadigital.com
 DOMAIN,ads.petiteballerinasfucked.com
 DOMAIN,ads.petitehdporn.com
 DOMAIN,ads.philaseiten.de
@@ -1143,8 +1195,10 @@ DOMAIN,ads.rediff.com
 DOMAIN,ads.redlightcenter.com
 DOMAIN,ads.redmangoanalytics.com
 DOMAIN,ads.rekini.lv
+DOMAIN,ads.renhuanxi.com
 DOMAIN,ads.resoom.de
 DOMAIN,ads.reteimprese.it
+DOMAIN,ads.reviva.works
 DOMAIN,ads.revora.net
 DOMAIN,ads.reward-hunt.com
 DOMAIN,ads.ride.ch
@@ -1158,6 +1212,7 @@ DOMAIN,ads.rokuapi.net
 DOMAIN,ads.rtl.hr
 DOMAIN,ads.rubiconproject.com
 DOMAIN,ads.rudolf-mueller.de
+DOMAIN,ads.runtrck.com
 DOMAIN,ads.rustore.ru
 DOMAIN,ads.safehouse.dk
 DOMAIN,ads.samnytt.se
@@ -1194,6 +1249,7 @@ DOMAIN,ads.skiberg.dk
 DOMAIN,ads.skktec.com
 DOMAIN,ads.smaapis.de
 DOMAIN,ads.smartadserver.com
+DOMAIN,ads.smartclick.com
 DOMAIN,ads.smartfeedads.com
 DOMAIN,ads.smn.rs
 DOMAIN,ads.sobanuka.com
@@ -1208,12 +1264,15 @@ DOMAIN,ads.speedifynetworks.com
 DOMAIN,ads.sportradar.com
 DOMAIN,ads.sportradar.com.edgekey.net
 DOMAIN,ads.sportslocalmedia.com
+DOMAIN,ads.sportsport.mk
 DOMAIN,ads.spusu.at
 DOMAIN,ads.sss2corep.zebra.engineering
 DOMAIN,ads.stadtradeln.de
+DOMAIN,ads.stalker2.com
 DOMAIN,ads.standartnews.com
 DOMAIN,ads.stepsiblingscaught.com
 DOMAIN,ads.steroidswiki.com
+DOMAIN,ads.sttrck.com
 DOMAIN,ads.studo.co
 DOMAIN,ads.stuttgart-tourist.de
 DOMAIN,ads.sul21.com.br
@@ -1245,6 +1304,7 @@ DOMAIN,ads.thebangkokinsight.com
 DOMAIN,ads.theblank.net
 DOMAIN,ads.thecable.ng
 DOMAIN,ads.thecage.co.il
+DOMAIN,ads.thegamings.com
 DOMAIN,ads.thehiveworks.com
 DOMAIN,ads.themoneytizer.com.cdn.cloudflare.net
 DOMAIN,ads.thestar.com
@@ -1326,6 +1386,7 @@ DOMAIN,ads.vivofree.com.br
 DOMAIN,ads.vizio.com
 DOMAIN,ads.vk.com
 DOMAIN,ads.vmedija.lt
+DOMAIN,ads.vnhell.com
 DOMAIN,ads.vnumedia.com
 DOMAIN,ads.vocento.com
 DOMAIN,ads.voyageforum.com
@@ -1340,6 +1401,7 @@ DOMAIN,ads.webinf.team
 DOMAIN,ads.webintoapp.com
 DOMAIN,ads.webmasterpoint.org
 DOMAIN,ads.websiteservices.com
+DOMAIN,ads.wecansync.com
 DOMAIN,ads.welltalky.cn
 DOMAIN,ads.welocal.cloud
 DOMAIN,ads.wenet.pl
@@ -1360,6 +1422,7 @@ DOMAIN,ads.wwe.biz
 DOMAIN,ads.x5.ru
 DOMAIN,ads.xfastest.com
 DOMAIN,ads.xhamster.com
+DOMAIN,ads.xnavxx.com
 DOMAIN,ads.xrocket.ch
 DOMAIN,ads.xtra.co.nz
 DOMAIN,ads.yahoo.com
@@ -1368,6 +1431,7 @@ DOMAIN,ads.yirmidort.tv
 DOMAIN,ads.yldmgrimg.net
 DOMAIN,ads.youngermommy.com
 DOMAIN,ads.youtube.com
+DOMAIN,ads.yupmanga.com
 DOMAIN,ads.zdravie.sk
 DOMAIN,ads.zestlink.net
 DOMAIN,ads.zhios.cn
@@ -1382,6 +1446,7 @@ DOMAIN,adserver.adotmob.com.cdn.cloudflare.net
 DOMAIN,adserver.adrivo.com
 DOMAIN,adserver.adtechus.com
 DOMAIN,adserver.adultfriendfinder.com
+DOMAIN,adserver.advrstcdn.com
 DOMAIN,adserver.afa.net
 DOMAIN,adserver.aidameter.com
 DOMAIN,adserver.aktuell4u.de
@@ -1390,6 +1455,7 @@ DOMAIN,adserver.audi-on.com
 DOMAIN,adserver.autotecnica.org
 DOMAIN,adserver.b24.co
 DOMAIN,adserver.banjaluka.net
+DOMAIN,adserver.barrapunto.com
 DOMAIN,adserver.beggarspromo.com
 DOMAIN,adserver.bernews.com
 DOMAIN,adserver.betandwin.de
@@ -1420,6 +1486,7 @@ DOMAIN,adserver.euroweeklynews.com
 DOMAIN,adserver.everypixel.com
 DOMAIN,adserver.fbg.dk
 DOMAIN,adserver.fcrmedia.com
+DOMAIN,adserver.finditquick.com
 DOMAIN,adserver.flowzz.com
 DOMAIN,adserver.forengruppe.de
 DOMAIN,adserver.forum-media.eu
@@ -1435,6 +1502,7 @@ DOMAIN,adserver.gtvads.com
 DOMAIN,adserver.guiademoteis.com.br
 DOMAIN,adserver.hrreview.co.uk
 DOMAIN,adserver.hwupgrade.it
+DOMAIN,adserver.ibjmedia.com
 DOMAIN,adserver.idg.de
 DOMAIN,adserver.image.bompresse.fr
 DOMAIN,adserver.industryarena.com
@@ -1450,6 +1518,7 @@ DOMAIN,adserver.konograma.com
 DOMAIN,adserver.l-iz.de
 DOMAIN,adserver.latinon.com
 DOMAIN,adserver.lv-hessen.de
+DOMAIN,adserver.magentamarketinggroup.com
 DOMAIN,adserver.magyarmezogazdasag.hu
 DOMAIN,adserver.matthaesmedien.net
 DOMAIN,adserver.mediasector.es
@@ -1461,6 +1530,7 @@ DOMAIN,adserver.molbuk.cv.ua
 DOMAIN,adserver.mtrust.cn
 DOMAIN,adserver.myhomeapps.com
 DOMAIN,adserver.news.com.au
+DOMAIN,adserver.ngz-network.de
 DOMAIN,adserver.nydailynews.com
 DOMAIN,adserver.o2.pl
 DOMAIN,adserver.oddschecker.com
@@ -1503,6 +1573,7 @@ DOMAIN,adserver.virginmedia.com
 DOMAIN,adserver.wunschimmo.de
 DOMAIN,adserver.wunschimmo.de.cname.immovativ.de
 DOMAIN,adserver.xornaldelugo.gal
+DOMAIN,adserver.yaboo.com
 DOMAIN,adserver.yahoo.com
 DOMAIN,adserver.zander.online
 DOMAIN,adserver.zeichensetzen.de
