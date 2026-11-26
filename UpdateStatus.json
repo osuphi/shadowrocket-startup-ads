@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-11-25T09:56:12Z",
+  "checked_at_utc": "2026-11-26T09:40:18Z",
   "upstream": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule",
-  "upstream_date": "2026-11-11 22:01:38",
-  "upstream_sha256": "f6d4d95f42ca2c38acac956c77559b64c8f092a2ffcea337fb682d15b0686527",
-  "module_sha256": "baa8f9388791641da100aae8af41e6d8b80dd8c6c84ee2d06bfcac3891d1f2f9",
-  "module_changed": false,
+  "upstream_date": "2026-11-25 21:36:43",
+  "upstream_sha256": "f2c0f73aa2c5fe2327d95baca17d5eef7ec284bb49e9d69a74dfba6e89083905",
+  "module_sha256": "ab8d70f81961f758bdd2743449a80a933093e920fc5fcfd84b8d5565afa42049",
+  "module_changed": true,
   "rules": 163,
   "revision": "2026-11-11.2",
   "coverage_summary": {
@@ -41,8 +41,8 @@
   "pre_reviewed_update_hosts": 267,
   "bounded_updates": 1,
   "skipped": {
-    "native-rule-or-script-source-requires-review": 3160,
-    "app-not-reviewed": 830,
+    "native-rule-or-script-source-requires-review": 3162,
+    "app-not-reviewed": 829,
     "not-explicit-startup-ad": 202,
     "unsupported-new-rule": 28,
     "complex-or-mixed-new-path": 14,

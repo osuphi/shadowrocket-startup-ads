@@ -1168,7 +1168,7 @@
     {
       "app": "朴朴超市",
       "section": "Script",
-      "declaration_preview": "朴朴超市 = type=http-response, pattern=^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/a朴朴超市,, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60",
+      "declaration_preview": "朴朴超市 = type=http-response, pattern=^https:\\/\\/j1\\.pupuapi\\.com\\/client\\/app_resource\\/resource_preload\\/list_h5_resource, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60",
       "status": "发现候选，不代表已启用或实测"
     },
     {
