@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-11-26T09:40:18Z",
+  "checked_at_utc": "2026-11-27T09:45:52Z",
   "upstream": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Shadowrocket/module/blockAds.srmodule",
   "upstream_date": "2026-11-25 21:36:43",
   "upstream_sha256": "f2c0f73aa2c5fe2327d95baca17d5eef7ec284bb49e9d69a74dfba6e89083905",
   "module_sha256": "ab8d70f81961f758bdd2743449a80a933093e920fc5fcfd84b8d5565afa42049",
-  "module_changed": true,
+  "module_changed": false,
   "rules": 163,
   "revision": "2026-11-11.2",
   "coverage_summary": {
